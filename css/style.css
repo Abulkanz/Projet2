@@ -46,16 +46,63 @@ body{
     background-size: cover;
 }
 
+.accueilSite{
+    margin:0;
+    height: 100%;
+}
+
 #boiteLogo{
     width: 100%
 }
 
-.logo {
+#logoAcc {
     opacity: 0.8;
     display:block;
     margin: auto;
     height: 223px;
 }
+
+.logo{
+    opacity: 0.8;
+    height: 150px;
+    position: absolute;
+}
+
+.accueilSite header{
+    width: 100%;
+    text-align: center;
+    background-color: black;
+}
+
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    display: inline-block;
+    border-right: 1px solid #bbb;
+    padding: 3em 4em;
+}
+
+li a {
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font: 1.4em Righteous;
+    color: #61e5a1;
+}
+
+li a:hover{
+    color: white;
+}
+
+li:last-child {
+    border-right: none;
+}
+
 
 /*Cible seulement le titre du formulaire*/
 div form label {
@@ -63,19 +110,11 @@ div form label {
     font: 1.6em "Alfa Slab One", serif;
 }
 
-.login-page {
-    width: 360px;
-    padding: 1% 0 0;
-    margin: auto;
-}
-
 .form {
     z-index: 1;
-    background: #eeffc3; /* Pour les navigateurs qui ne supporteraient pas gradient */
-    background: -webkit-linear-gradient(top, #3b4031, #eeffc3, #3b4031); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(bottom, #3b4031, #eeffc3, #3b4031); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(bottom, #3b4031, #eeffc3, #3b4031); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(to bottom, #3b4031, #eeffc3, #3b4031); 
+    background: #777f61;
+    border-radius: 2em 2em 2em 2em;
+    border: 1px solid rgba(0, 0, 0, 0.1);
     max-width: 360px;
     margin: 0 auto;
     padding: 45px;
@@ -94,7 +133,7 @@ div form label {
     font: 1.2em Righteous;
 }
 
-.form button {
+#boutonCo {
     text-transform: uppercase;
     outline: 0;
     background: #357f59;
@@ -109,7 +148,9 @@ div form label {
     border: 2px solid #1b402d;
 }
 
-.form button:hover,.form button:active,.form button:focus {
+#boutonCo:hover,
+#boutonCo:active,
+#boutonCo:focus {
     background: #61e5a1;
     border: 2px solid #1b402d;
     color: #357f59;
@@ -123,16 +164,20 @@ div form label {
 }
 
 a{
-  color: #357f59;
-  text-decoration: none;  
+    color: #357f59;
+    text-decoration: none;  
 }
 
 a:hover{
     color: #61e5a1;
 }
 
-.form .register-form {
-    display: none;
+.blocModules{
+    height: 25%;
+    text-align: center;
+    font: 1.2em Righteous white;
+    padding: 5em 0;
+    border: 1px solid rgba(1, 1, 1, 0.5);
 }
 
 /*
