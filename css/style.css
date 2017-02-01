@@ -165,9 +165,7 @@ div form label {
     border: 2px solid #1b402d;
 }
 
-#boutonCo:hover,
-#boutonCo:active,
-#boutonCo:focus {
+#boutonCo:hover{
     background: #61e5a1;
     border: 2px solid #1b402d;
     color: #357f59;
@@ -199,7 +197,7 @@ a:hover{
     height: 33%;
     text-align: center;
     font: 1.2em Righteous white;
-    padding: 5em 0 0 0;
+    padding: 7em 0 0 0;
 }
 
 .module{
@@ -233,7 +231,49 @@ th{
     padding: 0;
 }
 
+.vignLienFiche:hover{
+    transform: scale(1.2, 1.2);
+    border-radius: 2em;
+    transition-duration: 0.5s;
+}
 
+.ficheAnimal{
+    margin-top: 1em;
+    height: 100%;
+}
+
+.ficheAnimal .tiers{
+    width: 30%;
+    display: inline-block;
+    height: 100%;
+    background-color: lightgrey;
+    text-align: center;
+    font: 1.2em Righteous white;
+    margin: auto auto;
+    border: 1px solid rgba(1, 1, 1, 0.5);
+}
+
+.tiersPortrait{
+    display: inline-block;
+    height: 100%;
+    width: 30%;
+    text-align: center;
+    margin: auto auto;
+    background: url(../img/photos/babouin.jpg) no-repeat center;
+    background-size: cover;
+    border: 1px solid rgba(1, 1, 1, 0.5);
+}
+
+.ficheAnimal .deuxTiers{
+    width: 60.5%;
+    display: inline-block;
+    height: 100%;
+    background-color: lightgrey;
+    text-align: center;
+    font: 1.2em Righteous white;
+    margin: auto auto;
+    border: 1px solid rgba(1, 1, 1, 0.5);
+}
 
 /*
 .container {
