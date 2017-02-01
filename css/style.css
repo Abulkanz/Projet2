@@ -1,13 +1,12 @@
 @font-face{
-    font-family: "Alfa Slab One", serif;
+    font-family: 'Alfa Slab One', cursive;
     src: url(../fonts/AlfaSlabOne-Regular.ttf);
 }
 
 @font-face{
-    font-family: Righteous, sans-serif;
-    src: url(../fonts/AlfaSlabOne-Regular.ttf);
+    font-family: 'Righteous', cursive;
+    src: url(../fonts/Righteous-Regular.ttf);
 }
-
 
 html{
     height: 100%;
@@ -21,7 +20,6 @@ html{
       par exemple de façon simple et harmonieuse
     */
 }
-
 
 body{
     background: #eeffc3; /* Pour les navigateurs qui ne supporteraient pas gradient */
@@ -107,7 +105,7 @@ li:last-child {
 /*Cible seulement le titre du formulaire*/
 div form label {
     /*1.6em = 16px*/
-    font: 1.6em "Alfa Slab One", serif;
+    font: 1.6em "Alfa Slab One";
 }
 
 .form {
