@@ -19,6 +19,7 @@ html{
       1em vaut la taille d'un caractère, partique pour inclure des marges 
       par exemple de façon simple et harmonieuse
     */
+    overflow: hidden;
 }
 
 body{
@@ -102,6 +103,12 @@ li:last-child {
     border-right: none;
 }
 
+.avatar{
+    width: 240px;
+    position: absolute;
+    right: 1em;
+    top: 1.5em;
+}
 
 /*Cible seulement le titre du formulaire*/
 div form label {
@@ -171,11 +178,27 @@ a:hover{
     color: #61e5a1;
 }
 
+.conteneurModules{
+    margin-top: 1em;
+    height: 100%;
+}
+
+
 .blocModules{
-    height: 25%;
+    height: 33%;
     text-align: center;
     font: 1.2em Righteous white;
-    padding: 5em 0;
+    padding: 5em 0 0 0;
+}
+
+.module{
+    display: inline-block;
+    width: 20%;
+    height: 100%;
+    background-color: lightgrey;
+    text-align: center;
+    font: 1.2em Righteous white;
+    margin: auto auto;
     border: 1px solid rgba(1, 1, 1, 0.5);
 }
 
