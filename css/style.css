@@ -188,7 +188,7 @@ a:hover{
 }
 
 .conteneurModules{
-    margin-top: 1em;
+    margin-top: 6em;
     height: 100%;
 }
 
@@ -197,7 +197,7 @@ a:hover{
     height: 33%;
     text-align: center;
     font: 1.2em Righteous white;
-    padding: 7em 0 0 0;
+    padding: 3em 0 0 0;
 }
 
 .module{
