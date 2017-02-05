@@ -17,11 +17,10 @@
             echo 'Formulaire de modification'.'<br>'.'<br>';
             if(isset($_POST['identifiant'])){
                 $idEmployes=$_POST["identifiant"];
-                $varSql = "SELECT idConnexion, nom,prenom, fonction, avatar,motDePasse,adresse_mail,idSexe FROM employes WHERE idEmploye= ?";
+                $varSql = "SELECT idEmploye,idConnexion, nom,prenom, fonction, avatar,motDePasse,adresse_mail,idSexe FROM employes WHERE idEmploye= ?";
                 $idRequete = executeRequete($cnx,$varSql,array($idEmployes));
                 while($ligne=$idRequete->fetch()){   
             ?>
-            <form method="POST" action="" enctype="multipart/form-data">
                 <table>
 				<form method="POST" action="" enctype="multipart/form-data">
                 <thead>
@@ -31,7 +30,9 @@
                     </thead>
                     <tfoot>
                     <tr>
-                        <td colspan="4"><a href="listerecette.html">Retour à la liste des employé</a></td> 
+                        <td><input type="submit" id="retour" name="Retour" value="Retour" ></td>
+                        <td><input type="submit" id="Valider" name="Valider" value="Valider" ></td>
+                        <td><input type="hidden" id="idEmploye" name="idEmploye" value="<?php echo ''.$ligne['idEmploye'].'';?>"></td>
                     </tr>
                     </tfoot>
                     <tbody>
@@ -66,8 +67,6 @@
                         </tr>
                     </tbody>
             </table>
-                <input type="submit" name="Retour" value="Retour" />
-                <input type="submit" name="Valider" value="Valider" />
             </form>
             <?php
                 }
@@ -76,11 +75,8 @@
                 header('location:index.php?');
             }
             if(isset($_POST['Valider'])){
-                $idEmployes=$_POST["idEmployes"];
-                $nom=$_POST["nom"];
-                $prenom=$_POST["prenom"];
-                $fonction=$_POST["fonction"];
-				$Sql = "DELETE FROM employes WHERE idEmployes=?";
+                $idEmployes=$_POST["idEmploye"];
+				$Sql = "DELETE FROM employes WHERE idEmploye=?";
 				$idRequete = executeRequete($cnx,$Sql,array($idEmployes));
                 header('location:index.php');
             }
