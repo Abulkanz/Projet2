@@ -12,7 +12,7 @@
 html{
     height: 100%;
     /*Hauteur du document "bloquée" à 100%*/
-    font-size: 62.5%;
+    /*font-size: 62.5%;*/
     /*Cette proportion en % pour les tailles de police permet
       d'ensuite utiliser les proportions en "em", qui sont très
       intuitives de manière plus simple car grace à cette conversion
@@ -178,7 +178,7 @@ a:hover{
     font: 1.2em Righteous white;
     padding: 5em 0;
     border: 1px solid rgba(1, 1, 1, 0.5);
-}
+}*/
 
 /*
 .container {
@@ -186,7 +186,7 @@ a:hover{
   z-index: 1;
   max-width: 300px;
   margin: 0 auto;
-}/*
+}
 .container:before, .container:after {
   content: "";
   display: block;
@@ -214,4 +214,21 @@ a:hover{
 .container .info span .fa {
   color: #EF3B3A;
   }*/
+.miniature{
+  width: 50px;
+  height: 50px;
+}
+.avatar{
+  width: 200px;
+  height: 200px;
+}
+table{
+    border:#a8cbff 1px solid;
+    boder-collapse:collapse;
+    width:50%;
+}
 
+th, td{
+    border:#a8cbff 1px solid;
+    height:30px;
+}
