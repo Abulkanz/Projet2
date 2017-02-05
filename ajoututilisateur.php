@@ -85,7 +85,7 @@
             Adresse mail: <input type="text" id="mail" name="mail" /><br>
             Droits de l'utilisateur : <input type="text" id="droits" name="droits" /><br>
             Sexe de l'utilisateur : <input type="number" id="idSexe" name="idSexe" /><br>
-            <input type="submit" name="Envoyer" value="Envoyer le fichier" />
+            <input type="submit" name="Envoyer" value="Valider" />
             <input type="submit" name="Retour" value="Retour" />
         </form>
     </body>
