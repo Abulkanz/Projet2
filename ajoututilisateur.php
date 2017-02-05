@@ -17,10 +17,14 @@
         }
         if(isset($_POST['Envoyer'])){
             // recupere les information saisie
+            $idConnexion=$_POST["idconnexion"];
             $nom=$_POST["nom"];
             $prenom=$_POST["prenom"];
             $fonction=$_POST["fonction"];
-            $mdp=$_POST["mail"];
+            $motdepasse=$_POST["motdepasse"];
+            $mail=$_POST["mail"];
+            $droits=$_POST["droits"];
+            $idSexe=$_POST["idSexe"];
 
             // on recupere l'image : nom, type, taille,..
             $imgFile = $_FILES["avatar"]["name"];
@@ -31,11 +35,13 @@
             // on definit le repertoire ou sera sotcké l'image
             $upload_dir = 'img/'; 
             // on receuper l'extension du fichier image
-            $imgExt = strtolower(pathinfo($imgFile,PATHINFO_EXTENSION)); 
+            $imgExt = strtolower(pathinfo($imgFile,PATHINFO_EXTENSION));
+            // on recupere le nom de l'image
+            $nomImg = strtolower(pathinfo($imgFile,PATHINFO_FILENAME));
             // on definit les types de fichier qui seront pris en compte
             $valid_extensions = array('jpeg', 'jpg', 'png', 'gif');
             // on renome l'image 
-            $userpic = rand(1000,1000000).'.'.$imgExt;
+            $userpic = $nomImg.'.'.$imgExt;
 
             // on passe a l'envoie du fichier
             // on verifier d'abord que le fichier est correct
@@ -52,8 +58,8 @@
             }
             if(!isset($errMSG)){
                 // on insere dans la bdd
-                $Sql = "INSERT INTO employes(nom, prenom, fonction, motDePasse, avatar) VALUES (?,?,?,?,?)";
-                $idRequete = executeRequete($cnx,$Sql,array($nom,$prenom,$fonction,$mdp,$userpic));
+                $Sql = "INSERT INTO employes(idConnexion, nom, prenom, fonction, motDePasse, avatar, adresse_mail, droits, idSexe) VALUES (?,?,?,?,?,?,?,?,?)";
+                $idRequete = executeRequete($cnx,$Sql,array($idConnexion,$nom,$prenom,$fonction,$motdepasse,$userpic,$mail,$droits,$idSexe));
             }
             // on verifier que la requete OK
             if ($idRequete==true){
@@ -63,18 +69,22 @@
         </script>
         <?php 
             } else {
-                $errMSG = "Sorry Data Could Not Updated !";
+                $errMSG = "Désolé les données n'ont pas été insérée";
                 echo $errMSG;
             }
         }
         ?>
         <h1>Ajout d'un utilisateur</h1>
         <form method="POST" action="" enctype="multipart/form-data">
+            idConnexion : <input type="text" id="idconnexion" name="idconnexion" /><br>
             Nom : <input type="text" id="nom" name="nom" /><br>
             prenom : <input type="text" id="prenom" name="prenom" /><br>
             fonction :<input type="text" id="fonction" name="fonction" /><br>
-            Mail : <input type="text" id="mail" name="mail"/><br>
+            Mot de passe : <input type="text" id="motdepasse" name="motdepasse"/><br>
             Avatar : <input type="file" id="avatar" name="avatar" /><br>
+            Adresse mail: <input type="text" id="mail" name="mail" /><br>
+            Droits de l'utilisateur : <input type="text" id="droits" name="droits" /><br>
+            Sexe de l'utilisateur : <input type="number" id="idSexe" name="idSexe" /><br>
             <input type="submit" name="Envoyer" value="Envoyer le fichier" />
             <input type="submit" name="Retour" value="Retour" />
         </form>
