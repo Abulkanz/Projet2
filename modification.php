@@ -91,15 +91,19 @@
                 $imgFile = $_FILES["avatar"]["name"];
                 $tmp_dir = $_FILES["avatar"]["tmp_name"];
                 $imgSize = $_FILES["avatar"]["size"];
+                
                 // traitement de l'image
                 // on definit le repertoire ou sera sotcké l'image
                 $upload_dir = 'img/'; 
                 // on receuper l'extension du fichier image
-                $imgExt = strtolower(pathinfo($imgFile,PATHINFO_EXTENSION)); 
+                $imgExt = strtolower(pathinfo($imgFile,PATHINFO_EXTENSION));
+                // on recupere le nom de l'image
+                $nomImg = strtolower(pathinfo($imgFile,PATHINFO_FILENAME));
                 // on definit les types de fichier qui seront pris en compte
                 $valid_extensions = array('jpeg', 'jpg', 'png', 'gif');
                 // on renome l'image 
-                $userpic = rand(1000,1000000).'.'.$imgExt;
+                $userpic = $nomImg.'.'.$imgExt;
+                
 				if(in_array($imgExt, $valid_extensions)){
 					if($imgSize < 5000000){  
 						move_uploaded_file($tmp_dir,$upload_dir.$userpic);
