@@ -101,7 +101,9 @@ li {
 li:first-child{
     border-left: 1px solid #bbb;
 }
-li a {
+
+li .lienNav {
+    border: none;
     color: white;
     text-align: center;
     text-decoration: none;

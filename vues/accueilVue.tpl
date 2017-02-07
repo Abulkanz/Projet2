@@ -12,12 +12,24 @@
             <img class="logo" src="img/logoSinges.png">
             <header>
                 <ul>
+                    <li>
+                        <input class="lienNav" type="hidden" name="gestion" value="accueil">
+                        <input type="submit" name="produits" value="Accueil">
+                    </li>
+                    <li>
+                        <input class="lienNav" type="hidden" name="gestion" value="animaux">
+                        <input type="submit" name="clients" value="Animaux">
+                    </li>
+                    <li><input class="lienNav" type="submit" name="commandes" value="Commandes"></li>
+                    <li><input class="lienNav" type="submit" name="lignes_commande" value="Ligne Commande"></li>
+                    <img class="avatar" src="img/avatarTest.png" alt=""/>
+                </ul>
+                <!--ul>
                     <li><a href="page1.html">Accueil</a></li>
                     <li><a href="page2.html">Animaux</a></li>
                     <li><a href="#">Carte</a></li>
                     <li><a href="#">Statistiques</a></li>
-                    <img class="avatar" src="img/avatarTest.png" alt=""/>
-                </ul>
+                </ul-->
             </header>
             <div class="conteneurModules">
                 <div class="blocModules">
