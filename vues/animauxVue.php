@@ -4,4 +4,4 @@ require_once 'include/libs/Smarty.class.php';
 
 $tpl = new Smarty();
 
-$tpl->display('vues/accueilAnimaux.tpl');
+$tpl->display('vues/animauxVue.tpl');
