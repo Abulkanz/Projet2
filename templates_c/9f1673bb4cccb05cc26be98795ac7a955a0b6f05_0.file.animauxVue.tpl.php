@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2017-02-08 08:06:42
+/* Smarty version 3.1.29, created on 2017-02-08 08:08:47
   from "C:\Wamp64\www\Projet2\vues\animauxVue.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_589ad1928e9472_40280588',
+  'unifunc' => 'content_589ad20fee7be4_88312117',
   'file_dependency' => 
   array (
     '9f1673bb4cccb05cc26be98795ac7a955a0b6f05' => 
     array (
       0 => 'C:\\Wamp64\\www\\Projet2\\vues\\animauxVue.tpl',
-      1 => 1486541171,
+      1 => 1486541246,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_589ad1928e9472_40280588 ($_smarty_tpl) {
+function content_589ad20fee7be4_88312117 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -34,13 +34,21 @@ function content_589ad1928e9472_40280588 ($_smarty_tpl) {
         <div class="conteneur">
             <img class="logo" src="img/logoSinges.png">
             <header>
-                <ul>
-                    <li><a href="page1.html">Accueil</a></li>
-                    <li><a href="page2.html">Animaux</a></li>
-                    <li><a href="#">Carte</a></li>
-                    <li><a href="#">Statistiques</a></li>
-                    <img class="avatar" src="img/avatarTest.png" alt=""/>
-                </ul>
+                <form method="POST" name="gestion">
+                    <ul>
+                        <li>
+                            <input type="hidden" name="gestion" value="accueil">
+                            <input class="lienNav" type="submit" value="Accueil">
+                        </li>
+                        <li>
+                            <input type="hidden" name="gestion" value="animaux">
+                            <input class="lienNav" type="submit" value="Animaux">
+                        </li>
+                        <li><input class="lienNav" type="submit" name="commandes" value="Carte"></li>
+                        <li><input class="lienNav" type="submit" name="lignes_commande" value="Statistiques"></li>
+                        <img class="avatar" src="img/avatarTest.png" alt=""/>
+                    </ul>
+                </form>
             </header>
             <div class="conteneurTable">
                 <table class="tAnimaux">
