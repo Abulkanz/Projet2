@@ -4,20 +4,28 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="../css/style.css" rel="stylesheet">
+        <link href="style/styles.css" rel="stylesheet">
         <title>Ouhouhin-Animaux</title>
     </head>
     <body>
         <div class="conteneur">
             <img class="logo" src="img/logoSinges.png">
             <header>
-                <ul>
-                    <li><a href="page1.html">Accueil</a></li>
-                    <li><a href="page2.html">Animaux</a></li>
-                    <li><a href="#">Carte</a></li>
-                    <li><a href="#">Statistiques</a></li>
-                    <img class="avatar" src="img/avatarTest.png" alt=""/>
-                </ul>
+                <form method="POST" name="gestion">
+                    <ul>
+                        <li>
+                            <input type="hidden" name="gestion" value="accueil">
+                            <input class="lienNav" type="submit" value="Accueil">
+                        </li>
+                        <li>
+                            <input type="hidden" name="gestion" value="animaux">
+                            <input class="lienNav" type="submit" value="Animaux">
+                        </li>
+                        <li><input class="lienNav" type="submit" name="commandes" value="Carte"></li>
+                        <li><input class="lienNav" type="submit" name="lignes_commande" value="Statistiques"></li>
+                        <img class="avatar" src="img/avatarTest.png" alt=""/>
+                    </ul>
+                </form>
             </header>
             <div class="conteneurTable">
                 <table class="tAnimaux">
