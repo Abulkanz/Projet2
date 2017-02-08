@@ -104,12 +104,11 @@ li:first-child{
 
 li .lienNav {
     border: none;
-    color: white;
-    background-color: black;
     text-align: center;
     text-decoration: none;
     font: 1.4em Righteous;
     color: #61e5a1;
+    background-color: black;
 }
 
 li .lienNav:hover{
