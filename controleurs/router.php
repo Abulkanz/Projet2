@@ -10,6 +10,9 @@ switch ($gestion) {
     case 'animaux':
         require_once $gestion . 'Controleur.php';
         break;
+    case 'fiche':
+        require_once $gestion . 'Controleur.php';
+        break;
     case 'especes':
         require_once $gestion . 'Controleur.php';
         break;

@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2017-02-09 08:19:54
+/* Smarty version 3.1.29, created on 2017-02-09 14:01:43
   from "C:\Wamp64\www\Projet2\vues\animauxVue.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_589c262adc0755_01933738',
+  'unifunc' => 'content_589c76471698b1_29991560',
   'file_dependency' => 
   array (
     '9f1673bb4cccb05cc26be98795ac7a955a0b6f05' => 
     array (
       0 => 'C:\\Wamp64\\www\\Projet2\\vues\\animauxVue.tpl',
-      1 => 1486628389,
+      1 => 1486648900,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_589c262adc0755_01933738 ($_smarty_tpl) {
+function content_589c76471698b1_29991560 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -73,7 +73,7 @@ function content_589c262adc0755_01933738 ($_smarty_tpl) {
                         <th>Statut</th>
                     </tr>
                     <tr>
-                        <td><img class="vignLienFiche" src="img/photos/babouin.jpg" alt=""/></a></td>
+                        <td><form method="POST" name="gestion"><input type="hidden" name="gestion" value="fiche"><input type="submit" class="vignLienFiche" value=""/></form></td>
                         <td>Babouin</td>
                         <td>Patio</td>
                         <td>Male</td>

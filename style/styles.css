@@ -10,6 +10,7 @@
 
 html{
     height: 100%;
+    overflow: hidden;
     /*Hauteur du document "bloquée" à 100%*/
     font-size: 62.5%;
     /*Cette proportion en % pour les tailles de police permet
@@ -17,8 +18,8 @@ html{
       intuitives de manière plus simple car grace à cette conversion
       1.6em = 16 px 
       1em vaut la taille d'un caractère, partique pour inclure des marges 
-      par exemple de façon simple et harmonieuse
-    */
+      par exemple de façon simple et harmonieuse*/
+    
 }
 
 body{
@@ -232,6 +233,12 @@ th{
     width: 100%;
     vertical-align: middle;
     padding: 0;
+}
+
+.vignLienFiche{
+    background: url(../img/imgFiches/babouinMale.png) center;
+    height: 8.5em;
+    width: 15em;
 }
 
 .vignLienFiche:hover{

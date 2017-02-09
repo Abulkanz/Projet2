@@ -5,10 +5,10 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="style/styles.css" rel="stylesheet">
-        <title>Ouhouhin-Animaux</title>
+        <title>Projet2</title>
     </head>
     <body>
-        <div class="conteneur">
+        <div class="conteneur noOverF">
             <img class="logo" src="img/logoSinges.png">
             <header>
                 <ul>
@@ -33,36 +33,17 @@
                     <li><input class="lienNav" type="submit" name="lignes_commande" value="Statistiques"></li>
                     <img class="avatar" src="img/avatarTest.png" alt=""/>
                 </ul>
-
             </header>
-            <div class="conteneurTable">
-                <table class="tAnimaux">
-                    <tr>
-                        <th>Photo</th>
-                        <th>Espèce</th>
-                        <th>Prénom</th>
-                        <th>Sexe</th>
-                        <th>Poids</th>
-                        <th>Taille</th>
-                        <th>Date de naissance</th>
-                        <th>Age</th>
-                        <th>Lieu de naissance</th>
-                        <th>Statut</th>
-                    </tr>
-                    <tr>
-                        <td><form method="POST" name="gestion"><input type="hidden" name="gestion" value="fiche"><input type="submit" class="vignLienFiche" value=""/></form></td>
-                        <td>Babouin</td>
-                        <td>Patio</td>
-                        <td>Male</td>
-                        <td>33 kg</td>
-                        <td>102 cm</td>
-                        <td>07/05/07</td>
-                        <td>9 ans</td>
-                        <td>Ethiopie</td>
-                        <td>Prêté</td>
-                    </tr>
-                </table>
+            <div class="conteneurModules">
+                <div class="blocModules">
+                    <div class="tiers"><img class="iPortrait" src="img/imgFiches/babouinMale.png" alt=""/></div>
+                    <div class="tiers"></div>
+                    <div class="tiers"></div>
+                </div>
+                <div class="blocModules">
+                    <div class="deuxTiers"></div>
+                    <div class="tiers"></div>
+                </div>
             </div>
-        </div>  
     </body>
 </html>
