@@ -33,6 +33,13 @@ body{
     height: 100%;
 }
 
+/*Supprime le contour bleu au clic*/
+input:active,
+input:focus
+{
+    outline: 0;
+}
+
 /*div de l'image de fond'*/
 #accueil{
     margin:0;
@@ -239,12 +246,11 @@ th{
     background: url(../img/imgFiches/babouinMaleTn.png) center;
     height: 8.5em;
     width: 15em;
+    background-size: cover;
 }
 
 .vignLienFiche:hover{
-    transform: scale(1.2, 1.2);
-    border-radius: 2em;
-    transition-duration: 0.5s;
+    background-size: contain; 
 }
 
 .ficheAnimal{
