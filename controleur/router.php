@@ -28,6 +28,8 @@ if(isset($_POST['ajouter'])){
     rechercher($_POST);
 } elseif(isset($_POST['Trier'])){
     trier($_POST);
+} elseif(isset($_POST['envoyermail'])){
+    envoyermail($_POST);
 }
 else {
     liste();

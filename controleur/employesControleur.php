@@ -19,8 +19,18 @@ function consulter($param) {
     $idRequete=consultEmploye($param);
     require_once 'template/employesVueForm.php';
 }
-// fonction modifier 
+// fonction modifier
+function modifier($param) {
+    $action=$param['action'];
+    $idRequete=consultEmploye($param);
+    require_once 'template/employesVueForm.php';
+}
 // fonction validermodification
+function validermodification($param){
+    $action=$param['action'];
+    $idRequete= modifierEmploye($param);
+    liste();
+}
 // suppression
 // rechercher
 function rechercher($param){
@@ -46,4 +56,9 @@ function retour(){
 function liste() {
     $idRequete=listeEmploye();
     require_once 'template/employesVueListe.php';
+}
+function envoyermail($param){
+    $action=$param['action'];
+    $idRequete=envoyermails($param);
+    require_once 'templates/mail.php';
 }
