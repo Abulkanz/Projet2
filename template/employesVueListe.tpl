@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <title>Projet2</title>
 </head>
@@ -30,6 +29,7 @@
                  </select>
                 <input type="submit" name="Trier" value="Trier">
             </form>
+        <br>
         <table>
             <tr>
                 <th></th>
@@ -76,7 +76,7 @@
         <br>
         <form method="POST" action="index.php">
             <p>
-                <label>Ajouter un produit</label>
+                <label>Ajout d'un employé</label>
                 <input type="hidden" name="gestion" value="employes">
                 <input type="hidden" name="action" value="ajouter">
                 <input type="submit" name="ajouter" value="Ajouter">

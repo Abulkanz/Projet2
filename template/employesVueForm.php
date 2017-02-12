@@ -4,9 +4,6 @@ $tpl=new Smarty();
 switch ($action){
     case 'ajouter' :
         $tpl->assign("msg","Ajout d'un employes");
-        $tpl->assign("G", "Gramme");
-        $tpl->assign("P", "Poids piece");
-        $tpl->assign("valeur", 0);
         $tpl->display("template/employesVueAjouter.tpl");
         break;
     case 'consulter' :
@@ -26,8 +23,6 @@ switch ($action){
             $i++;
         }
         $tpl->assign("msg","Consultation de la fiche d'un employe");
-        $tpl->assign("G", "Gramme");
-        $tpl->assign("P", "Poids piece");
         $tpl->assign('consultEmploye', $consultEmploye);
         $tpl->display("template/employesVueConsult.tpl");
         break;
@@ -48,8 +43,6 @@ switch ($action){
             $i++;
         }
         $tpl->assign("msg","Modification de la fiche d'un employe");
-        $tpl->assign("G", "Gramme");
-        $tpl->assign("P", "Poids piece");
         $tpl->assign('consultEmploye', $consultEmploye);
         $tpl->display("template/employesVueModifier.tpl");
         break;
@@ -69,9 +62,7 @@ switch ($action){
             $consultEmploye[$i]['droits']=$row['droits'];
             $i++;
         }
-        $tpl->assign("msg","Suppresion du produit");
-        $tpl->assign("G", "Gramme");
-        $tpl->assign("P", "Poids piece");
+        $tpl->assign("msg","Suppression de la fiche d'un employe");
         $tpl->assign('consultEmploye', $consultEmploye);
         $tpl->display("template/employesVueSupprimer.tpl");
         break;   

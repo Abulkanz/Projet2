@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2017-02-11 11:40:56
+/* Smarty version 3.1.29, created on 2017-02-12 14:10:42
   from "C:\wamp64\www\projet2\template\employesVueListe.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_589ef848083d76_04078346',
+  'unifunc' => 'content_58a06ce209e1e9_91121084',
   'file_dependency' => 
   array (
     'e584d2df0e30d31f55ce6be4af808c24e914526c' => 
     array (
       0 => 'C:\\wamp64\\www\\projet2\\template\\employesVueListe.tpl',
-      1 => 1486813248,
+      1 => 1486908637,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_589ef848083d76_04078346 ($_smarty_tpl) {
+function content_58a06ce209e1e9_91121084 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -28,7 +28,6 @@ function content_589ef848083d76_04078346 ($_smarty_tpl) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <title>Projet2</title>
 </head>
@@ -54,6 +53,7 @@ function content_589ef848083d76_04078346 ($_smarty_tpl) {
                  </select>
                 <input type="submit" name="Trier" value="Trier">
             </form>
+        <br>
         <table>
             <tr>
                 <th></th>
@@ -125,7 +125,7 @@ $_smarty_tpl->tpl_vars['Employe'] = $__foreach_Employe_0_saved_item;
         <br>
         <form method="POST" action="index.php">
             <p>
-                <label>Ajouter un produit</label>
+                <label>Ajout d'un employé</label>
                 <input type="hidden" name="gestion" value="employes">
                 <input type="hidden" name="action" value="ajouter">
                 <input type="submit" name="ajouter" value="Ajouter">
