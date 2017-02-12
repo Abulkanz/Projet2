@@ -38,6 +38,17 @@ function vmodificationimage($param){
     liste();
 }
 // suppression
+function supprimer($param) {
+    $action=$param['action'];
+    $idRequete=consultEmploye($param);
+    require_once 'template/employesVueForm.php';
+}
+// valider la suppression
+function validersuppression($param) {
+    $action=$param['action'];
+    $idRequete= supprimerEmploye($param);
+    liste();
+}
 // rechercher
 function rechercher($param){
     $action=$param['action'];

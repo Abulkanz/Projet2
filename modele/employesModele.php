@@ -139,6 +139,13 @@ function modifierImageEmploye($param){
     }
     return $idRequete;
 }
+function supprimerEmploye($param){
+    $idEmployes=$param["idEmploye"];
+    $cnx=getBD();
+    $sql="DELETE FROM employes WHERE idEmploye = ?";;
+    $idRequete=  executeRequete($cnx, $sql,array($idEmployes));
+    return $idRequete;
+}
 function envoyermails($param){
     $mail = new PHPMailer();
     // On indique que l'on va utlisé le protocole smtp
