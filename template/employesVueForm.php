@@ -13,10 +13,14 @@ switch ($action){
         $consultEmploye=array();
         $i=0;
         while($row=$idRequete->fetch()){
+            $consultEmploye[$i]['idconnexion']=$row['idConnexion'];
+            $consultEmploye[$i]['avatar']=$row['avatar'];
+            $consultEmploye[$i]['idEmploye']=$row['idEmploye'];
             $consultEmploye[$i]['idSexe']=$row['idSexe'];
             $consultEmploye[$i]['nom']=$row['nom'];
             $consultEmploye[$i]['prenom']=$row['prenom'];
             $consultEmploye[$i]['fonction']=$row['fonction'];
+            $consultEmploye[$i]['motdepasse']=$row['motDePasse'];
             $consultEmploye[$i]['adressemail']=$row['adresse_mail'];
             $consultEmploye[$i]['droits']=$row['droits'];
             $i++;
