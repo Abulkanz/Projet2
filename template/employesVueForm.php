@@ -32,6 +32,7 @@ switch ($action){
         $i=0;
         while($row=$idRequete->fetch()){
             $consultEmploye[$i]['idconnexion']=$row['idConnexion'];
+            $consultEmploye[$i]['avatar']=$row['avatar'];
             $consultEmploye[$i]['idEmploye']=$row['idEmploye'];
             $consultEmploye[$i]['idSexe']=$row['idSexe'];
             $consultEmploye[$i]['nom']=$row['nom'];

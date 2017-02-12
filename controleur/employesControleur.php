@@ -31,6 +31,12 @@ function validermodification($param){
     $idRequete= modifierEmploye($param);
     liste();
 }
+// fonction vmodificationimage
+function vmodificationimage($param){
+    $action=$param['action'];
+    $idRequete= modifierImageEmploye($param);
+    liste();
+}
 // suppression
 // rechercher
 function rechercher($param){

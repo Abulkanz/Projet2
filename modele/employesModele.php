@@ -82,6 +82,7 @@ function ajouterEmploye($param){
     }
     return $idRequete;
 }
+// fonction pour modifier la totalité des information sans l'image
 function modifierEmploye($param){
     $idEmploye = $param["idEmploye"];
     $idConnexion = $param["idconnexion"];
@@ -97,11 +98,18 @@ function modifierEmploye($param){
     $droite="tk!@";
     $gauche="ar30&bb%";
     $motdepasse=hash('Ripemd128',"$gauche.$mdp_temp.$droite");
-    // traitemment de l'image
+    $cnx=getBD();
+    $Sql = "UPDATE employes SET idConnexion=?, nom=?, prenom=?, fonction=?, motDePasse=?, adresse_mail=?,droits=? WHERE idEmploye=?";
+    $idRequete = executeRequete($cnx,$Sql,array($idConnexion, $nom,$prenom,$fonction,$motdepasse,$mail,$droits,$idEmploye));
+
+    return $idRequete;
+}
+function modifierImageEmploye($param){
+    $idEmployes=$param["idEmploye"];
     // on recupere l'image : nom, type, taille,..
-    $imgFile = $_FILES["avatar"]["name"];
-    $tmp_dir = $_FILES["avatar"]["tmp_name"];
-    $imgSize = $_FILES["avatar"]["size"];
+     $imgFile = $_FILES["avatar"]["name"];
+     $tmp_dir = $_FILES["avatar"]["tmp_name"];
+     $imgSize = $_FILES["avatar"]["size"];
     
     // traitement de l'image
     // on definit le repertoire ou sera sotcké l'image
@@ -114,24 +122,21 @@ function modifierEmploye($param){
     $valid_extensions = array('jpeg', 'jpg', 'png', 'gif');
     // on renome l'image 
     $userpic = $nomImg.'.'.$imgExt;
-
-    // on passe a l'envoie du fichier
-    // on verifier d'abord que le fichier est correct
     if(in_array($imgExt, $valid_extensions)){
         if($imgSize < 5000000){  
             move_uploaded_file($tmp_dir,$upload_dir.$userpic);
-        } else {
-             $errMSG = "Le fichier est trop gros";
-        }
-    } else{
-        $errMSG = "Le format de l'image n'est pas pris en charge";  
-    }
-    if(!isset($errMSG)){
+            } else { 
+                $errMSG = "Le fichier est trop gros";
+			}
+		} else {
+            $errMSG = "Le format de l'image n'est pas pris en charge";  
+		}
+	if(!isset($errMSG)){
         // on insere dans la bdd
         $cnx=getBD();
-        $Sql = "UPDATE employes SET idConnexion=?, nom=?, prenom=?, fonction=?, motDePasse=?, adresse_mail=?,droits=? WHERE idEmploye=?";
-        $idRequete = executeRequete($cnx,$Sql,array($idConnexion, $nom,$prenom,$fonction,$motdepasse,$mail,$droits,$idEmploye));
-    } 
+        $Sql = "UPDATE employes SET avatar=? WHERE idEmploye=?";
+        $idRequete = executeRequete($cnx,$Sql,array($userpic,$idEmployes));
+    }
     return $idRequete;
 }
 function envoyermails($param){

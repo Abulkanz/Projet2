@@ -20,6 +20,8 @@ if(isset($_POST['ajouter'])){
     modifier($_POST);
 } elseif(isset($_POST['validermodification'])){
     validermodification($_POST);
+} elseif(isset($_POST['vmodificationimage'])){
+    vmodificationimage($_POST);
 } elseif (isset($_POST['supprimer'])) {
     modifier($_POST);
 } elseif(isset($_POST['validersuppression'])){
