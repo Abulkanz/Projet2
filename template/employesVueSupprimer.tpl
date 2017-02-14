@@ -15,7 +15,7 @@
 				<form method="POST" action="index.php" enctype="multipart/form-data">
                 <thead>
                     <tr>
-                        <td colspan="3">Fiche de : {$Employe.nom} {$Employe.prenom}</td>
+                        <td colspan="3">Fiche de : {$Civilite} {$Employe.nom} {$Employe.prenom}</td>
                     </tr>
                     </thead>
                     <tfoot>
@@ -48,11 +48,11 @@
                         </tr>
                         <tr>
                             <td>Mot de passe de la personne</td>
-                            <td><input id="motdepasse" name="motdepasse" value="{$Employe.motdepasse}"></td>
+                            <td><input type="password" id="motdepasse" name="motdepasse" value="{$Employe.motdepasse}"></td>
                         </tr>
                         <tr>
                             <td>Adresse mail de la personne</td>
-                            <td><input id="mail" name="mail" value="{$Employe.adressemail}"></td>
+                            <td><input tyepe="email" id="mail" name="mail" value="{$Employe.adressemail}"></td>
                         </tr>
                         <tr>
                             <td>Sexe</td>

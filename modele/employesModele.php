@@ -31,7 +31,7 @@ function consultEmploye($param){
     return $idRequete;
 }
 function ajouterEmploye($param){
-    $idConnexion = $param["idconnexion"];
+    $idConnexion = $param["login"];
     $nom=$param["nom"];
     $prenom=$param["prenom"]; 
     $fonction=$param["fonction"]; 
@@ -84,7 +84,7 @@ function ajouterEmploye($param){
 }
 // fonction pour modifier la totalité des information sans l'image
 function modifierEmploye($param){
-    $idEmploye = $param["idEmploye"];
+    $idEmploye = $param["login"];
     $idConnexion = $param["idconnexion"];
     $nom=$param["nom"];
     $prenom=$param["prenom"]; 
@@ -105,7 +105,7 @@ function modifierEmploye($param){
     return $idRequete;
 }
 function modifierImageEmploye($param){
-    $idEmployes=$param["idEmploye"];
+    $idEmployes=$param["login"];
     // on recupere l'image : nom, type, taille,..
      $imgFile = $_FILES["avatar"]["name"];
      $tmp_dir = $_FILES["avatar"]["tmp_name"];
@@ -140,7 +140,7 @@ function modifierImageEmploye($param){
     return $idRequete;
 }
 function supprimerEmploye($param){
-    $idEmployes=$param["idEmploye"];
+    $idEmployes=$param["login"];
     $cnx=getBD();
     $sql="DELETE FROM employes WHERE idEmploye = ?";;
     $idRequete=  executeRequete($cnx, $sql,array($idEmployes));

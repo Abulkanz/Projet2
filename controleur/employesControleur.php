@@ -53,7 +53,7 @@ function validersuppression($param) {
 function rechercher($param){
     $action=$param['action'];
     $idRequete= rechercheremploye($param);
-    require_once 'template/employesVueListe.php';
+    require_once 'template/employesVueRechercher.php';
 }
 // trier
 function trier($param){
@@ -66,7 +66,8 @@ function valider(){
     liste();
 }
 // fonction retour
-function retour(){
+function retour($param){
+    $action=$param['action'];
     liste();
 }
 // fonction pour liste les employés

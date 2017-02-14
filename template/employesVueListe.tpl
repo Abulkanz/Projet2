@@ -18,7 +18,7 @@
         <input type="text" name="nom">
         <input type="submit" name="Rechercher" value="Rechercher">
         </form>
-        <form method="post" action="index.php">
+        <!--<form method="post" action="index.php">
         <input type="hidden" name="gestion" value="employes">
         <input type="hidden" name="action" value="Trier">
                 Trier
@@ -28,7 +28,7 @@
                      <option value="prenom">Prenom</option>
                  </select>
                 <input type="submit" name="Trier" value="Trier">
-            </form>
+            </form>-->
         <br>
         <table>
             <tr>

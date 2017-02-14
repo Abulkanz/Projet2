@@ -15,7 +15,7 @@
 				<form method="POST" action="index.php">
                 <thead>
                     <tr>
-                        <td colspan="3">Fiche de : {$Employe.nom} {$Employe.prenom}</td>
+                        <td colspan="3">Fiche de : {$Civilite} {$Employe.nom} {$Employe.prenom}</td>
                     </tr>
                     </thead>
                     <tfoot>
@@ -31,35 +31,35 @@
                         <tr>
                             <td rowspan="8"><img src="img/{$Employe.avatar}" class="avatar"></td>
                             <td>Identifiant de connexion de la personne</td>
-                            <td><input id="idconnexion" name="idconnexion" value="{$Employe.idconnexion}"></td>
+                            <td><input id="idconnexion" name="idconnexion" value="{$Employe.idconnexion}" readonly></td>
                         </tr>
 						<tr>
                             <td>Nom de la personne</td>
-                            <td><input id="nom" name="nom" value="{$Employe.nom}"></td>
+                            <td><input id="nom" name="nom" value="{$Employe.nom}" readonly></td>
                         </tr>
                         <tr>
                             <td>Prenom de la personne</td>
-                            <td><input id="prenom" name="prenom" value="{$Employe.prenom}"></td>
+                            <td><input id="prenom" name="prenom" value="{$Employe.prenom}" readonly></td>
                         </tr>
                         <tr>
                             <td>Fonction de la personne</td>
-                            <td><input id="fonction" name="fonction" value="{$Employe.fonction}"></td>
+                            <td><input id="fonction" name="fonction" value="{$Employe.fonction}" readonly></td>
                         </tr>
                         <tr>
                             <td>Mot de passe de la personne</td>
-                            <td><input id="motdepasse" name="motdepasse" value="{$Employe.motdepasse}"></td>
+                            <td><input type="password" id="motdepasse" name="motdepasse" value="{$Employe.motdepasse}" readonly></td>
                         </tr>
                         <tr>
                             <td>Adresse mail de la personne</td>
-                            <td><input id="mail" name="mail" value="{$Employe.adressemail}"></td>
+                            <td><input type="email" id="mail" name="mail" value="{$Employe.adressemail}" readonly></td>
                         </tr>
                         <tr>
                             <td>Sexe</td>
-							<td><input id="droits" name="droits" value="{$Employe.droits}"></td>
+							<td><input id="idSexe" name="idSexe" value="{$Employe.idSexe}" readonly></td>
                         </tr>
                         <tr>
                             <td>Droits de l'utilisateur</td>
-							<td><input id="idSexe" name="idSexe" value="{$Employe.idSexe}"></td>
+							<td><input id="droits" name="droits" value="{$Employe.droits}" readonly></td>
                         </tr>
                     </tbody>
                     </form>

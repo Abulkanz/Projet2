@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2017-02-13 18:06:40
-  from "C:\wamp64\www\projet2\template\employesVueListe.tpl" */
+/* Smarty version 3.1.29, created on 2017-02-14 08:58:30
+  from "C:\wamp64\www\projet2\template\employesVueRechercher.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_58a1f5b0afb894_22657468',
+  'unifunc' => 'content_58a2c6b67783d8_54164920',
   'file_dependency' => 
   array (
-    'e584d2df0e30d31f55ce6be4af808c24e914526c' => 
+    '686157bb842c545f037d5cd745a1838c8af0490f' => 
     array (
-      0 => 'C:\\wamp64\\www\\projet2\\template\\employesVueListe.tpl',
-      1 => 1487009196,
+      0 => 'C:\\wamp64\\www\\projet2\\template\\employesVueRechercher.tpl',
+      1 => 1487062319,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_58a1f5b0afb894_22657468 ($_smarty_tpl) {
+function content_58a2c6b67783d8_54164920 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -119,6 +119,10 @@ $_smarty_tpl->tpl_vars['Employe'] = $__foreach_Employe_0_saved_item;
 }
 ?>
         </table>
+        <br>
+        <form>
+        <input type="submit" name"Retour" value="Retour a l'accueil">
+        </form>
         <br>
         Nombre d'enregistrements : <?php echo $_smarty_tpl->tpl_vars['nbligne']->value;?>
 

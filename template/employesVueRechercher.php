@@ -28,7 +28,7 @@ switch ($action){
             }
             $i++;
         }
-        /*$test="<td><imut type='submit' name='Retour' value'Retour'></td>";
+        /*$test="<td><imut type='submit' name='' value'Retour'></td>";
         $tpl->assign('test',$test);*/
         $tpl->assign("msg","Consultation de la fiche d'un employe");
         $tpl->assign('consultEmploye', $consultEmploye);
@@ -87,6 +87,23 @@ switch ($action){
         $tpl->display("template/employesVueSupprimer.tpl");
         break; 
         case 'Rechercher':
+        $listeEmploye=array();
+        $i=0;
+        while($row=$idRequete->fetch()){
+            $listeEmploye[$i]['avatar']=$row['avatar'];
+            $listeEmploye[$i]['idEmploye']=$row['idEmploye'];
+            $listeEmploye[$i]['nom']=$row['nom'];
+            $listeEmploye[$i]['prenom']=$row['prenom'];
+            $listeEmploye[$i]['fonction']=$row['fonction'];
+            $i++;
+        }
+        $tpl->assign("msg","Resultat de la recherche");
+        $nbligne=$idRequete->rowCount();
+        $tpl->assign('nbligne',$nbligne);
+        $tpl->assign('listeEmploye', $listeEmploye);
+        $tpl->display("template/employesVueRechercher.tpl");
+        break;
+        case Retour:
         $listeEmploye=array();
         $i=0;
         while($row=$idRequete->fetch()){

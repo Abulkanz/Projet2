@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2017-02-12 13:35:49
+/* Smarty version 3.1.29, created on 2017-02-14 09:13:45
   from "C:\wamp64\www\projet2\template\employesVueConsult.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_58a064b57af660_40590854',
+  'unifunc' => 'content_58a2ca492d6ac7_50654142',
   'file_dependency' => 
   array (
     'fad43b5f001b52e056b22bbf7833d0294d192ed5' => 
     array (
       0 => 'C:\\wamp64\\www\\projet2\\template\\employesVueConsult.tpl',
-      1 => 1486906374,
+      1 => 1487063616,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_58a064b57af660_40590854 ($_smarty_tpl) {
+function content_58a2ca492d6ac7_50654142 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html>
@@ -50,7 +50,8 @@ $__foreach_Employe_0_saved_local_item = $_smarty_tpl->tpl_vars['Employe'];
 				<form method="POST" action="index.php">
                 <thead>
                     <tr>
-                        <td colspan="3">Fiche de : <?php echo $_smarty_tpl->tpl_vars['Employe']->value['nom'];?>
+                        <td colspan="3">Fiche de : <?php echo $_smarty_tpl->tpl_vars['Civilite']->value;?>
+ <?php echo $_smarty_tpl->tpl_vars['Employe']->value['nom'];?>
  <?php echo $_smarty_tpl->tpl_vars['Employe']->value['prenom'];?>
 </td>
                     </tr>
@@ -70,42 +71,42 @@ $__foreach_Employe_0_saved_local_item = $_smarty_tpl->tpl_vars['Employe'];
 " class="avatar"></td>
                             <td>Identifiant de connexion de la personne</td>
                             <td><input id="idconnexion" name="idconnexion" value="<?php echo $_smarty_tpl->tpl_vars['Employe']->value['idconnexion'];?>
-"></td>
+" readonly></td>
                         </tr>
 						<tr>
                             <td>Nom de la personne</td>
                             <td><input id="nom" name="nom" value="<?php echo $_smarty_tpl->tpl_vars['Employe']->value['nom'];?>
-"></td>
+" readonly></td>
                         </tr>
                         <tr>
                             <td>Prenom de la personne</td>
                             <td><input id="prenom" name="prenom" value="<?php echo $_smarty_tpl->tpl_vars['Employe']->value['prenom'];?>
-"></td>
+" readonly></td>
                         </tr>
                         <tr>
                             <td>Fonction de la personne</td>
                             <td><input id="fonction" name="fonction" value="<?php echo $_smarty_tpl->tpl_vars['Employe']->value['fonction'];?>
-"></td>
+" readonly></td>
                         </tr>
                         <tr>
                             <td>Mot de passe de la personne</td>
-                            <td><input id="motdepasse" name="motdepasse" value="<?php echo $_smarty_tpl->tpl_vars['Employe']->value['motdepasse'];?>
-"></td>
+                            <td><input type="password" id="motdepasse" name="motdepasse" value="<?php echo $_smarty_tpl->tpl_vars['Employe']->value['motdepasse'];?>
+" readonly></td>
                         </tr>
                         <tr>
                             <td>Adresse mail de la personne</td>
-                            <td><input id="mail" name="mail" value="<?php echo $_smarty_tpl->tpl_vars['Employe']->value['adressemail'];?>
-"></td>
+                            <td><input type="email" id="mail" name="mail" value="<?php echo $_smarty_tpl->tpl_vars['Employe']->value['adressemail'];?>
+" readonly></td>
                         </tr>
                         <tr>
                             <td>Sexe</td>
-							<td><input id="droits" name="droits" value="<?php echo $_smarty_tpl->tpl_vars['Employe']->value['droits'];?>
-"></td>
+							<td><input id="idSexe" name="idSexe" value="<?php echo $_smarty_tpl->tpl_vars['Employe']->value['idSexe'];?>
+" readonly></td>
                         </tr>
                         <tr>
                             <td>Droits de l'utilisateur</td>
-							<td><input id="idSexe" name="idSexe" value="<?php echo $_smarty_tpl->tpl_vars['Employe']->value['idSexe'];?>
-"></td>
+							<td><input id="droits" name="droits" value="<?php echo $_smarty_tpl->tpl_vars['Employe']->value['droits'];?>
+" readonly></td>
                         </tr>
                     </tbody>
                     </form>
