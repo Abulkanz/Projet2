@@ -318,8 +318,8 @@ VALUES
 INSERT INTO parcelle (nomParcelle, idEspece) VALUES ("Territoire des Babouins", 1), ("Territoire des Bonobos", 2), ("Territoire des Capucins", 3), ("Territoire des Chimpanzés", 4), ("Territoire des Colobes", 5), ("Territoire des Géladas", 6), ("Territoire des Gibbons", 7), ("Territoire des Gorilles", 8), ("Territoire des Macaques", 9), ("Territoire des Mandrills", 10), ("Territoire des Marmousets", 11), ("Territoire des Lagotriches", 12);
 
 -- ajout des contraintes
-ALTER TABLE animaux ADD CONSTRAINT fk_animaux_ sexe FOREIGN KEY (idSexe) REFERENCES animaux(idSexe);
-ALTER TABLE employes ADD CONSTRAINT fk_employes_ sexe FOREIGN KEY (idSexe) REFERENCES sexe(idSexe);
+ALTER TABLE animaux ADD CONSTRAINT fk_animaux_sexe FOREIGN KEY (idSexe) REFERENCES sexe(idSexe);
+ALTER TABLE employes ADD CONSTRAINT fk_employes_sexe FOREIGN KEY (idSexe) REFERENCES sexe(idSexe);
 ALTER TABLE animaux ADD CONSTRAINT fk_animaux_idPays FOREIGN KEY (idPays) REFERENCES pays(idPays);
 ALTER TABLE animaux ADD CONSTRAINT fk_animaux_espece FOREIGN KEY (idEspece) REFERENCES especes(idEspece);
 ALTER TABLE animaux ADD CONSTRAINT fk_animaux_parcelle FOREIGN KEY (idParcelle) REFERENCES parcelle(idParcelle);
