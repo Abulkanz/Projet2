@@ -86,8 +86,8 @@ if (isset($_POST['action'])) {
     while ($ligne = $reqListeAnimaux->fetch(PDO::FETCH_ASSOC)) {
         $listeAnimaux[$i]['photo'] = '<input class="vignLienFiche" value="" type="submit" style="background-image: url(img/imgFiches/' . $ligne['prenomAnimal'] . 'Tn.png">';
         $listeAnimaux[$i]['prenomAnimal'] = $ligne['prenomAnimal'];
-        $listeAnimaux[$i]['poids'] = $ligne['poids'];
-        $listeAnimaux[$i]['taille'] = $ligne['taille'];
+        $listeAnimaux[$i]['poids'] = $ligne['poids'].' kg';
+        $listeAnimaux[$i]['taille'] = $ligne['taille'].' cm';
         $listeAnimaux[$i]['dateNaissance'] = $ligne['date_naissance'];
         $listeAnimaux[$i]['lieuNaissance'] = $ligne['lieu_naissance'];
         $listeAnimaux[$i]['statut'] = $ligne['statut'];
@@ -98,6 +98,11 @@ if (isset($_POST['action'])) {
     $i = 0;
     while ($ligne2 = $reqAgeAnimaux->fetch(PDO::FETCH_ASSOC)) {
         $listeAnimaux[$i]['age'] = $ligne2['Age'];
+        if ($listeAnimaux[$i]['age'] <= 1){
+            $listeAnimaux[$i]['age'] = $listeAnimaux[$i]['age'].' an';
+        }else{
+            $listeAnimaux[$i]['age'] = $listeAnimaux[$i]['age'].' ans';
+        }
         $i++;
     }
     //Recuperation de l'espèce
@@ -111,9 +116,9 @@ if (isset($_POST['action'])) {
     while ($ligne4 = $reqSexAnimaux->fetch(PDO::FETCH_ASSOC)) {
         $listeAnimaux[$i]['sexe'] = $ligne4['sexe'];
         if ($listeAnimaux[$i]['sexe'] == 'M') {
-            $listeAnimaux[$i]['sexe'] == 'Male';
+            $listeAnimaux[$i]['sexe'] = 'Male';
         } else {
-            $listeAnimaux[$i]['sexe'] == 'Femelle';
+            $listeAnimaux[$i]['sexe'] = 'Femelle';
         }
         $i++;
     }
