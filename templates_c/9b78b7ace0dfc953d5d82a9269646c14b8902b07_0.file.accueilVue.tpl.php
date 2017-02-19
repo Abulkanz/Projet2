@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2017-02-19 22:25:44
-  from "C:\wamp64\www\Projet2\vues\ficheVue.tpl" */
+/* Smarty version 3.1.29, created on 2017-02-19 22:31:46
+  from "C:\wamp64\www\Projet2\vues\accueilVue.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_58aa1b68c18d84_08804758',
+  'unifunc' => 'content_58aa1cd2edbb18_61432589',
   'file_dependency' => 
   array (
-    '4c6b0308a845d0121b12d256ffcb4c9e69352618' => 
+    '9b78b7ace0dfc953d5d82a9269646c14b8902b07' => 
     array (
-      0 => 'C:\\wamp64\\www\\Projet2\\vues\\ficheVue.tpl',
-      1 => 1487543141,
+      0 => 'C:\\wamp64\\www\\Projet2\\vues\\accueilVue.tpl',
+      1 => 1487098158,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_58aa1b68c18d84_08804758 ($_smarty_tpl) {
+function content_58aa1cd2edbb18_61432589 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -56,19 +56,29 @@ function content_58aa1b68c18d84_08804758 ($_smarty_tpl) {
                     <li><input class="lienNav" type="submit" name="lignes_commande" value="Statistiques"></li>
                     <img class="avatar" src="img/avatarTest.png" alt=""/>
                 </ul>
+
+                <!--ul>
+                    <li><a href="page1.html">Accueil</a></li>
+                    <li><a href="page2.html">Animaux</a></li>
+                    <li><a href="#">Carte</a></li>
+                    <li><a href="#">Statistiques</a></li>
+                </ul-->
             </header>
             <div class="conteneurModules">
                 <div class="blocModules">
-                    <div class="tiers"><?php echo $_smarty_tpl->tpl_vars['photo']->value;?>
-</div>
-                    <div class="tiers"><p>15641</p></div>
-                    <div class="tiers"><p>azddazd v</p></div>
+                    <div class="module"></div>
+                    <div class="module"></div>
+                    <div class="module"></div>
+                    <div class="module"></div>
                 </div>
                 <div class="blocModules">
-                    <div class="deuxTiers"><p>zacdazd</p></div>
-                    <div class="tiers"><p>dcad</p></div>
+                    <div class="module"></div>
+                    <div class="module"></div>
+                    <div class="module"></div>
+                    <div class="module"></div>
                 </div>
             </div>
+        </div>
     </body>
 </html><?php }
 }

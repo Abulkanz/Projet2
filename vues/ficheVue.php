@@ -12,7 +12,7 @@ $reqSexAnimal = $tabReqConsult[3];
 
 if ($ligne = $reqConsAnimal->fetch()) {
     $ficheAnimal['idAnimal'] = $ligne['idAnimaux'];
-    $ficheAnimal['photo'] = '<img src= "img/imgFiches/' . $ligne['photo'] . '">';
+    $ficheAnimal['photo'] = '<img class="iPortrait" src= "img/imgFiches/' . $ligne['photo'] . '">';
     $ficheAnimal['prenomAnimal'] = $ligne['prenomAnimal'];
     $ficheAnimal['poids'] = $ligne['poids'];
     $ficheAnimal['taille'] = $ligne['taille'];
