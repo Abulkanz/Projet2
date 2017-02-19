@@ -38,7 +38,7 @@
                 <div class="blocModules">
                     <div class="tiers">{$photo}</div>
                     <div class="tiers"></div>
-                    <div class="tiers"></div>
+                    <div class="tiers">{$numero}</div>
                 </div>
                 <div class="blocModules">
                     <div class="deuxTiers"></div>

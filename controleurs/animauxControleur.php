@@ -3,7 +3,7 @@
 require_once 'modele/animauxModele.php';
 
 function parDefaut() {
-    $tabReq = listeAnimaux();
+    $tabReqListe = listeAnimaux();
     require_once 'vues/animauxVue.php';
 }
 

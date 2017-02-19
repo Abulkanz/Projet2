@@ -5,12 +5,13 @@ require_once 'include/libs/Smarty.class.php';
 $tpl = new Smarty();
 $ficheAnimal = [];
 
-$reqConsAnimal = $tabReq[0];
-$reqAgeAnimal = $tabReq[1];
-$reqEspeceAnimal = $tabReq[2];
-$reqSexAnimal = $tabReq[3];
+$reqConsAnimal = $tabReqConsult[0];
+$reqAgeAnimal = $tabReqConsult[1];
+$reqEspeceAnimal = $tabReqConsult[2];
+$reqSexAnimal = $tabReqConsult[3];
 
 if ($ligne = $reqConsAnimal->fetch()) {
+    $ficheAnimal['idAnimal'] = $ligne['idAnimaux'];
     $ficheAnimal['photo'] = '<img src= "img/imgFiches/' . $ligne['photo'] . '">';
     $ficheAnimal['prenomAnimal'] = $ligne['prenomAnimal'];
     $ficheAnimal['poids'] = $ligne['poids'];
@@ -41,6 +42,7 @@ if ($ligne = $reqConsAnimal->fetch()) {
 }
 
 $tpl->assign('photo', $ficheAnimal['photo']);
+$tpl->assign('numero', $ficheAnimal['idAnimal']);
 
 
 $tpl->display('vues/ficheVue.tpl');

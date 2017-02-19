@@ -4,10 +4,10 @@ require_once 'include/libs/Smarty.class.php';
 
 $tpl = new Smarty();
 $listeAnimaux = [];
-$reqListeAnimaux = $tabReq[0];
-$reqAgeAnimaux = $tabReq[1];
-$reqEspeceAnimaux = $tabReq[2];
-$reqSexAnimaux = $tabReq[3];
+$reqListeAnimaux = $tabReqListe[0];
+$reqAgeAnimaux = $tabReqListe[1];
+$reqEspeceAnimaux = $tabReqListe[2];
+$reqSexAnimaux = $tabReqListe[3];
 $i = 0;
 
 
@@ -97,7 +97,7 @@ if (isset($_POST['action'])) {
                                         <input type="hidden" name="action" value="consulter">
                                         <input type="hidden" name="idAnimal" value=' . $ligne['idAnimaux'] . '>
                                         <input class="vignLienFiche" value="" type="submit" style="background-image: url(img/imgFiches/' . $ligne['prenomAnimal'] . 'Tn.png">
-                                      <form>';
+                                      </form>';
         $listeAnimaux[$i]['prenomAnimal'] = $ligne['prenomAnimal'];
         $listeAnimaux[$i]['poids'] = $ligne['poids'] . ' kg';
         $listeAnimaux[$i]['taille'] = $ligne['taille'] . ' cm';

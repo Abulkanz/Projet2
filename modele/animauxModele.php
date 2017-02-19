@@ -20,6 +20,6 @@ function listeAnimaux() {
     $reqAgeAnimaux = executeR($cnx, $sql2);
     $reqEspeceAnimaux = executeR($cnx, $sql3);
     $reqSexAnimaux = executeR($cnx, $sql4);
-    $tabReq = [$reqListeAnimaux, $reqAgeAnimaux, $reqEspeceAnimaux, $reqSexAnimaux];
-    return $tabReq;
+    $tabReqListe = [$reqListeAnimaux, $reqAgeAnimaux, $reqEspeceAnimaux, $reqSexAnimaux];
+    return $tabReqListe;
 }
