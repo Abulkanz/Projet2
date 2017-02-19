@@ -20,9 +20,13 @@ switch ($gestion) {
         echo 'Impossible !';
 }
 
-if(isset($_POST['action'])){
-    
-}else{
+if (isset($_POST['action'])) {
+    if (isset($_POST['consulter'])) {
+        consulter($_POST);
+    }
+} else {
     parDefaut();
 }
 
+
+    

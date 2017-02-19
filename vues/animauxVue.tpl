@@ -49,7 +49,6 @@
                         <td>{$Animal.age}</td>
                         <td>{$Animal.lieuNaissance}</td>
                         <td>{$Animal.statut}</td>
-                        {*<td>{$Animal.reference}</td>*}
                     </tr>
                 {/foreach}
                 </table>

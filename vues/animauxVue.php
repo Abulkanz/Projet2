@@ -33,7 +33,13 @@ if (isset($_POST['action'])) {
                     </tr>';
 
         while ($ligne = $reqListeAnimaux->fetch(PDO::FETCH_ASSOC)) {
-            $listeAnimaux[$i]['photo'] = '<img style="background: url(../img/imgFiches/' . $ligne['photo'] . 'Tn.png) center;">';
+            $listeAnimaux[$i]['photo'] = '<form method="POST" action="index.php">
+                                            <input type="hidden" name="gestion" value="fiche">
+                                            <input type="hidden" name="action" value="consulter">
+                                            <input type="hidden" name="consulter" value="consulter">
+                                            <input type="hidden" name="idAnimal" value=' . $ligne['idAnimaux'] . '>
+                                            <input class="vignLienFiche" value="" type="submit" style="background-image: url(img/imgFiches/' . $ligne['prenomAnimal'] . 'Tn.png">
+                                          <form>';
             $listeAnimaux[$i]['prenomAnimal'] = $ligne['prenomAnimal'];
             $listeAnimaux[$i]['poids'] = $ligne['poids'];
             $listeAnimaux[$i]['taille'] = $ligne['taille'];
@@ -78,19 +84,29 @@ if (isset($_POST['action'])) {
                         <th>Poids</th>
                         <th>Taille</th>
                         <th>Date de naissance</th>
-//                        <th>Age</th>
+                        <th>Age</th>
                         <th>Lieu de naissance</th>
                         <th>Statut</th>
                     </tr>';
 
     while ($ligne = $reqListeAnimaux->fetch(PDO::FETCH_ASSOC)) {
-        $listeAnimaux[$i]['photo'] = '<input class="vignLienFiche" value="" type="submit" style="background-image: url(img/imgFiches/' . $ligne['prenomAnimal'] . 'Tn.png">';
+        //Vignette cliquable pour la consultation
+        $listeAnimaux[$i]['photo'] = '<form method="POST" action="index.php">
+                                        <input type="hidden" name="gestion" value="fiche">
+                                        <input type="hidden" name="consulter" value="consulter">
+                                        <input type="hidden" name="action" value="consulter">
+                                        <input type="hidden" name="idAnimal" value=' . $ligne['idAnimaux'] . '>
+                                        <input class="vignLienFiche" value="" type="submit" style="background-image: url(img/imgFiches/' . $ligne['prenomAnimal'] . 'Tn.png">
+                                      <form>';
         $listeAnimaux[$i]['prenomAnimal'] = $ligne['prenomAnimal'];
-        $listeAnimaux[$i]['poids'] = $ligne['poids'].' kg';
-        $listeAnimaux[$i]['taille'] = $ligne['taille'].' cm';
+        $listeAnimaux[$i]['poids'] = $ligne['poids'] . ' kg';
+        $listeAnimaux[$i]['taille'] = $ligne['taille'] . ' cm';
         $listeAnimaux[$i]['dateNaissance'] = $ligne['date_naissance'];
         $listeAnimaux[$i]['lieuNaissance'] = $ligne['lieu_naissance'];
         $listeAnimaux[$i]['statut'] = $ligne['statut'];
+        if ($listeAnimaux[$i]['statut'] == NULL) {
+            $listeAnimaux[$i]['statut'] = "Présent";
+        }
         $i++;
     }
 
@@ -98,10 +114,10 @@ if (isset($_POST['action'])) {
     $i = 0;
     while ($ligne2 = $reqAgeAnimaux->fetch(PDO::FETCH_ASSOC)) {
         $listeAnimaux[$i]['age'] = $ligne2['Age'];
-        if ($listeAnimaux[$i]['age'] <= 1){
-            $listeAnimaux[$i]['age'] = $listeAnimaux[$i]['age'].' an';
-        }else{
-            $listeAnimaux[$i]['age'] = $listeAnimaux[$i]['age'].' ans';
+        if ($listeAnimaux[$i]['age'] <= 1) {
+            $listeAnimaux[$i]['age'] = $listeAnimaux[$i]['age'] . ' an';
+        } else {
+            $listeAnimaux[$i]['age'] = $listeAnimaux[$i]['age'] . ' ans';
         }
         $i++;
     }
