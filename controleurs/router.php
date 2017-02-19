@@ -20,3 +20,9 @@ switch ($gestion) {
         echo 'Impossible !';
 }
 
+if(isset($_POST['action'])){
+    
+}else{
+    liste();
+}
+

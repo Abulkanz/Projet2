@@ -36,7 +36,7 @@
             </header>
             <div class="conteneurModules">
                 <div class="blocModules">
-                    <div class="tiers"><img class="iPortrait" src="img/imgFiches/babouinMale.png" alt=""/></div>
+                    <div class="tiers"><img class="iPortrait" src="img/imgFiches/Arthur.png" alt=""/></div>
                     <div class="tiers"></div>
                     <div class="tiers"></div>
                 </div>

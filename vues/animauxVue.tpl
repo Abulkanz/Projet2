@@ -36,31 +36,22 @@
 
             </header>
             <div class="conteneurTable">
-                <table class="tAnimaux">
+                {$initTable}
+                {foreach from=$listeAnimaux item=Animal}
                     <tr>
-                        <th>Photo</th>
-                        <th>Espèce</th>
-                        <th>Prénom</th>
-                        <th>Sexe</th>
-                        <th>Poids</th>
-                        <th>Taille</th>
-                        <th>Date de naissance</th>
-                        <th>Age</th>
-                        <th>Lieu de naissance</th>
-                        <th>Statut</th>
+                        <td>{$Animal.photo}</td>
+                        <td>{$Animal.prenomAnimal}</td>
+                        <td>{$Animal.nomEspece}</td>
+                        <td>{$Animal.sexe}</td>
+                        <td>{$Animal.poids}</td>
+                        <td>{$Animal.taille}</td>
+                        <td>{$Animal.dateNaissance}</td>
+                        <td>{$Animal.age}</td>
+                        <td>{$Animal.lieuNaissance}</td>
+                        <td>{$Animal.statut}</td>
+                        {*<td>{$Animal.reference}</td>*}
                     </tr>
-                    <tr>
-                        <td><form method="POST" name="gestion"><input type="hidden" name="gestion" value="fiche"><input type="submit" class="vignLienFiche" value=""/></form></td>
-                        <td>Babouin</td>
-                        <td>Patio</td>
-                        <td>Male</td>
-                        <td>33 kg</td>
-                        <td>102 cm</td>
-                        <td>07/05/07</td>
-                        <td>9 ans</td>
-                        <td>Ethiopie</td>
-                        <td>Prêté</td>
-                    </tr>
+                {/foreach}
                 </table>
             </div>
         </div>  
