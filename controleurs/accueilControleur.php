@@ -1,6 +1,6 @@
 <?php
 
-function liste(){
+function parDefaut(){
 require_once 'vues/accueilVue.php';
 }
 

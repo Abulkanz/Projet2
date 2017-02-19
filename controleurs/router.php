@@ -23,6 +23,6 @@ switch ($gestion) {
 if(isset($_POST['action'])){
     
 }else{
-    liste();
+    parDefaut();
 }
 
