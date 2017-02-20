@@ -221,6 +221,21 @@ a:hover{
     border: 1px solid rgba(1, 1, 1, 0.5);
 }
 
+.fiche{
+    height: 70vh;
+    width: 75vw;
+    margin: 6em auto auto auto;
+    background-color: white;
+    box-shadow: 1em 1em 1em rgba(0, 0, 0, 0.75);
+}
+
+.iPortrait{
+    height: 340px;
+    object-fit: cover;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    margin: 1em;
+}
+
 th{
     font: 1.6em "Alfa Slab One";
     border: 1px solid rgba(0, 0, 0, 0.3);
@@ -251,11 +266,6 @@ th{
     background-size: contain; 
 }
 
-.ficheAnimal{
-    margin-top: 1em;
-    height: 100%;
-}
-
 .tiers{
     width: 30%;
     display: inline-block;
@@ -277,12 +287,6 @@ th{
     font: 1.2em Righteous white;
     margin: auto auto;
     border: 1px solid rgba(1, 1, 1, 0.5);
-}
-
-.iPortrait{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
 }
 
 

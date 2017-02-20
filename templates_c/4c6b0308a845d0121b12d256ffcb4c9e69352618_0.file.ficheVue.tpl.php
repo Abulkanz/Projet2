@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2017-02-19 22:25:44
+/* Smarty version 3.1.29, created on 2017-02-20 11:35:25
   from "C:\wamp64\www\Projet2\vues\ficheVue.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_58aa1b68c18d84_08804758',
+  'unifunc' => 'content_58aad47ddaf0b9_56080430',
   'file_dependency' => 
   array (
     '4c6b0308a845d0121b12d256ffcb4c9e69352618' => 
     array (
       0 => 'C:\\wamp64\\www\\Projet2\\vues\\ficheVue.tpl',
-      1 => 1487543141,
+      1 => 1487590524,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_58aa1b68c18d84_08804758 ($_smarty_tpl) {
+function content_58aad47ddaf0b9_56080430 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -57,18 +57,11 @@ function content_58aa1b68c18d84_08804758 ($_smarty_tpl) {
                     <img class="avatar" src="img/avatarTest.png" alt=""/>
                 </ul>
             </header>
-            <div class="conteneurModules">
-                <div class="blocModules">
-                    <div class="tiers"><?php echo $_smarty_tpl->tpl_vars['photo']->value;?>
-</div>
-                    <div class="tiers"><p>15641</p></div>
-                    <div class="tiers"><p>azddazd v</p></div>
-                </div>
-                <div class="blocModules">
-                    <div class="deuxTiers"><p>zacdazd</p></div>
-                    <div class="tiers"><p>dcad</p></div>
-                </div>
+            <div class="fiche">
+                <?php echo $_smarty_tpl->tpl_vars['photo']->value;?>
+
             </div>
+        </div>
     </body>
 </html><?php }
 }

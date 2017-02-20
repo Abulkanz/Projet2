@@ -34,16 +34,9 @@
                     <img class="avatar" src="img/avatarTest.png" alt=""/>
                 </ul>
             </header>
-            <div class="conteneurModules">
-                <div class="blocModules">
-                    <div class="tiers">{$photo}</div>
-                    <div class="tiers"><p>15641</p></div>
-                    <div class="tiers"><p>azddazd v</p></div>
-                </div>
-                <div class="blocModules">
-                    <div class="deuxTiers"><p>zacdazd</p></div>
-                    <div class="tiers"><p>dcad</p></div>
-                </div>
+            <div class="fiche">
+                {$photo}
             </div>
+        </div>
     </body>
 </html>
