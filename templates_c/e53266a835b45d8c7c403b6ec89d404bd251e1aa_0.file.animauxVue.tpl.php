@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2017-02-19 21:54:12
+/* Smarty version 3.1.29, created on 2017-02-20 13:21:11
   from "C:\wamp64\www\Projet2\vues\animauxVue.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_58aa14040db9f4_58161566',
+  'unifunc' => 'content_58aaed4734f2b0_26072039',
   'file_dependency' => 
   array (
     'e53266a835b45d8c7c403b6ec89d404bd251e1aa' => 
     array (
       0 => 'C:\\wamp64\\www\\Projet2\\vues\\animauxVue.tpl',
-      1 => 1487541247,
+      1 => 1487596866,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_58aa14040db9f4_58161566 ($_smarty_tpl) {
+function content_58aaed4734f2b0_26072039 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -82,15 +82,7 @@ $__foreach_Animal_0_saved_local_item = $_smarty_tpl->tpl_vars['Animal'];
 </td>
                         <td><?php echo $_smarty_tpl->tpl_vars['Animal']->value['sexe'];?>
 </td>
-                        <td><?php echo $_smarty_tpl->tpl_vars['Animal']->value['poids'];?>
-</td>
-                        <td><?php echo $_smarty_tpl->tpl_vars['Animal']->value['taille'];?>
-</td>
-                        <td><?php echo $_smarty_tpl->tpl_vars['Animal']->value['dateNaissance'];?>
-</td>
                         <td><?php echo $_smarty_tpl->tpl_vars['Animal']->value['age'];?>
-</td>
-                        <td><?php echo $_smarty_tpl->tpl_vars['Animal']->value['lieuNaissance'];?>
 </td>
                         <td><?php echo $_smarty_tpl->tpl_vars['Animal']->value['statut'];?>
 </td>

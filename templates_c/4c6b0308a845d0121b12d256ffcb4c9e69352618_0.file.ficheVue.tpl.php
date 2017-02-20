@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2017-02-20 11:35:25
+/* Smarty version 3.1.29, created on 2017-02-20 14:38:22
   from "C:\wamp64\www\Projet2\vues\ficheVue.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_58aad47ddaf0b9_56080430',
+  'unifunc' => 'content_58aaff5eb2b303_63469414',
   'file_dependency' => 
   array (
     '4c6b0308a845d0121b12d256ffcb4c9e69352618' => 
     array (
       0 => 'C:\\wamp64\\www\\Projet2\\vues\\ficheVue.tpl',
-      1 => 1487590524,
+      1 => 1487601499,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_58aad47ddaf0b9_56080430 ($_smarty_tpl) {
+function content_58aaff5eb2b303_63469414 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -60,6 +60,40 @@ function content_58aad47ddaf0b9_56080430 ($_smarty_tpl) {
             <div class="fiche">
                 <?php echo $_smarty_tpl->tpl_vars['photo']->value;?>
 
+                <div class="dFiche">
+                    <h1 class="nomAnimal"><strong><?php echo $_smarty_tpl->tpl_vars['prenom']->value;?>
+ (<?php echo $_smarty_tpl->tpl_vars['numero']->value;?>
+)</strong></h1>
+                    <p class="pFiche">
+                        <strong class="espAnimal"><?php echo $_smarty_tpl->tpl_vars['espece']->value;?>
+ (<?php echo $_smarty_tpl->tpl_vars['pays']->value;?>
+)</strong>
+                        <br>
+                        <strong>Numero de parcelle : </strong><?php echo $_smarty_tpl->tpl_vars['parcelle']->value;?>
+
+                        <br>
+                        <strong>Taille : </strong><?php echo $_smarty_tpl->tpl_vars['taille']->value;?>
+
+                        <br>
+                        <strong>Poids : </strong><?php echo $_smarty_tpl->tpl_vars['poids']->value;?>
+
+                        <br>
+                        <strong>Né le : </strong><?php echo $_smarty_tpl->tpl_vars['dOb']->value;?>
+
+                        <br>
+                        <strong>Lieu de Naissance : </strong><?php echo $_smarty_tpl->tpl_vars['pOb']->value;?>
+
+                        <br>
+                        <strong>Père : </strong><?php echo $_smarty_tpl->tpl_vars['pere']->value;?>
+
+                        <br>
+                        <strong>Mère : </strong><?php echo $_smarty_tpl->tpl_vars['mere']->value;?>
+
+                        <br>
+                        <p class="descAnimal"><?php echo $_smarty_tpl->tpl_vars['description']->value;?>
+</p>
+                    </p>
+                </div>
             </div>
         </div>
     </body>

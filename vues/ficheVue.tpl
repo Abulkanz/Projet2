@@ -36,6 +36,28 @@
             </header>
             <div class="fiche">
                 {$photo}
+                <div class="dFiche">
+                    <h1 class="nomAnimal"><strong>{$prenom} ({$numero})</strong></h1>
+                    <p class="pFiche">
+                        <strong class="espAnimal">{$espece} ({$pays})</strong>
+                        <br>
+                        <strong>Numero de parcelle : </strong>{$parcelle}
+                        <br>
+                        <strong>Taille : </strong>{$taille}
+                        <br>
+                        <strong>Poids : </strong>{$poids}
+                        <br>
+                        <strong>Né le : </strong>{$dOb}
+                        <br>
+                        <strong>Lieu de Naissance : </strong>{$pOb}
+                        <br>
+                        <strong>Père : </strong>{$pere}
+                        <br>
+                        <strong>Mère : </strong>{$mere}
+                        <br>
+                        <p class="descAnimal">{$description}</p>
+                    </p>
+                </div>
             </div>
         </div>
     </body>

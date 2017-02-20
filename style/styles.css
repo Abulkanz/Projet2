@@ -222,18 +222,19 @@ a:hover{
 }
 
 .fiche{
-    height: 70vh;
-    width: 75vw;
-    margin: 6em auto auto auto;
+    height: 75%;
+    width: 75%;
+    margin: 4em auto auto auto;
     background-color: white;
     box-shadow: 1em 1em 1em rgba(0, 0, 0, 0.75);
 }
 
 .iPortrait{
-    height: 340px;
+    height: 50%;
     object-fit: cover;
     border: 1px solid rgba(0, 0, 0, 0.5);
     margin: 1em;
+    float: left;
 }
 
 th{
@@ -259,11 +260,41 @@ th{
 .vignLienFiche{
     height: 8.5em;
     width: 15em;
-    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover 
+
 }
 
 .vignLienFiche:hover{
-    background-size: contain; 
+    transform: scale(0.95);
+}
+
+.dFiche{
+    height: 50%;
+}
+
+.descAnimal{
+    font: 1.4em "Righteous";
+    text-align: justify;
+}
+
+.nomAnimal{
+    font: 2.2em "Righteous";
+    text-align: center;
+    padding: 0.5em;
+    color: #7f6229;
+}
+
+.espAnimal{
+    font: 1.6em "Righteous";
+    color: #367f59;
+}
+
+.pFiche{
+    font: 1.4em "Righteous";
+    text-align: center;
+    padding: 1em; 
 }
 
 .tiers{

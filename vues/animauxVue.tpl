@@ -43,11 +43,7 @@
                         <td>{$Animal.prenomAnimal}</td>
                         <td>{$Animal.nomEspece}</td>
                         <td>{$Animal.sexe}</td>
-                        <td>{$Animal.poids}</td>
-                        <td>{$Animal.taille}</td>
-                        <td>{$Animal.dateNaissance}</td>
                         <td>{$Animal.age}</td>
-                        <td>{$Animal.lieuNaissance}</td>
                         <td>{$Animal.statut}</td>
                     </tr>
                 {/foreach}
