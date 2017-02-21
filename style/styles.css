@@ -57,6 +57,13 @@ input:focus
     height: 100%;
 }
 
+.contGraphAccueil{
+    width: 20%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-75%);
+}
+
 .noOverF{
     overflow: hidden;
 }

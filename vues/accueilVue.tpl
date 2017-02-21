@@ -33,17 +33,14 @@
                     <li><input class="lienNav" type="submit" name="lignes_commande" value="Statistiques"></li>
                     <img class="avatar" src="img/avatarTest.png" alt=""/>
                 </ul>
-
-                <!--ul>
-                    <li><a href="page1.html">Accueil</a></li>
-                    <li><a href="page2.html">Animaux</a></li>
-                    <li><a href="#">Carte</a></li>
-                    <li><a href="#">Statistiques</a></li>
-                </ul-->
             </header>
             <div class="conteneurModules">
                 <div class="blocModules">
-                    <div class="module"></div>
+                    <div class="module">
+                        <div class="contGraphAccueil">
+                            <canvas id="tailleEsp"></canvas>
+                        </div>
+                    </div>
                     <div class="module"></div>
                     <div class="module"></div>
                     <div class="module"></div>
@@ -56,5 +53,6 @@
                 </div>
             </div>
         </div>
+        {$js}
     </body>
 </html>
