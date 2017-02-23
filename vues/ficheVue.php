@@ -5,6 +5,8 @@ require_once 'include/libs/Smarty.class.php';
 $tpl = new Smarty();
 $ficheAnimal = [];
 
+$jScript = "";
+
 $reqConsAnimal = $tabReqConsult[0];
 $reqAgeAnimal = $tabReqConsult[1];
 $reqEspeceAnimal = $tabReqConsult[2];
@@ -13,7 +15,8 @@ $reqPaysAnimal = $tabReqConsult[4];
 
 if ($ligne = $reqConsAnimal->fetch()) {
     $ficheAnimal['idAnimal'] = $ligne['idAnimaux'];
-    $ficheAnimal['photo'] = '<img class="iPortrait" src= "img/imgFiches/' . $ligne['photo'] . '">';
+    $ficheAnimal['photo'] = '<img class="iPortrait tooltip" src= "img/imgFiches/' . $ligne['photo'] . '" onclick="agrImg(this)">
+                             <span class="tooltiptext">Cliquez sur l\'image pour l\'agrandir</span><img id="icoAgr" src="img/icoLarge.png">';
     $ficheAnimal['prenomAnimal'] = $ligne['prenomAnimal'];
     $ficheAnimal['idParcelle'] = $ligne['idParcelle'];
     $ficheAnimal['poids'] = $ligne['poids']." kg";
@@ -71,8 +74,7 @@ $tpl->assign('description', $ficheAnimal['description']);
 $tpl->assign('pays', $ficheAnimal['pays']);
 $tpl->assign('pere', $ficheAnimal['pere']);
 $tpl->assign('mere', $ficheAnimal['mere']);
-
-
+$tpl->assign('js', $jScript);
 
 $tpl->display('vues/ficheVue.tpl');
 

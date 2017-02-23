@@ -31,6 +31,22 @@
                         </form>
                     </li>
                     <li><input class="lienNav" type="submit" name="lignes_commande" value="Statistiques"></li>
+                    <li>
+                            <form method="POST" action="index.php">
+                                <input type="text" name="objRech" placeholder="Rechercher">
+                                <input type="hidden" name="gestion" value="animaux">
+                                <input type="hidden" name="action" value="rechercher">
+                                <input type="submit" name="rechAnimal" value="->">
+                                <label for="tri">Trier par</label>
+                                <select id="tri" name="selection">
+                                    <option selected="selected" value="prenomAnimal">Prénom</option>
+                                    <option value="nomEspece">Espèce</option>
+                                    <option value="Sexe">Sexe</option>
+                                    <option value="Age">Age</option>
+                                    <option value="StatutA">Statut</option>
+                                </select>
+                            </form>
+                        </li>
                     <img class="avatar" src="img/avatarTest.png" alt=""/>
                 </ul>
 

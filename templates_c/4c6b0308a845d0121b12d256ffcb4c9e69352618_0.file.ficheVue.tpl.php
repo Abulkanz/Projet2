@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2017-02-20 14:38:22
+/* Smarty version 3.1.29, created on 2017-02-22 14:41:48
   from "C:\wamp64\www\Projet2\vues\ficheVue.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_58aaff5eb2b303_63469414',
+  'unifunc' => 'content_58ada32c672161_18707476',
   'file_dependency' => 
   array (
     '4c6b0308a845d0121b12d256ffcb4c9e69352618' => 
     array (
       0 => 'C:\\wamp64\\www\\Projet2\\vues\\ficheVue.tpl',
-      1 => 1487601499,
+      1 => 1487774434,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_58aaff5eb2b303_63469414 ($_smarty_tpl) {
+function content_58ada32c672161_18707476 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -57,10 +57,10 @@ function content_58aaff5eb2b303_63469414 ($_smarty_tpl) {
                     <img class="avatar" src="img/avatarTest.png" alt=""/>
                 </ul>
             </header>
-            <div class="fiche">
+            <div id="fiche">
                 <?php echo $_smarty_tpl->tpl_vars['photo']->value;?>
 
-                <div class="dFiche">
+                <div id="dFiche">
                     <h1 class="nomAnimal"><strong><?php echo $_smarty_tpl->tpl_vars['prenom']->value;?>
  (<?php echo $_smarty_tpl->tpl_vars['numero']->value;?>
 )</strong></h1>
@@ -90,12 +90,20 @@ function content_58aaff5eb2b303_63469414 ($_smarty_tpl) {
                         <strong>Mère : </strong><?php echo $_smarty_tpl->tpl_vars['mere']->value;?>
 
                         <br>
-                        <p class="descAnimal"><?php echo $_smarty_tpl->tpl_vars['description']->value;?>
+                    <p class="descAnimal"><?php echo $_smarty_tpl->tpl_vars['description']->value;?>
 </p>
                     </p>
                 </div>
             </div>
         </div>
+        <?php echo '<script'; ?>
+>
+            function agrImg($param) {
+                $param.style.cssText = "position:absolute; top:50%; left:50%; transform:translate(-50%, -50%);";
+                document.getElementById("dFiche").style.display = "none";
+            }
+        <?php echo '</script'; ?>
+>
     </body>
 </html><?php }
 }

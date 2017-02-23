@@ -34,9 +34,9 @@
                     <img class="avatar" src="img/avatarTest.png" alt=""/>
                 </ul>
             </header>
-            <div class="fiche">
+            <div id="fiche">
                 {$photo}
-                <div class="dFiche">
+                <div id="dFiche">
                     <h1 class="nomAnimal"><strong>{$prenom} ({$numero})</strong></h1>
                     <p class="pFiche">
                         <strong class="espAnimal">{$espece} ({$pays})</strong>
@@ -55,10 +55,16 @@
                         <br>
                         <strong>Mère : </strong>{$mere}
                         <br>
-                        <p class="descAnimal">{$description}</p>
+                    <p class="descAnimal">{$description}</p>
                     </p>
                 </div>
             </div>
         </div>
+        <script>
+            function agrImg($param) {
+                $param.style.cssText = "position:absolute; top:50%; left:50%; transform:translate(-50%, -50%);";
+                document.getElementById("dFiche").style.display = "none";
+            }
+        </script>
     </body>
 </html>

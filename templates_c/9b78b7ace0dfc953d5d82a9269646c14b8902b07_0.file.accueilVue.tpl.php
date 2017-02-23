@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2017-02-21 21:12:56
+/* Smarty version 3.1.29, created on 2017-02-22 13:09:26
   from "C:\wamp64\www\Projet2\vues\accueilVue.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_58acad589e0e89_75705947',
+  'unifunc' => 'content_58ad8d8646f9f0_74508376',
   'file_dependency' => 
   array (
     '9b78b7ace0dfc953d5d82a9269646c14b8902b07' => 
     array (
       0 => 'C:\\wamp64\\www\\Projet2\\vues\\accueilVue.tpl',
-      1 => 1487710410,
+      1 => 1487768914,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_58acad589e0e89_75705947 ($_smarty_tpl) {
+function content_58ad8d8646f9f0_74508376 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -57,25 +57,17 @@ function content_58acad589e0e89_75705947 ($_smarty_tpl) {
                     <img class="avatar" src="img/avatarTest.png" alt=""/>
                 </ul>
             </header>
-            <div class="conteneurModules">
-                <div class="blocModules">
-                    <div class="module">
+            <div class="contGraphs">
                         <div class="contGraphAccueil">
                             <canvas id="tailleEsp"></canvas>
                         </div>
-                    </div>
-                    <div class="module"></div>
-                    <div class="module"></div>
-                    <div class="module"></div>
-                </div>
-                <div class="blocModules">
-                    <div class="module"></div>
-                    <div class="module"></div>
-                    <div class="module"></div>
-                    <div class="module"></div>
-                </div>
+                <div class="contGraphAccueil"></div>
+                <div class="contGraphAccueil"></div>
+                <div class="contGraphAccueil"></div>
+                    
+                   
             </div>
-        </div>
+                
         <?php echo $_smarty_tpl->tpl_vars['js']->value;?>
 
     </body>

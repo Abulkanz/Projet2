@@ -34,25 +34,17 @@
                     <img class="avatar" src="img/avatarTest.png" alt=""/>
                 </ul>
             </header>
-            <div class="conteneurModules">
-                <div class="blocModules">
-                    <div class="module">
+            <div class="contGraphs">
                         <div class="contGraphAccueil">
                             <canvas id="tailleEsp"></canvas>
                         </div>
-                    </div>
-                    <div class="module"></div>
-                    <div class="module"></div>
-                    <div class="module"></div>
-                </div>
-                <div class="blocModules">
-                    <div class="module"></div>
-                    <div class="module"></div>
-                    <div class="module"></div>
-                    <div class="module"></div>
-                </div>
+                <div class="contGraphAccueil"></div>
+                <div class="contGraphAccueil"></div>
+                <div class="contGraphAccueil"></div>
+                    
+                   
             </div>
-        </div>
+                
         {$js}
     </body>
 </html>

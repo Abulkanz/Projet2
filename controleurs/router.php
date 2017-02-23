@@ -23,6 +23,8 @@ switch ($gestion) {
 if (isset($_POST['action'])) {
     if (isset($_POST['consulter'])) {
         consulter($_POST);
+    } else if ($_POST['action'] == 'rechercher') {
+        rechercher($_POST);
     }
 } else {
     parDefaut();

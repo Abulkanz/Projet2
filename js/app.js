@@ -28,7 +28,8 @@ $(document).ready(function () {
              var ctx = $('#tailleEsp');
              var barGraph = new Chart(ctx, {
                 type: 'bar',
-                data: chartdata
+                data: chartdata,
+                responsive: true
              });
         },
         error: function (data) {

@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2017-02-20 13:21:11
+/* Smarty version 3.1.29, created on 2017-02-23 10:21:59
   from "C:\wamp64\www\Projet2\vues\animauxVue.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_58aaed4734f2b0_26072039',
+  'unifunc' => 'content_58aeb7c7c62ca6_26564191',
   'file_dependency' => 
   array (
     'e53266a835b45d8c7c403b6ec89d404bd251e1aa' => 
     array (
       0 => 'C:\\wamp64\\www\\Projet2\\vues\\animauxVue.tpl',
-      1 => 1487596866,
+      1 => 1487844296,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_58aaed4734f2b0_26072039 ($_smarty_tpl) {
+function content_58aeb7c7c62ca6_26564191 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -54,6 +54,22 @@ function content_58aaed4734f2b0_26072039 ($_smarty_tpl) {
                         </form>
                     </li>
                     <li><input class="lienNav" type="submit" name="lignes_commande" value="Statistiques"></li>
+                    <li>
+                            <form method="POST" action="index.php">
+                                <input type="text" name="objRech" placeholder="Rechercher">
+                                <input type="hidden" name="gestion" value="animaux">
+                                <input type="hidden" name="action" value="rechercher">
+                                <input type="submit" name="rechAnimal" value="->">
+                                <label for="tri">Trier par</label>
+                                <select id="tri" name="selection">
+                                    <option selected="selected" value="prenomAnimal">Prénom</option>
+                                    <option value="nomEspece">Espèce</option>
+                                    <option value="Sexe">Sexe</option>
+                                    <option value="Age">Age</option>
+                                    <option value="StatutA">Statut</option>
+                                </select>
+                            </form>
+                        </li>
                     <img class="avatar" src="img/avatarTest.png" alt=""/>
                 </ul>
 

@@ -4,16 +4,10 @@ require_once 'include/libs/Smarty.class.php';
 
 $tpl = new Smarty();
 $listeAnimaux = [];
-$reqListeAnimaux = $tabReqListe[0];
-$reqAgeAnimaux = $tabReqListe[1];
-$reqEspeceAnimaux = $tabReqListe[2];
-$reqSexAnimaux = $tabReqListe[3];
 $i = 0;
 
-
 if (isset($_POST['action'])) {
-
-    if (!$ligne = $reqListeAnimaux->fetch()) {
+    if (!$ligne = $reqRech->fetch()) {
         $aucRes = '<p class="aucRes">--La recherche ne fournit aucun resultat--</p>';
         $nbLignes = '';
         $initTable = '';
@@ -28,7 +22,7 @@ if (isset($_POST['action'])) {
                         <th>Statut</th>
                     </tr>';
 
-        while ($ligne = $reqListeAnimaux->fetch(PDO::FETCH_ASSOC)) {
+        do {
             $listeAnimaux[$i]['photo'] = '<form method="POST" action="index.php">
                                             <input type="hidden" name="gestion" value="fiche">
                                             <input type="hidden" name="action" value="consulter">
@@ -37,36 +31,21 @@ if (isset($_POST['action'])) {
                                             <input class="vignLienFiche" value="" type="submit" style="background-image: url(img/imgFiches/' . $ligne['prenomAnimal'] . 'Tn.png">
                                           <form>';
             $listeAnimaux[$i]['prenomAnimal'] = $ligne['prenomAnimal'];
-            $listeAnimaux[$i]['statut'] = $ligne['statut'];
+            $listeAnimaux[$i]['nomEspece'] = $ligne['nomEspece'];
+            $listeAnimaux[$i]['sexe'] = $ligne['Sexe'];
+            $listeAnimaux[$i]['age'] = $ligne['Age'];
+            $listeAnimaux[$i]['statut'] = $ligne['StatutA'];
             $i++;
-        }
-        //Recupération de l'age
-        $i = 0;
-        while ($ligne2 = $reqAgeAnimaux->fetch(PDO::FETCH_ASSOC)) {
-            $listeAnimaux[$i]['age'] = $ligne2['Age'];
-            $i++;
-        }
-        //Recuperation de l'espèce
-        $i = 0;
-        while ($ligne3 = $reqEspeceAnimaux->fetch(PDO::FETCH_ASSOC)) {
-            $listeAnimaux[$i]['nomEspece'] = $ligne3['nomEspece'];
-            $i++;
-        }
-        //Recuperation du sexe
-        $i = 0;
-        while ($ligne4 = $reqSexAnimaux->fetch(PDO::FETCH_ASSOC)) {
-            $listeAnimaux[$i]['sexe'] = $ligne4['sexe'];
-            if ($listeAnimaux[$i]['sexe'] == 'M') {
-                $listeAnimaux[$i]['sexe'] == 'Male';
-            } else {
-                $listeAnimaux[$i]['sexe'] == 'Femelle';
-            }
-            $i++;
-        }
+        } while ($ligne = $reqRech->fetch(PDO::FETCH_ASSOC));
         $aucRes = '';
-        $nbLignes = $reqListeAnimaux->rowCount();
+        $nbLignes = $reqRech->rowCount();
     }
 } else {
+    $reqListeAnimaux = $tabReqListe[0];
+    $reqAgeAnimaux = $tabReqListe[1];
+    $reqEspeceAnimaux = $tabReqListe[2];
+    $reqSexAnimaux = $tabReqListe[3];
+
     $initTable = '<table class="tAnimaux">
                     <tr>
                         <th>Photo</th>
