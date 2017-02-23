@@ -32,7 +32,7 @@
                         <tr>
                             <td rowspan="8"><img src="img/{$Employe.avatar}" class="avatar"></td>
                             <td>Identifiant de connexion de la personne</td>
-                            <td><input id="idconnexion" name="idconnexion" value="{$Employe.idconnexion}"></td>
+                            <td><input id="login" name="login" value="{$Employe.login}"></td>
                         </tr>
 						<tr>
                             <td>Nom de la personne</td>

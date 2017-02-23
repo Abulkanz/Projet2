@@ -1,26 +1,13 @@
 <?php
 // on charge le fichier modele.php qui contient les fonction servant pour la base de données
 include  'modele.php' ;
+require_once('include/libs/phpmailer/PHPMailerAutoload.php'); 
 
 // fonction qui est appelé par la fonction liste dans le controleur
 function listeEmploye(){
     $cnx=getBD();
     $sql="SELECT * FROM employes";
     $idRequete=  executeRequete($cnx, $sql);
-    return $idRequete;
-}
-function rechercheremploye($param){
-    $idEmployes= $param['nom'];
-    $cnx=getBD();
-    $sql="SELECT * FROM employes WHERE nom LIKE CONCAT('%', ?, '%')";
-    $idRequete=  executeRequete($cnx, $sql,array($idEmployes));
-    return $idRequete;
-}
-function trieremploye($param){
-    $elementtrie= $param['choix'];
-    $cnx=getBD();
-    $sql="SELECT nom,prenom FROM employes ORDER BY ? ASC";
-    $idRequete=  executeRequete($cnx, $sql,array($elementtrie));
     return $idRequete;
 }
 function consultEmploye($param){
@@ -31,7 +18,7 @@ function consultEmploye($param){
     return $idRequete;
 }
 function ajouterEmploye($param){
-    $idConnexion = $param["login"];
+    $login = $param["login"];
     $nom=$param["nom"];
     $prenom=$param["prenom"]; 
     $fonction=$param["fonction"]; 
@@ -77,15 +64,15 @@ function ajouterEmploye($param){
     if(!isset($errMSG)){
         // on insere dans la bdd
          $cnx=getBD();
-         $Sql = "INSERT INTO employes(idConnexion, nom, prenom, fonction, motDePasse, avatar, adresse_mail, droits, idSexe) VALUES (?,?,?,?,?,?,?,?,?)";
-         $idRequete = executeRequete($cnx,$Sql,array($idConnexion,$nom,$prenom,$fonction,$motdepasse,$userpic,$mail,$droits,$idSexe));
+         $Sql = "INSERT INTO employes(login, nomEmploye, prenomEmploye, fonction, motDePasse, avatar, adresse_mail, droits, idSexe) VALUES (?,?,?,?,?,?,?,?,?)";
+         $idRequete = executeRequete($cnx,$Sql,array($login,$nom,$prenom,$fonction,$motdepasse,$userpic,$mail,$droits,$idSexe));
     }
     return $idRequete;
 }
 // fonction pour modifier la totalité des information sans l'image
 function modifierEmploye($param){
-    $idEmploye = $param["login"];
-    $idConnexion = $param["idconnexion"];
+    $idEmploye = $param["idEmploye"];
+    $login = $param["login"];
     $nom=$param["nom"];
     $prenom=$param["prenom"]; 
     $fonction=$param["fonction"]; 
@@ -99,13 +86,13 @@ function modifierEmploye($param){
     $gauche="ar30&bb%";
     $motdepasse=hash('Ripemd128',"$gauche.$mdp_temp.$droite");
     $cnx=getBD();
-    $Sql = "UPDATE employes SET idConnexion=?, nom=?, prenom=?, fonction=?, motDePasse=?, adresse_mail=?,droits=? WHERE idEmploye=?";
-    $idRequete = executeRequete($cnx,$Sql,array($idConnexion, $nom,$prenom,$fonction,$motdepasse,$mail,$droits,$idEmploye));
+    $Sql = "UPDATE employes SET login=?, nom=?, prenom=?, fonction=?, motDePasse=?, adresse_mail=?,droits=? WHERE idEmploye=?";
+    $idRequete = executeRequete($cnx,$Sql,array($login, $nom,$prenom,$fonction,$motdepasse,$mail,$droits,$idEmploye));
 
     return $idRequete;
 }
 function modifierImageEmploye($param){
-    $idEmployes=$param["login"];
+    $idEmployes=$param["idEmploye"];
     // on recupere l'image : nom, type, taille,..
      $imgFile = $_FILES["avatar"]["name"];
      $tmp_dir = $_FILES["avatar"]["tmp_name"];
@@ -140,7 +127,7 @@ function modifierImageEmploye($param){
     return $idRequete;
 }
 function supprimerEmploye($param){
-    $idEmployes=$param["login"];
+    $idEmployes=$param["idEmploye"];
     $cnx=getBD();
     $sql="DELETE FROM employes WHERE idEmploye = ?";;
     $idRequete=  executeRequete($cnx, $sql,array($idEmployes));
@@ -173,7 +160,7 @@ function envoyermails($param){
 	$mail->Subject = 'TEST';
 				
 	// On definit le contenu du mail
-	$mail->msgHTML(file_get_contents('testcorpsmail.html'), dirname(__FILE__));
+	$mail->msgHTML(file_get_contents('template/employesVueForm.tpl'), dirname(__FILE__));
 	
     // Envoi du mail avec gestion des erreurs
 	if(!$mail->Send()) {
@@ -182,4 +169,11 @@ function envoyermails($param){
         echo 'Message envoyé !';
 	}
     return true;
+}
+function profilEmploye($param){
+    $idEmployes= $param['identifiant'];
+    $cnx=getBD();
+    $sql="SELECT * FROM employes WHERE login = ?";
+    $idRequete=  executeRequete($cnx, $sql,array($idEmployes));
+    return $idRequete;
 }

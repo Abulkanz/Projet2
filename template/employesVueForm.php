@@ -1,5 +1,5 @@
 <?php
-require_once 'include/libs/Smarty.class.php';
+require_once 'include/libs/smarty/Smarty.class.php';
 $tpl=new Smarty();
 switch ($action){
     case 'ajouter' :
@@ -10,11 +10,11 @@ switch ($action){
         $consultEmploye=array();
         $i=0;
         while($row=$idRequete->fetch()){
-            $consultEmploye[$i]['idconnexion']=$row['login'];
+            $consultEmploye[$i]['login']=$row['login'];
             $consultEmploye[$i]['avatar']=$row['avatar'];
             $consultEmploye[$i]['idEmploye']=$row['idEmploye'];
-            $consultEmploye[$i]['nom']=$row['nom'];
-            $consultEmploye[$i]['prenom']=$row['prenom'];
+            $consultEmploye[$i]['nomEmploye']=$row['nomEmploye'];
+            $consultEmploye[$i]['prenomEmploye']=$row['prenomEmploye'];
             $consultEmploye[$i]['fonction']=$row['fonction'];
             $consultEmploye[$i]['motdepasse']=$row['motDePasse'];
             $consultEmploye[$i]['adressemail']=$row['adresse_mail'];
@@ -28,21 +28,31 @@ switch ($action){
             }
             $i++;
         }
-        /*$test="<td><imut type='submit' name='Retour' value'Retour'></td>";
-        $tpl->assign('test',$test);*/
+        $form="<form method='POST' action='index.php'' enctype='multipart/form-data'>";
+        $bouton1="<input type='submit' name='envoyermail' value='Envoyer la fiche par mail' />";
+        $action1="<input type='hidden' name='action' value='envoyermail'>";
+        $debutlignetab="";
+        $finlignetab="";
+        $parametrereadonly="readonly";
         $tpl->assign("msg","Consultation de la fiche d'un employe");
+        $tpl->assign("action1",$action1);
+        $tpl->assign("bouton1",$bouton1);
+        $tpl->assign('form',$form);
+        $tpl->assign("parametrereadonly",$parametrereadonly);
+        $tpl->assign("debutlignetab",$debutlignetab);
+        $tpl->assign("finlignetab",$finlignetab);
         $tpl->assign('consultEmploye', $consultEmploye);
-        $tpl->display("template/employesVueConsult.tpl");
+        $tpl->display("template/employesVueForm.tpl");
         break;
     case 'modifier':
         $consultEmploye=array();
         $i=0;
         while($row=$idRequete->fetch()){
-            $consultEmploye[$i]['idconnexion']=$row['login'];
+            $consultEmploye[$i]['login']=$row['login'];
             $consultEmploye[$i]['avatar']=$row['avatar'];
             $consultEmploye[$i]['idEmploye']=$row['idEmploye'];
-            $consultEmploye[$i]['nom']=$row['nom'];
-            $consultEmploye[$i]['prenom']=$row['prenom'];
+            $consultEmploye[$i]['nomEmploye']=$row['nomEmploye'];
+            $consultEmploye[$i]['prenomEmploye']=$row['prenomEmploye'];
             $consultEmploye[$i]['fonction']=$row['fonction'];
             $consultEmploye[$i]['motdepasse']=$row['motDePasse'];
             $consultEmploye[$i]['adressemail']=$row['adresse_mail'];
@@ -56,19 +66,31 @@ switch ($action){
             }
             $i++;
         }
+        $form="<form method='POST' action='index.php'' enctype='multipart/form-data'>";
+        $action1="<input type='hidden' name='action' value='validermodification'>";
+        $bouton1="<input type='submit' id='Valider' name='validermodification' value='Valider' >";
+        $debutlignetab="<tr><td colspan='3'><form><input type='hidden' name='gestion' value='employes'><input type='hidden' name='action' value='vmodificationimage'><input type='file' id='avatar' name='avatar' >";
+        $finlignetab="<input type='submit'' id='modifier'' name='vmodificationimage'' value='Modifier' ></form></td></tr>";
+        $parametrereadonly="";
         $tpl->assign("msg","Modification de la fiche d'un employe");
         $tpl->assign('consultEmploye', $consultEmploye);
-        $tpl->display("template/employesVueModifier.tpl");
+        $tpl->assign("action1",$action1);
+        $tpl->assign("bouton1",$bouton1);
+        $tpl->assign('form',$form);
+        $tpl->assign("parametrereadonly",$parametrereadonly);
+        $tpl->assign("debutlignetab",$debutlignetab);
+        $tpl->assign("finlignetab",$finlignetab);
+        $tpl->display("template/employesVueForm.tpl");
         break;
     case 'supprimer':
         $consultEmploye=array();
         $i=0;
         while($row=$idRequete->fetch()){
-            $consultEmploye[$i]['idconnexion']=$row['login'];
+            $consultEmploye[$i]['login']=$row['login'];
             $consultEmploye[$i]['avatar']=$row['avatar'];
             $consultEmploye[$i]['idEmploye']=$row['idEmploye'];
-            $consultEmploye[$i]['nom']=$row['nom'];
-            $consultEmploye[$i]['prenom']=$row['prenom'];
+            $consultEmploye[$i]['nomEmploye']=$row['nomEmploye'];
+            $consultEmploye[$i]['prenomEmploye']=$row['prenomEmploye'];
             $consultEmploye[$i]['fonction']=$row['fonction'];
             $consultEmploye[$i]['motdepasse']=$row['motDePasse'];
             $consultEmploye[$i]['adressemail']=$row['adresse_mail'];
@@ -82,9 +104,21 @@ switch ($action){
             }
             $i++;
         }
+        $form="<form method='POST' action='index.php' enctype='multipart/form-data'>";
+        $bouton1="<input type='submit' id='Valider' name='validersuppression' value='Supprimer'>";
+        $action1="<input type='hidden' name='action' value='validersuppression'>";
+        $debutlignetab="";
+        $finlignetab="";
+        $parametrereadonly="readonly";
         $tpl->assign("msg","Suppression de la fiche d'un employe");
+        $tpl->assign('form',$form);
+        $tpl->assign("action1",$action1);
+        $tpl->assign("bouton1",$bouton1);
+        $tpl->assign("parametrereadonly",$parametrereadonly);
+        $tpl->assign("debutlignetab",$debutlignetab);
+        $tpl->assign("finlignetab",$finlignetab);
         $tpl->assign('consultEmploye', $consultEmploye);
-        $tpl->display("template/employesVueSupprimer.tpl");
+        $tpl->display("template/employesVueForm.tpl");
         break; 
         case 'Rechercher':
         $listeEmploye=array();
@@ -92,8 +126,8 @@ switch ($action){
         while($row=$idRequete->fetch()){
             $listeEmploye[$i]['avatar']=$row['avatar'];
             $listeEmploye[$i]['idEmploye']=$row['idEmploye'];
-            $listeEmploye[$i]['nom']=$row['nom'];
-            $listeEmploye[$i]['prenom']=$row['prenom'];
+            $listeEmploye[$i]['nomEmploye']=$row['nomEmploye'];
+            $listeEmploye[$i]['prenomEmploye']=$row['prenomEmploye'];
             $listeEmploye[$i]['fonction']=$row['fonction'];
             $i++;
         }

@@ -1,26 +1,18 @@
 <?php
-/*
 session_start();
 require_once 'include/configuration.php';
 if (isset($_POST['deconnexion'])) {
     deconnexion();
 }else{
-    if (!isset($_SESSION['login'])) {
-        $gestion = 'login';
+if (!isset($_SESSION['login'])) {
+    $gestion = 'login';
+} else {
+    if (isset($_REQUEST['gestion'])) {
+        $gestion = $_REQUEST['gestion'];
     } else {
-        if (isset($_REQUEST['gestion'])) {
-             $gestion = $_REQUEST['gestion'];
-        } else {
-             $gestion = 'accueil';
-        }
+        $gestion = 'accueil';
     }
-    require_once 'controleur/router.php';
-}*/
-require_once 'include/configuration.php';
-        if(isset($_REQUEST['gestion'])){
-            $gestion=$_REQUEST['gestion'];
-        } else {
-            $gestion='employes';
-        }
-        require_once 'controleur/router.php';
+}
+require_once 'controleur/router.php';
+}
 ?>

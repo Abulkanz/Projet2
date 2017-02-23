@@ -49,18 +49,6 @@ function validersuppression($param) {
     $idRequete= supprimerEmploye($param);
     liste();
 }
-// rechercher
-function rechercher($param){
-    $action=$param['action'];
-    $idRequete= rechercheremploye($param);
-    require_once 'template/employesVueRechercher.php';
-}
-// trier
-function trier($param){
-    $action=$param['action'];
-    $idRequete= trieremploye($param);
-    require_once 'template/employesVueListe.php';
-}
 // fonction valider 
 function valider(){
     liste();

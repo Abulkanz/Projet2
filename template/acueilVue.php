@@ -1,16 +1,26 @@
 <?php
-require_once 'include/libs/Smarty.class.php';
+require_once 'include/libs/smarty/Smarty.class.php';
 $tpl=new Smarty();
-/*$listeProduits=array();
-$i=0;
-while($row=$idRequete->fetch()){
-    $listeProduits[$i]['reference']=$row['reference'];
-    $listeProduits[$i]['designation']=$row['designation'];
-    $listeProduits[$i]['prix']=$row['prix_unitaire_HT'];
-    $i++;
+$login=$_SESSION['login'];
+$fonction=$_SESSION['droits'];
+if($fonction=="3"){
+    $tpl->assign('msg','Accueil');
+    $msg2=$_SESSION['fonction'];
+    $tpl->assign('login',$login);
+    $tpl->assign('msg2',$msg2);
+    $tpl->display('template/acueilVue.tpl');
+} elseif ($fonction=="2"){
+    $tpl->assign('msg','Accueil');
+    $tpl->assign('login',$login);
+    $msg2=$_SESSION['fonction'];
+    $tpl->assign('msg2',$msg2);
+    $tpl->display('template/acueilVue.tpl');
 }
-$nbligne=$idRequete->rowCount();*/
-$tpl->assign('msg','Accueil');
-/*$tpl->assign('nbligne',$nbligne);
-$tpl->assign('listeProduits', $listeProduits);*/
-$tpl->display('template/accueilVue.tpl');
+else ($fonction=="1"){
+    $tpl->assign('msg','Accueil');
+    $tpl->assign('login',$login);
+    $msg2=$_SESSION['fonction'];
+    $tpl->assign('msg2',$msg2);
+    $tpl->display('template/acueilVue.tpl');
+}
+
