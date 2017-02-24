@@ -9,8 +9,6 @@
     <title>Projet2</title>
 </head>
     <body>
-        <h2>{$msg}</h2>
-        <br>
         <nav>
             <form method="POST" action="index.php">
                 <input type="hidden" name="gestion" value="accueil">
@@ -23,6 +21,10 @@
             <form method="POST" action="index.php">
                 <input type="hidden" name="gestion" value="animaux">
                 <input type="submit" name="animaux" value="animaux">
+            </form>
+            <form method="POST" name="gestion">
+                <input type="hidden" name="gestion" value="carte">
+                <input class="lienNav" type="submit" name="carte" value="Carte">
             </form>
             <form method="POST" action="index.php">
                 <input type="hidden" name="gestion" value="statistique">
@@ -53,6 +55,8 @@
                 </li>
             </ul>
         </nav>
+        <h2>{$msg}</h2>
+        <br>
         <table>
             <tr>
                 <th></th>

@@ -18,7 +18,7 @@
                     <tr>
                         <input type="hidden" name="gestion" value="animaux">
                         <input type="hidden" name="action" value="validerajouter">
-                        <td><input type="submit" id="retour" name="Retour" value="Retour" ></td>
+                        <td><input type="submit" id="retour" name="retour" value="Retour" ></td>
                         <td colspan="3"><input type="submit" name="validerajouter" value="Valider"/></td>
                     </tr>
                     </tfoot>

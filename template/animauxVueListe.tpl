@@ -9,20 +9,19 @@
     <title>Projet2</title>
 </head>
     <body>
-        <h2>{$msg}</h2>
-        <br>
         <nav>
             <form method="POST" action="index.php">
                 <input type="hidden" name="gestion" value="accueil">
                 <input type="submit" name="accueil" value="accueil">
             </form>
-            <form method="POST" action="index.php">
-                <input type="hidden" name="gestion" value="employes">
-                <input type="submit" name="employes" value="utilisateur">
-            </form>
+            {$employes}
             <form method="POST" action="index.php">
                 <input type="hidden" name="gestion" value="animaux">
                 <input type="submit" name="animaux" value="animaux">
+            </form>
+            <form method="POST" name="gestion">
+                <input type="hidden" name="gestion" value="carte">
+                <input class="lienNav" type="submit" name="carte" value="Carte">
             </form>
             <form method="POST" action="index.php">
                 <input type="hidden" name="gestion" value="statistique">
@@ -53,6 +52,7 @@
                 </li>
             </ul>
         </nav>
+        <h2>{$msg}</h2>
         <br>
         <form method="POST" action="index.php">
         <input type="hidden" name="gestion" value="Animauxs">
@@ -94,7 +94,7 @@
                 <td>{$sexe}</td>
                 <td>{$Animaux.poids}</td>
                 <td>{$Animaux.taille}</td>
-                <td>10</td>
+                <td>Age de l'animal</td>
                 <td>{$Animaux.lieu_naissance}</td>
                 <td>{$Animaux.statut}</td>
                 <td>
@@ -105,7 +105,7 @@
                         {$consulter}
                     </form>
                 </td>
-                <td>
+                <td {$style}>
                     <form method="POST" action="index.php">
                         <input type="hidden" name="identifiant" value="{$Animaux.idAnimaux}">
                         <input type="hidden" name="gestion" value="animaux">
@@ -113,7 +113,7 @@
                         {$modifier}
                     </form>
                 </td>
-                <td>
+                <td {$style}>
                     <form method="POST" action="index.php">
                         <input type="hidden" name="identifiant" value="{$Animaux.idAnimaux}">
                         <input type="hidden" name="gestion" value="animaux">

@@ -29,8 +29,8 @@ switch ($action){
             $i++;
         }
         $form="<form method='POST' action='index.php'' enctype='multipart/form-data'>";
-        $bouton1="<input type='submit' name='envoyermail' value='Envoyer la fiche par mail' />";
-        $action1="<input type='hidden' name='action' value='envoyermail'>";
+        $bouton1="<td><input type='submit' id='retour' name='retour' value='Retour' ></td>";
+        $action1="";
         $debutlignetab="";
         $finlignetab="";
         $parametrereadonly="readonly";

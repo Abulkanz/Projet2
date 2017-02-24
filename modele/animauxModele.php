@@ -135,7 +135,7 @@ function modifierImageAnimaux($param){
     return $idRequete;
 }
 function supprimerAnimaux($param){
-    $idEmployes=$param["idEmploye"];
+    $idEmployes=$param["idAnimaux"];
     $cnx=getBD();
     $sql="DELETE FROM animaux WHERE idAnimaux = ?";;
     $idRequete=  executeRequete($cnx, $sql,array($idEmployes));

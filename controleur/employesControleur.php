@@ -54,8 +54,7 @@ function valider(){
     liste();
 }
 // fonction retour
-function retour($param){
-    $action=$param['action'];
+function retour(){
     liste();
 }
 // fonction pour liste les employés
@@ -65,6 +64,11 @@ function liste() {
 }
 function envoyermail($param){
     $action=$param['action'];
-    $idRequete=envoyermails($param);
-    require_once 'templates/mail.php';
+    $idRequete=corspmail($param);
+    require_once 'template/mail.php';
+}
+function deconnexion(){
+    $_SESSION = array();
+    session_destroy();
+    require_once 'template/loginVue.php';
 }

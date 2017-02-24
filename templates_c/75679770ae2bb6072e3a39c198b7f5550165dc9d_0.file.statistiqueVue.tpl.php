@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2017-02-24 12:17:16
-  from "C:\wamp64\www\authentification\template\acueilVue.tpl" */
+/* Smarty version 3.1.29, created on 2017-02-24 12:18:07
+  from "C:\wamp64\www\authentification\template\statistiqueVue.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_58b0244c0cfaa4_28812503',
+  'unifunc' => 'content_58b0247f6ad121_32296532',
   'file_dependency' => 
   array (
-    'fe093f8d2af66503153aa812623b04a37287f584' => 
+    '75679770ae2bb6072e3a39c198b7f5550165dc9d' => 
     array (
-      0 => 'C:\\wamp64\\www\\authentification\\template\\acueilVue.tpl',
-      1 => 1487938621,
+      0 => 'C:\\wamp64\\www\\authentification\\template\\statistiqueVue.tpl',
+      1 => 1487938425,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_58b0244c0cfaa4_28812503 ($_smarty_tpl) {
+function content_58b0247f6ad121_32296532 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html>

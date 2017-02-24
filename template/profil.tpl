@@ -14,13 +14,14 @@
                 <input type="hidden" name="gestion" value="accueil">
                 <input type="submit" name="accueil" value="accueil">
             </form>
-            <form method="POST" action="index.php">
-                <input type="hidden" name="gestion" value="employes">
-                <input type="submit" name="employes" value="utilisateur">
-            </form>
+            {$employes}
             <form method="POST" action="index.php">
                 <input type="hidden" name="gestion" value="animaux">
                 <input type="submit" name="animaux" value="animaux">
+            </form>
+            <form method="POST" name="gestion">
+                <input type="hidden" name="gestion" value="carte">
+                <input class="lienNav" type="submit" name="carte" value="Carte">
             </form>
             <form method="POST" action="index.php">
                 <input type="hidden" name="gestion" value="statistique">
@@ -56,9 +57,6 @@
         <table>
 				{$form}
                 <thead>
-                    <tr>
-                        <td colspan="3">Fiche de : {$Employe.nomEmploye} {$Employe.prenomEmploye}</td>
-                    </tr>
                     </thead>
                     <tbody>
                         <tr>

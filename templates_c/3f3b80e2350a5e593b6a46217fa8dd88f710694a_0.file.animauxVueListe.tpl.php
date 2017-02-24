@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2017-02-23 14:51:42
+/* Smarty version 3.1.29, created on 2017-02-24 16:01:01
   from "C:\wamp64\www\authentification\template\animauxVueListe.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_58aef6fe3def74_48824400',
+  'unifunc' => 'content_58b058bd7983e5_88097770',
   'file_dependency' => 
   array (
     '3f3b80e2350a5e593b6a46217fa8dd88f710694a' => 
     array (
       0 => 'C:\\wamp64\\www\\authentification\\template\\animauxVueListe.tpl',
-      1 => 1487859808,
+      1 => 1487952051,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_58aef6fe3def74_48824400 ($_smarty_tpl) {
+function content_58b058bd7983e5_88097770 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -32,21 +32,20 @@ function content_58aef6fe3def74_48824400 ($_smarty_tpl) {
     <title>Projet2</title>
 </head>
     <body>
-        <h2><?php echo $_smarty_tpl->tpl_vars['msg']->value;?>
-</h2>
-        <br>
         <nav>
             <form method="POST" action="index.php">
                 <input type="hidden" name="gestion" value="accueil">
                 <input type="submit" name="accueil" value="accueil">
             </form>
-            <form method="POST" action="index.php">
-                <input type="hidden" name="gestion" value="employes">
-                <input type="submit" name="employes" value="utilisateur">
-            </form>
+            <?php echo $_smarty_tpl->tpl_vars['employes']->value;?>
+
             <form method="POST" action="index.php">
                 <input type="hidden" name="gestion" value="animaux">
                 <input type="submit" name="animaux" value="animaux">
+            </form>
+            <form method="POST" name="gestion">
+                <input type="hidden" name="gestion" value="carte">
+                <input class="lienNav" type="submit" name="carte" value="Carte">
             </form>
             <form method="POST" action="index.php">
                 <input type="hidden" name="gestion" value="statistique">
@@ -79,6 +78,8 @@ function content_58aef6fe3def74_48824400 ($_smarty_tpl) {
                 </li>
             </ul>
         </nav>
+        <h2><?php echo $_smarty_tpl->tpl_vars['msg']->value;?>
+</h2>
         <br>
         <form method="POST" action="index.php">
         <input type="hidden" name="gestion" value="Animauxs">
@@ -137,7 +138,7 @@ $__foreach_Animaux_0_saved_local_item = $_smarty_tpl->tpl_vars['Animaux'];
 </td>
                 <td><?php echo $_smarty_tpl->tpl_vars['Animaux']->value['taille'];?>
 </td>
-                <td>10</td>
+                <td>Age de l'animal</td>
                 <td><?php echo $_smarty_tpl->tpl_vars['Animaux']->value['lieu_naissance'];?>
 </td>
                 <td><?php echo $_smarty_tpl->tpl_vars['Animaux']->value['statut'];?>
@@ -152,7 +153,8 @@ $__foreach_Animaux_0_saved_local_item = $_smarty_tpl->tpl_vars['Animaux'];
 
                     </form>
                 </td>
-                <td>
+                <td <?php echo $_smarty_tpl->tpl_vars['style']->value;?>
+>
                     <form method="POST" action="index.php">
                         <input type="hidden" name="identifiant" value="<?php echo $_smarty_tpl->tpl_vars['Animaux']->value['idAnimaux'];?>
 ">
@@ -162,7 +164,8 @@ $__foreach_Animaux_0_saved_local_item = $_smarty_tpl->tpl_vars['Animaux'];
 
                     </form>
                 </td>
-                <td>
+                <td <?php echo $_smarty_tpl->tpl_vars['style']->value;?>
+>
                     <form method="POST" action="index.php">
                         <input type="hidden" name="identifiant" value="<?php echo $_smarty_tpl->tpl_vars['Animaux']->value['idAnimaux'];?>
 ">

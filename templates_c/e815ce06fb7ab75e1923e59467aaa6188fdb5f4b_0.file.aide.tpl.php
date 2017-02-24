@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2017-02-23 14:25:41
+/* Smarty version 3.1.29, created on 2017-02-24 12:13:51
   from "C:\wamp64\www\authentification\template\aide.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_58aef0e58a2844_23005998',
+  'unifunc' => 'content_58b0237fc59c90_86247646',
   'file_dependency' => 
   array (
     'e815ce06fb7ab75e1923e59467aaa6188fdb5f4b' => 
     array (
       0 => 'C:\\wamp64\\www\\authentification\\template\\aide.tpl',
-      1 => 1487859789,
+      1 => 1487937048,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_58aef0e58a2844_23005998 ($_smarty_tpl) {
+function content_58b0237fc59c90_86247646 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html>
@@ -32,13 +32,15 @@ function content_58aef0e58a2844_23005998 ($_smarty_tpl) {
                 <input type="hidden" name="gestion" value="accueil">
                 <input type="submit" name="accueil" value="accueil">
             </form>
-            <form method="POST" action="index.php">
-                <input type="hidden" name="gestion" value="employes">
-                <input type="submit" name="employes" value="utilisateur">
-            </form>
+            <?php echo $_smarty_tpl->tpl_vars['employes']->value;?>
+
             <form method="POST" action="index.php">
                 <input type="hidden" name="gestion" value="animaux">
                 <input type="submit" name="animaux" value="animaux">
+            </form>
+            <form method="POST" name="gestion">
+                <input type="hidden" name="gestion" value="carte">
+                <input class="lienNav" type="submit" name="carte" value="Carte">
             </form>
             <form method="POST" action="index.php">
                 <input type="hidden" name="gestion" value="statistique">
@@ -73,8 +75,6 @@ function content_58aef0e58a2844_23005998 ($_smarty_tpl) {
         </nav>
         <mean>
             <h2><?php echo $_smarty_tpl->tpl_vars['msg']->value;?>
-</h2>
-            <p><?php echo $_smarty_tpl->tpl_vars['msg2']->value;?>
 </h2>
             <br>
             <h1>Sommaire</h1>

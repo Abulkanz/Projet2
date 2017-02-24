@@ -5,3 +5,8 @@ function profil($param) {
     $idRequete=profilEmploye($param);
     require_once 'template/profil.php';
 }
+function deconnexion(){
+    $_SESSION = array();
+    session_destroy();
+    require_once 'template/loginVue.php';
+}

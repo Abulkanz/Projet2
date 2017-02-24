@@ -1,7 +1,7 @@
 <?php
 // aide
-function aide(){
-    require_once 'template/aide.php';
+function statistique(){
+    require_once 'template/statistique.php';
 }
 function deconnexion(){
     $_SESSION = array();

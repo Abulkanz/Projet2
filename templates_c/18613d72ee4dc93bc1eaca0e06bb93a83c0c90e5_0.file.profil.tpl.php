@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2017-02-23 19:50:00
+/* Smarty version 3.1.29, created on 2017-02-24 13:07:24
   from "C:\wamp64\www\authentification\template\profil.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_58af3ce8350729_29692396',
+  'unifunc' => 'content_58b0300cb2cc09_05025642',
   'file_dependency' => 
   array (
     '18613d72ee4dc93bc1eaca0e06bb93a83c0c90e5' => 
     array (
       0 => 'C:\\wamp64\\www\\authentification\\template\\profil.tpl',
-      1 => 1487879338,
+      1 => 1487937041,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_58af3ce8350729_29692396 ($_smarty_tpl) {
+function content_58b0300cb2cc09_05025642 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html>
@@ -37,13 +37,15 @@ function content_58af3ce8350729_29692396 ($_smarty_tpl) {
                 <input type="hidden" name="gestion" value="accueil">
                 <input type="submit" name="accueil" value="accueil">
             </form>
-            <form method="POST" action="index.php">
-                <input type="hidden" name="gestion" value="employes">
-                <input type="submit" name="employes" value="utilisateur">
-            </form>
+            <?php echo $_smarty_tpl->tpl_vars['employes']->value;?>
+
             <form method="POST" action="index.php">
                 <input type="hidden" name="gestion" value="animaux">
                 <input type="submit" name="animaux" value="animaux">
+            </form>
+            <form method="POST" name="gestion">
+                <input type="hidden" name="gestion" value="carte">
+                <input class="lienNav" type="submit" name="carte" value="Carte">
             </form>
             <form method="POST" action="index.php">
                 <input type="hidden" name="gestion" value="statistique">
@@ -94,11 +96,6 @@ $__foreach_Employe_0_saved_local_item = $_smarty_tpl->tpl_vars['Employe'];
 				<?php echo $_smarty_tpl->tpl_vars['form']->value;?>
 
                 <thead>
-                    <tr>
-                        <td colspan="3">Fiche de : <?php echo $_smarty_tpl->tpl_vars['Employe']->value['nomEmploye'];?>
- <?php echo $_smarty_tpl->tpl_vars['Employe']->value['prenomEmploye'];?>
-</td>
-                    </tr>
                     </thead>
                     <tbody>
                         <tr>

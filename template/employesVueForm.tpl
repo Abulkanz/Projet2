@@ -22,8 +22,7 @@
                     <tr>
                         <input type="hidden" name="gestion" value="employes">
                         {$action1}
-                        <td><input type="submit" id="retour" name="retour" value="Retour" ></td>
-                        <td colspan="3">{$bouton1}</td>
+                        <td>{$bouton1}</td>
                         <!-- bouton servant a la modification -->
                     </tr>
                     </tfoot>

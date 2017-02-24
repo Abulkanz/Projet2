@@ -1,7 +1,7 @@
 <?php
 // aide
-function aide(){
-    require_once 'template/aide.php';
+function carte(){
+    require_once 'template/carte.php';
 }
 function deconnexion(){
     $_SESSION = array();

@@ -12,6 +12,12 @@ switch ($gestion){
     case 'animaux':
      require_once($gestion.'Controleur.php');
      break;
+    case 'carte':
+     require_once($gestion.'Controleur.php');
+     break;
+    case 'statistique':
+     require_once($gestion.'Controleur.php');
+     break;
     case 'aide':
      require_once($gestion.'Controleur.php');
      break;
@@ -29,7 +35,7 @@ if (isset($_SESSION['login'])) {
     } elseif(isset($_POST['valider'])) {
         valider($_POST);
     } elseif(isset($_POST['retour'])) {
-        retour($_POST);
+        retour();
     }elseif (isset($_POST['consulter'])) {
         consulter($_POST);
     } elseif (isset($_POST['modifier'])) {
@@ -54,6 +60,10 @@ if (isset($_SESSION['login'])) {
         aide();
     }elseif(isset($_POST['profil'])){
         profil($_POST);
+    }elseif(isset($_POST['carte'])){
+        carte();
+    }elseif(isset($_POST['statistique'])){
+        statistique($_POST);
     }else {
         liste();
     }
