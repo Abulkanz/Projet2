@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2017-02-23 19:38:36
+/* Smarty version 3.1.29, created on 2017-02-24 17:49:53
   from "C:\wamp64\www\authentification\template\AnimauxVueForm.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_58af3a3c27d812_58231857',
+  'unifunc' => 'content_58b0724164de82_22070760',
   'file_dependency' => 
   array (
     '0a76fd76c4b1fa460e9f8c4c86d0f9f87a3b6efa' => 
     array (
       0 => 'C:\\wamp64\\www\\authentification\\template\\AnimauxVueForm.tpl',
-      1 => 1487878709,
+      1 => 1487958440,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_58af3a3c27d812_58231857 ($_smarty_tpl) {
+function content_58b0724164de82_22070760 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html>
@@ -137,17 +137,6 @@ if ($__foreach_Animaux_0_saved_item) {
 $_smarty_tpl->tpl_vars['Animaux'] = $__foreach_Animaux_0_saved_item;
 }
 ?>
-             <?php echo '<script'; ?>
->
-             function confirmation(form) {
-                 // validation code here ...
-                 if(!valid) {
-                     alert('Please correct the errors in the form!');
-                     return false;
-                else {
-                    return confirm('Do you really want to submit the form?');
-                    }
-                 }
             <?php echo '</script'; ?>
 >
     </body>

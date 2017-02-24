@@ -22,7 +22,8 @@
                     <tr>
                         <input type="hidden" name="gestion" value="employes">
                         {$action1}
-                        <td>{$bouton1}</td>
+                        <td>{$bouton2}</td>
+                        <td colspan='{$valeurcolspan}'>{$bouton1}</td>
                         <!-- bouton servant a la modification -->
                     </tr>
                     </tfoot>

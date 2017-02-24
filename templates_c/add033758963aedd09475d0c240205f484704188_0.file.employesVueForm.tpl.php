@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2017-02-24 16:48:36
+/* Smarty version 3.1.29, created on 2017-02-24 17:24:19
   from "C:\wamp64\www\authentification\template\employesVueForm.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_58b063e4593f98_75985892',
+  'unifunc' => 'content_58b06c43b62b90_18256832',
   'file_dependency' => 
   array (
     'add033758963aedd09475d0c240205f484704188' => 
     array (
       0 => 'C:\\wamp64\\www\\authentification\\template\\employesVueForm.tpl',
-      1 => 1487954912,
+      1 => 1487957056,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_58b063e4593f98_75985892 ($_smarty_tpl) {
+function content_58b06c43b62b90_18256832 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html>
@@ -61,7 +61,10 @@ $__foreach_Employe_0_saved_local_item = $_smarty_tpl->tpl_vars['Employe'];
                         <input type="hidden" name="gestion" value="employes">
                         <?php echo $_smarty_tpl->tpl_vars['action1']->value;?>
 
-                        <td><?php echo $_smarty_tpl->tpl_vars['bouton1']->value;?>
+                        <td><?php echo $_smarty_tpl->tpl_vars['bouton2']->value;?>
+</td>
+                        <td colspan='<?php echo $_smarty_tpl->tpl_vars['valeurcolspan']->value;?>
+'><?php echo $_smarty_tpl->tpl_vars['bouton1']->value;?>
 </td>
                         <!-- bouton servant a la modification -->
                     </tr>

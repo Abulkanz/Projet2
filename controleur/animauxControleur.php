@@ -76,7 +76,7 @@ function liste() {
 }
 function envoyermail($param){
     $action=$param['action'];
-    $idRequete=envoyermails($param);
+    $idRequete=corspmail($param);
     require_once 'template/mail.php';
 }
 function deconnexion(){

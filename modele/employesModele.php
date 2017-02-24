@@ -1,7 +1,6 @@
 <?php
 // on charge le fichier modele.php qui contient les fonction servant pour la base de données
 include  'modele.php' ;
-require_once('include/libs/phpmailer/PHPMailerAutoload.php'); 
 
 // fonction qui est appelé par la fonction liste dans le controleur
 function listeEmploye(){

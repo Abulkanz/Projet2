@@ -1,17 +1,18 @@
 <?php 
 // appelle de smarty et creation d'un nouvelle objet smarty
 require_once 'include/libs/smarty/Smarty.class.php';
+require_once('include/libs/phpmailer/PHPMailerAutoload.php'); 
 $tpl=new Smarty; 
 
 // definition du tableau qui conteient les données extraite de la base
 $listeEmploye=array();
 $i=0;
 while($row=$idRequete->fetch()){
-    $listeEmploye[$i]['idEmploye']=$row['idEmploye'];
-    $listeEmploye[$i]['avatar']=$row['avatar'];
-    $listeEmploye[$i]['nomEmploye']=$row['nomEmploye'];
-    $listeEmploye[$i]['prenomEmploye']=$row['prenomEmploye'];
-    $listeEmploye[$i]['fonction']=$row['fonction'];
+    $listeEmploye[$i]['idAnimaux']=$row['idAnimaux'];
+    $listeEmploye[$i]['photo']=$row['photo'];
+    $listeEmploye[$i]['date_naissance']=$row['date_naissance'];
+    $listeEmploye[$i]['prenomAnimal']=$row['prenomAnimal'];
+    $listeEmploye[$i]['statut']=$row['statut'];
     $i++;
 }
 $tpl->assign('listeEmploye', $listeEmploye);
@@ -30,7 +31,7 @@ $mail->SMTPSecure = 'tls';
 	
 // On s'authentifie
 $mail->Username = "sora18500@gmail.com";
-$mail->Password = "MDP";
+$mail->Password = "";
 	
 // On definit l'adrresse mail,le nom de l'expediteur et du destinataie
 // expediteur
@@ -50,4 +51,5 @@ if(!$mail->Send()) {
     echo 'Erreur : ' . $mail->ErrorInfo;
 } else {
     echo 'Message envoyé !';
+    header('location:index.php');
 }

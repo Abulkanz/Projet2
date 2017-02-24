@@ -141,40 +141,10 @@ function supprimerAnimaux($param){
     $idRequete=  executeRequete($cnx, $sql,array($idEmployes));
     return $idRequete;
 }
-function envoyermails($param){
-    $mail = new PHPMailer();
-    // On indique que l'on va utlisé le protocole smtp
-    $mail->isSMTP();
-    // on indique l'adresse du serveur smtp
-    $mail->Host = 'smtp.googlemail.com';
-    // on indique que l'authentification est necessaire
-    $mail->SMTPAuth   = true;
-    // on indique le port smtp a utilisé et que l'on utilisé le protocole tls pour la sécurité
-    $mail->Port = 587; 
-    $mail->SMTPSecure = 'tls';
-	
-    // On s'authentifie
-    $mail->Username = "sora18500@gmail.com";
-    $mail->Password = "Stargate18AU";
-	
-    // On definit l'adrresse mail,le nom de l'expediteur et du destinataie
-    // expediteur
-    $mail->SetFrom('sora18500@gmail.com', 'admintechs');
-    
-    // destinataire
-    $mail->AddAddress('lablandinerie2@gmail.com', 'Rossignol Anthony');
-				
-	// On difinit l'objet du mail
-	$mail->Subject = 'TEST';
-				
-	// On definit le contenu du mail
-	$mail->msgHTML(file_get_contents('testcorpsmail.html'), dirname(__FILE__));
-	
-    // Envoi du mail avec gestion des erreurs
-	if(!$mail->Send()) {
-        echo 'Erreur : ' . $mail->ErrorInfo;
-	} else {
-        echo 'Message envoyé !';
-	}
-    return true;
+function corspmail($param){
+    $idAnimaux= $param['idAnimaux'];
+    $cnx=getBD();
+    $sql="SELECT * FROM animaux WHERE idAnimaux = ?";
+    $idRequete=  executeRequete($cnx, $sql,array($idAnimaux));
+    return $idRequete;
 }
