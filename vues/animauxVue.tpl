@@ -51,6 +51,7 @@
                 </ul>
 
             </header>
+            {$aucRes}
             <div class="conteneurTable">
                 {$initTable}
                 {foreach from=$listeAnimaux item=Animal}

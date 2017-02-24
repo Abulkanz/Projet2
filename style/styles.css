@@ -67,13 +67,19 @@ input:focus
     width: 40%;
     background-color: white;
     text-align: center;
-    font: 1.2em Righteous white;
+    font: 1.2em Righteous;
     margin: 0.5em 0.5em;
     border: 1px solid rgba(1, 1, 1, 0.5);
 }
 
 .noOverF{
     overflow: hidden;
+}
+
+.aucRes{
+    text-align: center;
+    font: 1.2em "Alfa Slab One"; 
+    color: red;
 }
 
 #boiteLogo{
@@ -277,7 +283,7 @@ a:hover{
     transform: scale(0.3);
 }
 
- .tooltip:hover + .tooltiptext {
+.tooltip:hover + .tooltiptext {
     visibility: visible;
 }
 

@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2017-02-23 10:21:59
+/* Smarty version 3.1.29, created on 2017-02-23 14:26:15
   from "C:\wamp64\www\Projet2\vues\animauxVue.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_58aeb7c7c62ca6_26564191',
+  'unifunc' => 'content_58aef107ea4132_59417086',
   'file_dependency' => 
   array (
     'e53266a835b45d8c7c403b6ec89d404bd251e1aa' => 
     array (
       0 => 'C:\\wamp64\\www\\Projet2\\vues\\animauxVue.tpl',
-      1 => 1487844296,
+      1 => 1487859971,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_58aeb7c7c62ca6_26564191 ($_smarty_tpl) {
+function content_58aef107ea4132_59417086 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -74,6 +74,8 @@ function content_58aeb7c7c62ca6_26564191 ($_smarty_tpl) {
                 </ul>
 
             </header>
+            <?php echo $_smarty_tpl->tpl_vars['aucRes']->value;?>
+
             <div class="conteneurTable">
                 <?php echo $_smarty_tpl->tpl_vars['initTable']->value;?>
 

@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2017-02-22 13:09:26
+/* Smarty version 3.1.29, created on 2017-02-23 20:46:19
   from "C:\wamp64\www\Projet2\vues\accueilVue.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_58ad8d8646f9f0_74508376',
+  'unifunc' => 'content_58af4a1b309f41_20903884',
   'file_dependency' => 
   array (
     '9b78b7ace0dfc953d5d82a9269646c14b8902b07' => 
     array (
       0 => 'C:\\wamp64\\www\\Projet2\\vues\\accueilVue.tpl',
-      1 => 1487768914,
+      1 => 1487882707,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_58ad8d8646f9f0_74508376 ($_smarty_tpl) {
+function content_58af4a1b309f41_20903884 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -61,7 +61,9 @@ function content_58ad8d8646f9f0_74508376 ($_smarty_tpl) {
                         <div class="contGraphAccueil">
                             <canvas id="tailleEsp"></canvas>
                         </div>
-                <div class="contGraphAccueil"></div>
+                <div class="contGraphAccueil">
+                    <canvas id="poidsEsp"></canvas>
+                </div>
                 <div class="contGraphAccueil"></div>
                 <div class="contGraphAccueil"></div>
                     

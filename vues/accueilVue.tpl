@@ -38,7 +38,9 @@
                         <div class="contGraphAccueil">
                             <canvas id="tailleEsp"></canvas>
                         </div>
-                <div class="contGraphAccueil"></div>
+                <div class="contGraphAccueil">
+                    <canvas id="poidsEsp"></canvas>
+                </div>
                 <div class="contGraphAccueil"></div>
                 <div class="contGraphAccueil"></div>
                     
