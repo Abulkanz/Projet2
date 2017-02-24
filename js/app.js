@@ -22,14 +22,15 @@ $(document).ready(function () {
                 datasets: [
                     {
                         label: 'Taille Moyenne',
-                        backgroundColor: 'rgba(97, 229, 161, 0.75)',
-                        borderColor: 'rgba(255, 255, 255, 0.5)',
-                        hoverBackgroundColor: 'rgba(97, 229, 161, 1)',
-                        hoverBorderColor: 'rgba(255, 255, 255, 0.75)',
+                        backgroundColor: 'rgba(54, 127, 89, 0.75)',
+                        borderColor: 'rgba(27, 64, 45, 0.75)',
+                        hoverBackgroundColor: 'rgba(54, 127, 89, 1)',
+                        hoverBorderColor: 'rgba(27, 64, 45, 1)',
                         data: taille
                     }
                 ]
             };
+            
             var ctx = $('#tailleEsp');
             var barGraph = new Chart(ctx, {
                 type: 'bar',
@@ -71,14 +72,15 @@ $(document).ready(function () {
                 datasets: [
                     {
                         label: 'Poids moyen',
-                        backgroundColor: 'rgba(200, 200, 200, 0.75)',
-                        borderColor: 'rgba(200, 200, 200, 0.75)',
+                        backgroundColor: 'rgba(229, 176, 74, 0.75)',
+                        borderColor: 'rgba(127, 98, 41, 0.75)',
                         hoverBackgroundColor: 'rgba(200, 200, 200, 1)',
-                        hoverBorderColor: 'rgba(200, 200, 200, 1)',
+                        hoverBorderColor: 'rgba(127, 98, 41, 1)',
                         data: poids
                     }
                 ]
             };
+            
             var ctx = $('#poidsEsp');
             var barGraph = new Chart(ctx, {
                 type: 'line',
