@@ -45,7 +45,7 @@ CREATE TABLE IF NOT EXISTS `employes` (
 -- Contenu de la table `employes`
 --
 
-INSERT INTO `employes` (`idEmploye`, `nomEmploye`, `prenomEmploye`, `fonction`, `motDePasse`, `avatar`, `adresse_mail`, `login`, `droits`, `idSexe`) VALUES
+INSERT INTO `employes` (`nomEmploye`, `prenomEmploye`, `fonction`, `motDePasse`, `avatar`, `adresse_mail`, `login`, `droits`, `idSexe`) VALUES
 ('Lacroix', 'Valérie', 'Administrateur', '9047e04c46b2daec5d9aca7b74a8793c', 'userlogof.png', 'vlacroix@ouhouhin.fr', 'vlacroix', 3, 2),
 ('Courtemanche', 'Eugéne', 'Chef Animalier', '293ba93a2f275fa27842cfde0ba575c6', 'userlogom.jpg', 'ecourtemanche@ouhouhin.fr', 'ecourtemanche', 2, 1),
 ('Poisson', 'Tyson', 'Vétérinaire', 'b9b0bf75ed6678ceeea8b79596a867a6', 'userlogom.jpg', 'tpoisson@ouhouhin.fr', 'tpoisson', 2, 1),
