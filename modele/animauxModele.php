@@ -4,7 +4,7 @@ include 'modele.php';
 
 function listeAnimaux() {
     $cnx = getBD();
-    $sql = 'SELECT DISTINCT
+    $reqListe = 'SELECT DISTINCT
                             idAnimaux,
                             prenomAnimal, 
                             nomEspece, 
@@ -22,6 +22,7 @@ function listeAnimaux() {
             ON animaux.idSexe = sexe.idSexe
             LEFT JOIN continent
             ON pays.idContinent = continent.idContinent';
+    $reqListe = executeR($cnx, $reqListe);
     return $reqListe;
 }
 

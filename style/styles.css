@@ -261,7 +261,7 @@ a:hover{
     position: relative;
 }
 
-.tooltiptext {
+#tooltiptext {
     font: 1.2em "Alfa Slab One";
     visibility: hidden;
     width: 120px;

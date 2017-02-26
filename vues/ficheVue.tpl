@@ -62,8 +62,15 @@
         </div>
         <script>
             function agrImg($param) {
-                $param.style.cssText = "position:absolute; top:50%; left:50%; transform:translate(-50%, -50%);";
-                document.getElementById("dFiche").style.display = "none";
+                if ($param.style.position == "absolute") {
+                    $param.style.cssText = "height: 50%; object-fit: cover; border: 1px solid rgba(0, 0, 0, 0.5); margin: 1em; float: left;";
+                    document.getElementById("dFiche").style.display = "block";
+                    
+                } else {
+                    $param.style.cssText = "position:absolute; top:50%; left:50%; transform:translate(-50%, -50%);";
+                    document.getElementById("dFiche").style.display = "none";
+                    document.getElementById("tooltiptext").style.visibility = "visible";
+                }
             }
         </script>
     </body>
