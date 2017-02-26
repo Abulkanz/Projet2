@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2017-02-24 17:24:19
+/* Smarty version 3.1.29, created on 2017-02-26 17:03:56
   from "C:\wamp64\www\authentification\template\employesVueForm.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_58b06c43b62b90_18256832',
+  'unifunc' => 'content_58b30a7cd9e295_12024360',
   'file_dependency' => 
   array (
     'add033758963aedd09475d0c240205f484704188' => 
     array (
       0 => 'C:\\wamp64\\www\\authentification\\template\\employesVueForm.tpl',
-      1 => 1487957056,
+      1 => 1488128632,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_58b06c43b62b90_18256832 ($_smarty_tpl) {
+function content_58b30a7cd9e295_12024360 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html>
@@ -73,43 +73,43 @@ $__foreach_Employe_0_saved_local_item = $_smarty_tpl->tpl_vars['Employe'];
                         <tr>
                             <td rowspan="8"><img src="img/<?php echo $_smarty_tpl->tpl_vars['Employe']->value['avatar'];?>
 " class="avatar"></td>
-                            <td>Identifiant de connexion de la personne</td>
+                            <td>Identifiant de connexion</td>
                             <td><input id="login" name="login" value="<?php echo $_smarty_tpl->tpl_vars['Employe']->value['login'];?>
 " <?php echo $_smarty_tpl->tpl_vars['parametrereadonly']->value;?>
 ></td>
                         </tr>
                         <tr>
-                            <td>Civilite</td>
+                            <td>Civilité</td>
 							<td><input id="idSexe" name="idSexe" value="<?php echo $_smarty_tpl->tpl_vars['Civilite']->value;?>
 " <?php echo $_smarty_tpl->tpl_vars['parametrereadonly']->value;?>
 ></td>
                         </tr>
 						<tr>
-                            <td>Nom de la personne</td>
+                            <td>Nom</td>
                             <td><input id="nom" name="nom" value="<?php echo $_smarty_tpl->tpl_vars['Employe']->value['nomEmploye'];?>
 " <?php echo $_smarty_tpl->tpl_vars['parametrereadonly']->value;?>
 ></td>
                         </tr>
                         <tr>
-                            <td>Prenom de la personne</td>
+                            <td>Prénom</td>
                             <td><input id="prenom" name="prenom" value="<?php echo $_smarty_tpl->tpl_vars['Employe']->value['prenomEmploye'];?>
 "<?php echo $_smarty_tpl->tpl_vars['parametrereadonly']->value;?>
 ></td>
                         </tr>
                         <tr>
-                            <td>Fonction de la personne</td>
+                            <td>Fonction</td>
                             <td><input id="fonction" name="fonction" value="<?php echo $_smarty_tpl->tpl_vars['Employe']->value['fonction'];?>
 " <?php echo $_smarty_tpl->tpl_vars['parametrereadonly']->value;?>
 ></td>
                         </tr>
                         <tr>
-                            <td>Mot de passe de la personne</td>
+                            <td>Mot de passe</td>
                             <td><input type="password" id="motdepasse" name="motdepasse" value="<?php echo $_smarty_tpl->tpl_vars['Employe']->value['motdepasse'];?>
 " <?php echo $_smarty_tpl->tpl_vars['parametrereadonly']->value;?>
 ></td>
                         </tr>
                         <tr>
-                            <td>Adresse mail de la personne</td>
+                            <td>Adresse mail</td>
                             <td><input type="email" id="mail" name="mail" value="<?php echo $_smarty_tpl->tpl_vars['Employe']->value['adressemail'];?>
 " <?php echo $_smarty_tpl->tpl_vars['parametrereadonly']->value;?>
 ></td>

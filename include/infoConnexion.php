@@ -1,7 +1,7 @@
 <?php
 define('SERVER', 'localhost');
 define('UTILISATEUR', 'root');
-define('MOTDEPASSE', 'rootroot');
-define('BASEDEDONNEES', 'test4');
+define('MOTDEPASSE', '');
+define('BASEDEDONNEES', 'nomdelabase');
 
 

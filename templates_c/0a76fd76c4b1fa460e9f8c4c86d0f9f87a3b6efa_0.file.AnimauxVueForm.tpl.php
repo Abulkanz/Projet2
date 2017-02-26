@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2017-02-24 17:49:53
+/* Smarty version 3.1.29, created on 2017-02-26 16:54:31
   from "C:\wamp64\www\authentification\template\AnimauxVueForm.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_58b0724164de82_22070760',
+  'unifunc' => 'content_58b308477f6903_90357756',
   'file_dependency' => 
   array (
     '0a76fd76c4b1fa460e9f8c4c86d0f9f87a3b6efa' => 
     array (
       0 => 'C:\\wamp64\\www\\authentification\\template\\AnimauxVueForm.tpl',
-      1 => 1487958440,
+      1 => 1488128058,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_58b0724164de82_22070760 ($_smarty_tpl) {
+function content_58b308477f6903_90357756 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html>
@@ -70,7 +70,7 @@ $__foreach_Animaux_0_saved_local_item = $_smarty_tpl->tpl_vars['Animaux'];
                         <tr>
                             <td rowspan="9"><img src="img/imgFiches/<?php echo $_smarty_tpl->tpl_vars['Animaux']->value['photo'];?>
 " class="avatar"></td>
-                            <td>Prenom de l'animal</td>
+                            <td>Prénom de l'animal</td>
                             <td><input type="text" id="prenomAnimal" name="prenomAnimal" value="<?php echo $_smarty_tpl->tpl_vars['Animaux']->value['prenomAnimal'];?>
 " <?php echo $_smarty_tpl->tpl_vars['parametrereadonly']->value;?>
 ></td>
@@ -94,13 +94,13 @@ $__foreach_Animaux_0_saved_local_item = $_smarty_tpl->tpl_vars['Animaux'];
 ></td>
                         </tr>
                         <tr>
-                            <td>date_naissance</td>
+                            <td>Date de naissance</td>
                             <td><input type="text" id="date_naissance" name="date_naissance" value="<?php echo $_smarty_tpl->tpl_vars['Animaux']->value['date_naissance'];?>
 " <?php echo $_smarty_tpl->tpl_vars['parametrereadonly']->value;?>
 ></td>
                         </tr>
                         <tr>
-                            <td>lieu de naissance</td>
+                            <td>Lieu de naissance</td>
                             <td><input type="text" id="lieu_naissance" name="lieu_naissance" value="<?php echo $_smarty_tpl->tpl_vars['Animaux']->value['lieu_naissance'];?>
 " <?php echo $_smarty_tpl->tpl_vars['parametrereadonly']->value;?>
 ></td>

@@ -50,7 +50,7 @@
                     <form method="POST" action="index.php">
                         <input type="hidden" name="gestion" value="animaux">
                         <input type="hidden" name="action" value="Deconnexion">
-                        <input type="submit" name="Deconnexion" value="Deconnexion">
+                        <input type="submit" name="Deconnexion" value="Déconnexion">
                     </form>
                 </li>
             </ul>
@@ -60,9 +60,9 @@
         <table>
             <tr>
                 <th></th>
-                <th>nom</th>
-                <th>prenom</th>
-                <th>fonction</th>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Fonction</th>
                 <th colspan="3">Action</th>
             </tr>
             {foreach from=$listeEmploye item=Employe}

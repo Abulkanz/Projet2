@@ -28,11 +28,11 @@
                             <td><input type="text" id="login" name="login" onblur="verifUtilisateur(this);"><span id="info"></span></td>
                         </tr>
 						<tr>
-                            <td>Nom de l'employe</td>
+                            <td>Nom</td>
                             <td><input type="text" id="nom" name="nom" /></td>
                         </tr>
                         <tr>
-                            <td>Prenom de l'employe</td>
+                            <td>Prénom</td>
                             <td><input type="text" id="prenom" name="prenom" /></td>
                         </tr>
                         <tr>

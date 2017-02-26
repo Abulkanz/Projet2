@@ -62,11 +62,6 @@ function liste() {
     $idRequete=listeEmploye();
     require_once 'template/employesVueListe.php';
 }
-function envoyermail($param){
-    $action=$param['action'];
-    $idRequete=corspmail($param);
-    require_once 'template/mail.php';
-}
 function deconnexion(){
     $_SESSION = array();
     session_destroy();

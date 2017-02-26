@@ -24,31 +24,31 @@
                     </tfoot>
                     <tbody>
                         <tr>
-                            <td>poids</td>
+                            <td>Poids</td>
                             <td><input type="text" id="poids" name="poids"></span></td>
                         </tr>
 						<tr>
-                            <td>taille</td>
+                            <td>Taille</td>
                             <td><input type="text" id="taille" name="taille" /></td>
                         </tr>
                         <tr>
-                            <td>prenom de l'animal</td>
+                            <td>Prénom de l'animal</td>
                             <td><input type="text" id="prenomAnimal" name="prenomAnimal" /></td>
                         </tr>
                         <tr>
-                            <td>date de naissance</date_naissa></td>
+                            <td>Date de naissance</date_naissa></td>
                             <td><input type="text" id="date_naissance" name="date_naissance" /></td>
                         </tr>
                         <tr>
-                            <td>lieu de naissance</td>
+                            <td>Lieu de naissance</td>
                             <td><input type="text" id="lieu_naissance" name="lieu_naissance" value=""></td>
                         </tr>
                         <tr>
-                            <td>pere</td>
+                            <td>Père</td>
                             <td><input type="text" id="pere" name="pere" value=""></td>
                         </tr>
                         <tr>
-                            <td>mere</td>
+                            <td>Mère</td>
                             <td><input type="mere" id="mere" name="mere" value=""></td>
                         </tr>
                         <tr>
@@ -79,7 +79,7 @@
                             <td><input type="text" id="idPays" name="idPays" value=""></td>
                         </tr>
                         <tr>
-                            <td>Especes</td>
+                            <td>Espèces</td>
                             <td><input type="text" id="idEspece" name="idEspece" value=""></td>
                         </tr>
                         <tr>

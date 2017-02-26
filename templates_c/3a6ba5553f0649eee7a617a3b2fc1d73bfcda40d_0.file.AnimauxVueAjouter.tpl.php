@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2017-02-23 19:15:08
+/* Smarty version 3.1.29, created on 2017-02-26 17:01:12
   from "C:\wamp64\www\authentification\template\AnimauxVueAjouter.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_58af34bc2c8567_59794643',
+  'unifunc' => 'content_58b309d8017d96_21681527',
   'file_dependency' => 
   array (
     '3a6ba5553f0649eee7a617a3b2fc1d73bfcda40d' => 
     array (
       0 => 'C:\\wamp64\\www\\authentification\\template\\AnimauxVueAjouter.tpl',
-      1 => 1487877300,
+      1 => 1488128464,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_58af34bc2c8567_59794643 ($_smarty_tpl) {
+function content_58b309d8017d96_21681527 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html>
@@ -44,37 +44,37 @@ function content_58af34bc2c8567_59794643 ($_smarty_tpl) {
                     <tr>
                         <input type="hidden" name="gestion" value="animaux">
                         <input type="hidden" name="action" value="validerajouter">
-                        <td><input type="submit" id="retour" name="Retour" value="Retour" ></td>
+                        <td><input type="submit" id="retour" name="retour" value="Retour" ></td>
                         <td colspan="3"><input type="submit" name="validerajouter" value="Valider"/></td>
                     </tr>
                     </tfoot>
                     <tbody>
                         <tr>
-                            <td>poids</td>
+                            <td>Poids</td>
                             <td><input type="text" id="poids" name="poids"></span></td>
                         </tr>
 						<tr>
-                            <td>taille</td>
+                            <td>Taille</td>
                             <td><input type="text" id="taille" name="taille" /></td>
                         </tr>
                         <tr>
-                            <td>prenom de l'animal</td>
+                            <td>Prénom de l'animal</td>
                             <td><input type="text" id="prenomAnimal" name="prenomAnimal" /></td>
                         </tr>
                         <tr>
-                            <td>date de naissance</date_naissa></td>
+                            <td>Date de naissance</date_naissa></td>
                             <td><input type="text" id="date_naissance" name="date_naissance" /></td>
                         </tr>
                         <tr>
-                            <td>lieu de naissance</td>
+                            <td>Lieu de naissance</td>
                             <td><input type="text" id="lieu_naissance" name="lieu_naissance" value=""></td>
                         </tr>
                         <tr>
-                            <td>pere</td>
+                            <td>Père</td>
                             <td><input type="text" id="pere" name="pere" value=""></td>
                         </tr>
                         <tr>
-                            <td>mere</td>
+                            <td>Mère</td>
                             <td><input type="mere" id="mere" name="mere" value=""></td>
                         </tr>
                         <tr>
@@ -105,7 +105,7 @@ function content_58af34bc2c8567_59794643 ($_smarty_tpl) {
                             <td><input type="text" id="idPays" name="idPays" value=""></td>
                         </tr>
                         <tr>
-                            <td>Especes</td>
+                            <td>Espèces</td>
                             <td><input type="text" id="idEspece" name="idEspece" value=""></td>
                         </tr>
                         <tr>

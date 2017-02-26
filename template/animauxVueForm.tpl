@@ -30,7 +30,7 @@
                     <tbody>
                         <tr>
                             <td rowspan="9"><img src="img/imgFiches/{$Animaux.photo}" class="avatar"></td>
-                            <td>Prenom de l'animal</td>
+                            <td>Prénom de l'animal</td>
                             <td><input type="text" id="prenomAnimal" name="prenomAnimal" value="{$Animaux.prenomAnimal}" {$parametrereadonly}></td>
                         </tr>
 						<tr>
@@ -46,11 +46,11 @@
                             <td><input type="text" id="statut" name="statut" value="{$Animaux.statut}" {$parametrereadonly}></td>
                         </tr>
                         <tr>
-                            <td>date_naissance</td>
+                            <td>Date de naissance</td>
                             <td><input type="text" id="date_naissance" name="date_naissance" value="{$Animaux.date_naissance}" {$parametrereadonly}></td>
                         </tr>
                         <tr>
-                            <td>lieu de naissance</td>
+                            <td>Lieu de naissance</td>
                             <td><input type="text" id="lieu_naissance" name="lieu_naissance" value="{$Animaux.lieu_naissance}" {$parametrereadonly}></td>
                         </tr>
                         <tr>

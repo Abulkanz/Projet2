@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2017-02-24 15:57:28
+/* Smarty version 3.1.29, created on 2017-02-26 17:02:33
   from "C:\wamp64\www\authentification\template\employesVueListe.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_58b057e8335b49_89913849',
+  'unifunc' => 'content_58b30a29301150_05724692',
   'file_dependency' => 
   array (
     '78b85915fd3076d11fc0cca1a44b7e5ebe797843' => 
     array (
       0 => 'C:\\wamp64\\www\\authentification\\template\\employesVueListe.tpl',
-      1 => 1487941943,
+      1 => 1488128549,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_58b057e8335b49_89913849 ($_smarty_tpl) {
+function content_58b30a29301150_05724692 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -86,9 +86,9 @@ function content_58b057e8335b49_89913849 ($_smarty_tpl) {
         <table>
             <tr>
                 <th></th>
-                <th>nom</th>
-                <th>prenom</th>
-                <th>fonction</th>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Fonction</th>
                 <th colspan="3">Action</th>
             </tr>
             <?php

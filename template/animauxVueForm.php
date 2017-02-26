@@ -22,7 +22,7 @@ switch ($action){
             $consultAnimaux[$i]['description']=$row['description'];
             if($consultAnimaux[$i]['idSexe']=$row['idSexe']==1){
                 $consultAnimaux[$i]['idSexe']=$row['idSexe'];
-                $tpl->assign("genre","Male");
+                $tpl->assign("genre","Mâle");
             } else {
                 $consultAnimaux[$i]['idSexe']=$row['idSexe'];
                 $tpl->assign("genre","Femelle");
@@ -61,7 +61,7 @@ switch ($action){
             $consultAnimaux[$i]['description']=$row['description'];
             if($consultAnimaux[$i]['idSexe']=$row['idSexe']==1){
                 $consultAnimaux[$i]['idSexe']=$row['idSexe'];
-                $tpl->assign("genre","Male");
+                $tpl->assign("genre","Mâle");
             } else {
                 $consultAnimaux[$i]['idSexe']=$row['idSexe'];
                 $tpl->assign("genre","Femelle");
@@ -100,7 +100,7 @@ switch ($action){
             $consultAnimaux[$i]['description']=$row['description'];
             if($consultAnimaux[$i]['idSexe']=$row['idSexe']==1){
                 $consultAnimaux[$i]['idSexe']=$row['idSexe'];
-                $tpl->assign("genre","Male");
+                $tpl->assign("genre","Mâle");
             } else {
                 $consultAnimaux[$i]['idSexe']=$row['idSexe'];
                 $tpl->assign("genre","Femelle");
@@ -137,12 +137,12 @@ switch ($action){
             $listeAnimaux[$i]['statut']=$row['statut'];
             $listeAnimaux[$i]['nomEspece']=$row['nomEspece'];
             $listeAnimaux[$i]['sexe']=$row['sexe'];
-            if($listeAnimaux[$i]['sexe']=='M'){
-                $tpl->assign("sexe","Male");
-                }elseif($listeAnimaux[$i]['sexe']=='F'){
-                    $tpl->assign("sexe","Femelle");
+            if($consultAnimaux[$i]['idSexe']=$row['idSexe']==1){
+                $consultAnimaux[$i]['idSexe']=$row['idSexe'];
+                $tpl->assign("genre","Mâle");
             } else {
-                 $tpl->assign("sexe","");
+                $consultAnimaux[$i]['idSexe']=$row['idSexe'];
+                $tpl->assign("genre","Femelle");
             }
             $i++;
         }

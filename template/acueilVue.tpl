@@ -41,8 +41,8 @@
                 <li>
                     <form method="POST" action="index.php">
                         <input type="hidden" name="gestion" value="animaux">
-                        <input type="hidden" name="action" value="Deconnexion">
-                        <input type="submit" name="Deconnexion" value="Deconnexion">
+                        <input type="hidden" name="action" value="Déconnexion">
+                        <input type="submit" name="Deconnexion" value="Déconnexion">
                     </form>
                 </li>
             </ul>

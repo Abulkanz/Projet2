@@ -30,31 +30,31 @@
                     <tbody>
                         <tr>
                             <td rowspan="8"><img src="img/{$Employe.avatar}" class="avatar"></td>
-                            <td>Identifiant de connexion de la personne</td>
+                            <td>Identifiant de connexion</td>
                             <td><input id="login" name="login" value="{$Employe.login}" {$parametrereadonly}></td>
                         </tr>
                         <tr>
-                            <td>Civilite</td>
+                            <td>Civilité</td>
 							<td><input id="idSexe" name="idSexe" value="{$Civilite}" {$parametrereadonly}></td>
                         </tr>
 						<tr>
-                            <td>Nom de la personne</td>
+                            <td>Nom</td>
                             <td><input id="nom" name="nom" value="{$Employe.nomEmploye}" {$parametrereadonly}></td>
                         </tr>
                         <tr>
-                            <td>Prenom de la personne</td>
+                            <td>Prénom</td>
                             <td><input id="prenom" name="prenom" value="{$Employe.prenomEmploye}"{$parametrereadonly}></td>
                         </tr>
                         <tr>
-                            <td>Fonction de la personne</td>
+                            <td>Fonction</td>
                             <td><input id="fonction" name="fonction" value="{$Employe.fonction}" {$parametrereadonly}></td>
                         </tr>
                         <tr>
-                            <td>Mot de passe de la personne</td>
+                            <td>Mot de passe</td>
                             <td><input type="password" id="motdepasse" name="motdepasse" value="{$Employe.motdepasse}" {$parametrereadonly}></td>
                         </tr>
                         <tr>
-                            <td>Adresse mail de la personne</td>
+                            <td>Adresse mail</td>
                             <td><input type="email" id="mail" name="mail" value="{$Employe.adressemail}" {$parametrereadonly}></td>
                         </tr>
                         <tr>
