@@ -4,22 +4,13 @@
 header('Content-Type: application/json');
 
 require_once '../../include/configuration.php';
-require_once '../modele.php';
+require_once '../accueilModele.php';
 
-$cnx = getBD();
+$reqChart = graphTaille();
 
-$req = "SELECT nomEspece, ROUND(AVG(taille), 2) 'tMoyenne' 
-        FROM animaux, especes
-        WHERE animaux.idEspece = especes.idEspece 
-        GROUP BY 1";
-
-$reqChart = executeR($cnx, $req);
-
-
-
-foreach ($reqChart as $ligne){
+foreach ($reqChart as $ligne) {
     $espece[] = $ligne;
-};
+}
 
 print json_encode($espece);
 

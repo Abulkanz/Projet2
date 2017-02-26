@@ -7,62 +7,110 @@ $ficheAnimal = [];
 
 $jScript = "";
 
-$reqConsAnimal = $tabReqConsult[0];
-$reqAgeAnimal = $tabReqConsult[1];
-$reqEspeceAnimal = $tabReqConsult[2];
-$reqSexAnimal = $tabReqConsult[3];
-$reqPaysAnimal = $tabReqConsult[4];
-
-if ($ligne = $reqConsAnimal->fetch()) {
-    $ficheAnimal['idAnimal'] = $ligne['idAnimaux'];
-    $ficheAnimal['photo'] = '<img class="iPortrait tooltip" src= "img/imgFiches/' . $ligne['photo'] . '" onclick="agrImg(this)">
-                             <span id="tooltiptext">Cliquez sur l\'image pour l\'agrandir</span>';
-    $ficheAnimal['prenomAnimal'] = $ligne['prenomAnimal'];
-    $ficheAnimal['idParcelle'] = $ligne['idParcelle'];
-    $ficheAnimal['poids'] = $ligne['poids']." kg";
-    $ficheAnimal['taille'] = $ligne['taille']." cm";
-    $ficheAnimal['dateNaissance'] = $ligne['date_naissance'];
-    $ficheAnimal['lieuNaissance'] = $ligne['lieu_naissance'];
-    $ficheAnimal['statut'] = $ligne['statut'];
-    $ficheAnimal['description'] = $ligne['description'];
-    $ficheAnimal['pere'] = $ligne['pere'];
-    if($ficheAnimal['pere'] == NULL){
-         $ficheAnimal['pere'] = "Inconnu";
-    }
-    $ficheAnimal['mere'] = $ligne['mere'];
-    if($ficheAnimal['mere'] == NULL){
-         $ficheAnimal['mere'] = "Inconnue";
-    }
-    //Recupération de l'age
-    if ($ligne2 = $reqAgeAnimal->fetch(PDO::FETCH_ASSOC)) {
-        $ficheAnimal['age'] = $ligne2['Age'];
-    }
-    //Recuperation de l'espèce
-    if ($ligne3 = $reqEspeceAnimal->fetch(PDO::FETCH_ASSOC)) {
-        $ficheAnimal['nomEspece'] = $ligne3['nomEspece'];
-    }
-    //Recuperation du sexe
-    if ($ligne4 = $reqSexAnimal->fetch(PDO::FETCH_ASSOC)) {
-        $ficheAnimal['sexe'] = $ligne4['sexe'];
-        if ($ficheAnimal['sexe'] == 'M') {
-            $ficheAnimal['sexe'] = 'Male';
+switch ($_POST['action']) {
+    case 'modifier' :
+        $varCRUD = '';
+        $reqConsAnimal = $tabReqModif[0];
+        $reqAgeAnimal = $tabReqModif[1];
+        $reqEspeceAnimal = $tabReqModif[2];
+        $reqSexAnimal = $tabReqModif[3];
+        $reqPaysAnimal = $tabReqModif[4];
+        if ($ligne = $reqConsAnimal->fetch()) {
+            $ficheAnimal['idAnimal'] = $ligne['idAnimaux'];
+            $ficheAnimal['photo'] = '<img class="iPortrait tooltip" src= "img/imgFiches/' . $ligne['photo'] . '">';
+            $ficheAnimal['prenomAnimal'] = $ligne['prenomAnimal'];
+            $ficheAnimal['idParcelle'] = $ligne['idParcelle'];
+            $ficheAnimal['poids'] = $ligne['poids'];
+            $ficheAnimal['taille'] = $ligne['taille'];
+            $ficheAnimal['dateNaissance'] = $ligne['date_naissance'];
+            $ficheAnimal['lieuNaissance'] = $ligne['lieu_naissance'];
+            $ficheAnimal['statut'] = $ligne['statut'];
+            $ficheAnimal['description'] = $ligne['description'];
+            $ficheAnimal['pere'] = $ligne['pere'];
+            $ficheAnimal['mere'] = $ligne['mere'];
+            //Recuperation de l'espèce
+            if ($ligne3 = $reqEspeceAnimal->fetch(PDO::FETCH_ASSOC)) {
+                $ficheAnimal['nomEspece'] = $ligne3['nomEspece'];
+            }
+            //Recuperation du sexe
+            if ($ligne4 = $reqSexAnimal->fetch(PDO::FETCH_ASSOC)) {
+                $ficheAnimal['sexe'] = $ligne4['sexe'];
+                if ($ficheAnimal['sexe'] == 'M') {
+                    $ficheAnimal['sexe'] = 'Male';
+                } else {
+                    $ficheAnimal['sexe'] = 'Femelle';
+                }
+            }
+            //Recuperation du pays d'origine
+            if ($ligne5 = $reqPaysAnimal->fetch(PDO::FETCH_ASSOC)) {
+                $ficheAnimal['pays'] = $ligne5['nomPays'];
+            }
+            $erreur = "";
         } else {
-            $ficheAnimal['sexe'] = 'Femelle';
+            $erreur = "<p>Une erreur est survenue</p>";
         }
-    }
-    //Recuperation du pays d'origine
-    if ($ligne5 = $reqPaysAnimal->fetch(PDO::FETCH_ASSOC)) {
-        $ficheAnimal['pays'] = $ligne5['nomPays'];
-    }
+        break;
 
-    $erreur = "";
-} else {
-    $erreur = "<p>Une erreur est survenue</p>";
+    case 'consulter' :
+        $varCRUD = 'style="border-style:none;" readonly';
+        $reqConsAnimal = $tabReqConsult[0];
+        $reqAgeAnimal = $tabReqConsult[1];
+        $reqEspeceAnimal = $tabReqConsult[2];
+        $reqSexAnimal = $tabReqConsult[3];
+        $reqPaysAnimal = $tabReqConsult[4];
+        if ($ligne = $reqConsAnimal->fetch()) {
+            $ficheAnimal['idAnimal'] = $ligne['idAnimaux'];
+            $ficheAnimal['photo'] = '<img class="iPortrait" src= "img/imgFiches/' . $ligne['photo'] . '" onclick="agrImg(this)">';
+            $ficheAnimal['prenomAnimal'] = $ligne['prenomAnimal'];
+            $ficheAnimal['idParcelle'] = $ligne['idParcelle'];
+            $ficheAnimal['poids'] = $ligne['poids'];
+            $ficheAnimal['taille'] = $ligne['taille'];
+            $ficheAnimal['dateNaissance'] = $ligne['date_naissance'];
+            $ficheAnimal['lieuNaissance'] = $ligne['lieu_naissance'];
+            $ficheAnimal['statut'] = $ligne['statut'];
+            $ficheAnimal['description'] = $ligne['description'];
+            $ficheAnimal['pere'] = $ligne['pere'];
+            if ($ficheAnimal['pere'] == NULL) {
+                $ficheAnimal['pere'] = "Inconnu";
+            }
+            $ficheAnimal['mere'] = $ligne['mere'];
+            if ($ficheAnimal['mere'] == NULL) {
+                $ficheAnimal['mere'] = "Inconnue";
+            }
+            //Recupération de l'age
+            if ($ligne2 = $reqAgeAnimal->fetch(PDO::FETCH_ASSOC)) {
+                $ficheAnimal['age'] = $ligne2['Age'];
+            }
+            //Recuperation de l'espèce
+            if ($ligne3 = $reqEspeceAnimal->fetch(PDO::FETCH_ASSOC)) {
+                $ficheAnimal['nomEspece'] = $ligne3['nomEspece'];
+            }
+            //Recuperation du sexe
+            if ($ligne4 = $reqSexAnimal->fetch(PDO::FETCH_ASSOC)) {
+                $ficheAnimal['sexe'] = $ligne4['sexe'];
+                if ($ficheAnimal['sexe'] == 'M') {
+                    $ficheAnimal['sexe'] = 'Male';
+                } else {
+                    $ficheAnimal['sexe'] = 'Femelle';
+                }
+            }
+            //Recuperation du pays d'origine
+            if ($ligne5 = $reqPaysAnimal->fetch(PDO::FETCH_ASSOC)) {
+                $ficheAnimal['pays'] = $ligne5['nomPays'];
+            }
+
+            $erreur = "";
+        } else {
+            $erreur = "<p>Une erreur est survenue</p>";
+        }
+        break;
 }
 
+
+$tpl->assign('varCRUD', $varCRUD);
 $tpl->assign('photo', $ficheAnimal['photo']);
-$tpl->assign('numero', "N° ".$ficheAnimal['idAnimal']);
-$tpl->assign('parcelle', "N° ".$ficheAnimal['idParcelle']);
+$tpl->assign('numero', $ficheAnimal['idAnimal']);
+$tpl->assign('parcelle', $ficheAnimal['idParcelle']);
 $tpl->assign('espece', $ficheAnimal['nomEspece']);
 $tpl->assign('prenom', $ficheAnimal['prenomAnimal']);
 $tpl->assign('poids', $ficheAnimal['poids']);

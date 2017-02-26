@@ -21,14 +21,19 @@ switch ($gestion) {
 }
 
 if (isset($_POST['action'])) {
-    if (isset($_POST['consulter'])) {
+    if ($_POST['action'] == 'consulter') {
         consulter($_POST);
     } else if ($_POST['action'] == 'rechercher') {
         rechercher($_POST);
+    } else if ($_POST['action'] == 'modifier') {
+        modifier($_POST);
+    } else if ($_POST['action'] == 'supprimer') {
+        supprimer($_POST);
     }
 } else {
     parDefaut();
 }
+
 
 
     

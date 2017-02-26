@@ -58,3 +58,5 @@ function listeRech($param) {
     $reqRech = executeR($cnx, $reqRech);
     return $reqRech;
 }
+
+

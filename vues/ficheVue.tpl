@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="style/font-awesome.min.css" rel="stylesheet" type="text/css"/>
         <link href="style/styles.css" rel="stylesheet">
         <title>Projet2</title>
     </head>
@@ -35,41 +36,55 @@
                 </ul>
             </header>
             <div id="fiche">
-                {$photo}
-                <div id="dFiche">
-                    <h1 class="nomAnimal"><strong>{$prenom} ({$numero})</strong></h1>
-                    <p class="pFiche">
-                        <strong class="espAnimal">{$espece} ({$pays})</strong>
-                        <br>
-                        <strong>Numero de parcelle : </strong>{$parcelle}
-                        <br>
-                        <strong>Taille : </strong>{$taille}
-                        <br>
-                        <strong>Poids : </strong>{$poids}
-                        <br>
-                        <strong>Né le : </strong>{$dOb}
-                        <br>
-                        <strong>Lieu de Naissance : </strong>{$pOb}
-                        <br>
-                        <strong>Père : </strong>{$pere}
-                        <br>
-                        <strong>Mère : </strong>{$mere}
-                        <br>
-                    <p class="descAnimal">{$description}</p>
-                    </p>
-                </div>
+                <table id="tFiche">
+                    <tr>
+                        <td>
+                            {$photo}
+                        </td>
+                        <td id="chpDesc">
+                            <fieldset id="fsFiche">
+                                <legend class="nomAnimal"><strong>{$prenom} (Id n°{$numero})</strong></legend>
+                                <form id="formAnimal">
+                                    <strong class="espAnimal">{$espece} ({$pays})</strong>
+                                    <br>
+                                    <label for="numParcelle"><strong>Numero de parcelle : </strong></label>
+                                    <input type="text" id="numParcelle" value="{$parcelle}" {$varCRUD}>
+                                    <br>
+                                    <label for="taille"><strong>Taille (cm): </strong></label>
+                                    <input type="text" id="taille" value="{$taille}" {$varCRUD}>
+                                    <br>
+                                    <label for="poids"><strong>Poids (kg): </strong></label>
+                                    <input type="text" id="poids" value="{$poids}" {$varCRUD}>
+                                    <br>
+                                    <label for="dOb"><strong>Né le : </strong></label>
+                                    <input type="text" id="dOb" value="{$dOb}" {$varCRUD}>
+                                    <br>
+                                    <label for="pOb"><strong>Lieu de Naissance : </strong></label>
+                                    <input type="text" id="pOb" value="{$pOb}" {$varCRUD}>
+                                    <br>
+                                    <label for="pere"><strong>Père : </strong></label>
+                                    <input type="text" id="pere" value="{$pere}" {$varCRUD}>
+                                    <br>
+                                    <label for="mere"><strong>Mère : </strong></label>
+                                    <input type="text" id="mere" value="{$mere}" {$varCRUD}>
+                                    <br>
+                                    <br>
+                                    <textarea from="formAnimal" id="desc" {$varCRUD}>{$description}</textarea>
+                                </form>
+                            </fieldset>
+                        </td>
+                    </tr>
+                </table>
             </div>
         </div>
         <script>
             function agrImg($param) {
                 if ($param.style.position == "absolute") {
-                    $param.style.cssText = "height: 50%; object-fit: cover; border: 1px solid rgba(0, 0, 0, 0.5); margin: 1em; float: left;";
-                    document.getElementById("dFiche").style.display = "block";
-                    
+                    $param.style.cssText = " width: 100%;object-fit: cover;padding: 1em;";
+                    document.getElementById("fsFiche").style.display = "block";
                 } else {
-                    $param.style.cssText = "position:absolute; top:50%; left:50%; transform:translate(-50%, -50%);";
-                    document.getElementById("dFiche").style.display = "none";
-                    document.getElementById("tooltiptext").style.visibility = "visible";
+                    $param.style.cssText = "width:80%;position:absolute; top:43%; left:50%; transform:translate(-50%, -50%);";
+                    document.getElementById("fsFiche").style.display = "none";
                 }
             }
         </script>

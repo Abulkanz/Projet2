@@ -8,3 +8,9 @@ function consulter($param) {
     require_once 'vues/ficheVue.php';
 }
 
+function modifier($param) {
+    $reference = $param['idAnimal'];
+    $tabReqModif = modifierFiche($reference);
+    require_once 'vues/ficheVue.php';
+}
+

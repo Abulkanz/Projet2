@@ -1,3 +1,5 @@
 <?php
 
-require_once 'vues/loginVue.php';
+function parDefaut() {
+    require_once 'vues/loginVue.php';
+}

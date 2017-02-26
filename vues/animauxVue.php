@@ -20,9 +20,11 @@ if (isset($_POST['action'])) {
                         <th>Sexe</th>
                         <th>Age</th>
                         <th>Statut</th>
+                        <th>Actions</th>
                     </tr>';
 
         do {
+            $listeAnimaux[$i]['idAnimal'] = $ligne['idAnimaux'];
             $listeAnimaux[$i]['photo'] = '<form method="POST" action="index.php">
                                             <input type="hidden" name="gestion" value="fiche">
                                             <input type="hidden" name="action" value="consulter">
@@ -63,9 +65,11 @@ if (isset($_POST['action'])) {
                         <th>Sexe</th>
                         <th>Age</th>
                         <th>Statut</th>
+                        <th>Actions</th>
                     </tr>';
 
         do {
+            $listeAnimaux[$i]['idAnimal'] = $ligne['idAnimaux'];
             $listeAnimaux[$i]['photo'] = '<form method="POST" action="index.php">
                                             <input type="hidden" name="gestion" value="fiche">
                                             <input type="hidden" name="action" value="consulter">

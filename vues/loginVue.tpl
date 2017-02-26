@@ -4,16 +4,17 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="style/font-awesome.min.css" rel="stylesheet" type="text/css"/>
         <link href="style/styles.css" rel="stylesheet">
         <title>Projet2</title>
     </head>
     <body>
-        <div id="accueil">
+        <div id="accueil" class="noOverF">
             <header>
                 <div id="boiteLogo"><img id="logoAcc" src="img/logoSinges.png"></div>
             </header>
             <main>
-                <div class="form">
+                <div class="formLogin">
                     <form method="POST" name="gestion">
                         <label><h1>BIENVENUE</h1></label>
                         <input type="text" placeholder="username" />

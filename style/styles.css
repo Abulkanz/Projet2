@@ -8,6 +8,10 @@
     src: url(../fonts/Righteous-Regular.ttf);
 }
 
+*{
+    box-sizing: border-box;
+}
+
 html{
     height: 100%;
     /*Hauteur du document "bloquée" à 100%*/
@@ -155,12 +159,12 @@ li:last-child {
 }
 
 /*Cible seulement le titre du formulaire*/
-div form label {
+div .formLogin label {
     /*1.6em = 16px*/
     font: 1.6em "Alfa Slab One";
 }
 
-.form {
+.formLogin {
     z-index: 1;
     background: #777f61;
     border-radius: 2em 2em 2em 2em;
@@ -172,7 +176,7 @@ div form label {
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 
-.form input {
+.formLogin input {
     outline: 0;
     background: #f2f2f2;
     width: 100%;
@@ -202,7 +206,7 @@ div form label {
     color: #357f59;
 }
 
-.form .message{
+.formLogin .message{
     font: 1.2em Righteous;
     color: #357f59;
     text-decoration: none;
@@ -241,41 +245,24 @@ a:hover{
     border: 1px solid rgba(1, 1, 1, 0.5);
 }
 
+
 #fiche{
-    height: 75%;
+    height: 43%;
     width: 75%;
-    margin: 4em auto auto auto;
+    margin: auto auto;
     background-color: white;
     box-shadow: 1em 1em 1em rgba(0, 0, 0, 0.75);
+    transform: translateY(43%); 
 }
 
 .iPortrait{
-    height: 50%;
+    width: 100%;
     object-fit: cover;
-    border: 1px solid rgba(0, 0, 0, 0.5);
-    margin: 1em;
-    float: left;
+    padding: 1em;
 }
 
-.tooltip {
-    position: relative;
-}
-
-#tooltiptext {
-    font: 1.2em "Alfa Slab One";
-    visibility: hidden;
-    width: 120px;
-    background-color: black;
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px 0;
-
-    /* Position the tooltip */
-    position: absolute;
-    z-index: 1;
-    margin-top: 340px;
-    transform: translate(-50%, -50%);
+#tFiche fieldset{
+    height: 100%;
 }
 
 #icoAgr{
@@ -283,8 +270,12 @@ a:hover{
     transform: scale(0.3);
 }
 
-.tooltip:hover + .tooltiptext {
+.iPortrait:hover + .tooltiptext {
     visibility: visible;
+}
+
+input[type='text']:disabled{
+    background-color: rgba(255, 255, 255, 0);
 }
 
 th{
@@ -320,13 +311,10 @@ th{
     transform: scale(0.95);
 }
 
-#dFiche{
-    height: 50%;
-}
-
-.descAnimal{
-    font: 1.4em "Righteous";
-    text-align: justify;
+#desc{
+    font: 14px "Righteous";
+    width: 100%;
+    resize: none;
 }
 
 .nomAnimal{
@@ -341,10 +329,13 @@ th{
     color: #367f59;
 }
 
-.pFiche{
+#tFiche{
     font: 1.4em "Righteous";
-    text-align: center;
-    padding: 1em; 
+    height: 100%;
+}
+
+#tFiche #chpDesc{
+    width: 50%;
 }
 
 .tiers{
