@@ -29,24 +29,33 @@ if (isset($_POST['action'])) {
                                             <input type="hidden" name="consulter" value="consulter">
                                             <input type="hidden" name="idAnimal" value=' . $ligne['idAnimaux'] . '>
                                             <input class="vignLienFiche" value="" type="submit" style="background-image: url(img/imgFiches/' . $ligne['prenomAnimal'] . 'Tn.png">
-                                          <form>';
+                                          </form>';
             $listeAnimaux[$i]['prenomAnimal'] = $ligne['prenomAnimal'];
             $listeAnimaux[$i]['nomEspece'] = $ligne['nomEspece'];
             $listeAnimaux[$i]['sexe'] = $ligne['Sexe'];
+            if ($listeAnimaux[$i]['sexe'] == 'M') {
+                $listeAnimaux[$i]['sexe'] = 'Male';
+            } else {
+                $listeAnimaux[$i]['sexe'] = 'Femelle';
+            }
             $listeAnimaux[$i]['age'] = $ligne['Age'];
+            if ($listeAnimaux[$i]['age'] <= 1) {
+                $listeAnimaux[$i]['age'] = $listeAnimaux[$i]['age'] . ' an';
+            } else {
+                $listeAnimaux[$i]['age'] = $listeAnimaux[$i]['age'] . ' ans';
+            }
             $listeAnimaux[$i]['statut'] = $ligne['StatutA'];
+            if ($listeAnimaux[$i]['statut'] == NULL) {
+                $listeAnimaux[$i]['statut'] = "Présent";
+            }
             $i++;
         } while ($ligne = $reqRech->fetch(PDO::FETCH_ASSOC));
         $aucRes = '';
         $nbLignes = $reqRech->rowCount();
     }
 } else {
-    $reqListeAnimaux = $tabReqListe[0];
-    $reqAgeAnimaux = $tabReqListe[1];
-    $reqEspeceAnimaux = $tabReqListe[2];
-    $reqSexAnimaux = $tabReqListe[3];
-
-    $initTable = '<table class="tAnimaux">
+    if ($ligne = $reqListe->fetch()) {
+        $initTable = '<table class="tAnimaux">
                     <tr>
                         <th>Photo</th>
                         <th>Prénom</th>
@@ -56,53 +65,37 @@ if (isset($_POST['action'])) {
                         <th>Statut</th>
                     </tr>';
 
-    while ($ligne = $reqListeAnimaux->fetch(PDO::FETCH_ASSOC)) {
-        //Vignette cliquable pour la consultation
-        $listeAnimaux[$i]['photo'] = '<form method="POST" action="index.php">
-                                        <input type="hidden" name="gestion" value="fiche">
-                                        <input type="hidden" name="consulter" value="consulter">
-                                        <input type="hidden" name="action" value="consulter">
-                                        <input type="hidden" name="idAnimal" value=' . $ligne['idAnimaux'] . '>
-                                        <input class="vignLienFiche" value="" type="submit" style="background-image: url(img/imgFiches/' . $ligne['prenomAnimal'] . 'Tn.png">
-                                      </form>';
-        $listeAnimaux[$i]['prenomAnimal'] = $ligne['prenomAnimal'];
-        $listeAnimaux[$i]['statut'] = $ligne['statut'];
-        if ($listeAnimaux[$i]['statut'] == NULL) {
-            $listeAnimaux[$i]['statut'] = "Présent";
-        }
-        $i++;
+        do {
+            $listeAnimaux[$i]['photo'] = '<form method="POST" action="index.php">
+                                            <input type="hidden" name="gestion" value="fiche">
+                                            <input type="hidden" name="action" value="consulter">
+                                            <input type="hidden" name="consulter" value="consulter">
+                                            <input type="hidden" name="idAnimal" value=' . $ligne['idAnimaux'] . '>
+                                            <input class="vignLienFiche" value="" type="submit" style="background-image: url(img/imgFiches/' . $ligne['prenomAnimal'] . 'Tn.png">
+                                          </form>';
+            $listeAnimaux[$i]['prenomAnimal'] = $ligne['prenomAnimal'];
+            $listeAnimaux[$i]['nomEspece'] = $ligne['nomEspece'];
+            $listeAnimaux[$i]['sexe'] = $ligne['Sexe'];
+            if ($listeAnimaux[$i]['sexe'] == 'M') {
+                $listeAnimaux[$i]['sexe'] = 'Male';
+            } else {
+                $listeAnimaux[$i]['sexe'] = 'Femelle';
+            }
+            $listeAnimaux[$i]['age'] = $ligne['Age'];
+            if ($listeAnimaux[$i]['age'] <= 1) {
+                $listeAnimaux[$i]['age'] = $listeAnimaux[$i]['age'] . ' an';
+            } else {
+                $listeAnimaux[$i]['age'] = $listeAnimaux[$i]['age'] . ' ans';
+            }
+            $listeAnimaux[$i]['statut'] = $ligne['StatutA'];
+            if ($listeAnimaux[$i]['statut'] == NULL) {
+                $listeAnimaux[$i]['statut'] = "Présent";
+            }
+            $i++;
+        } while ($ligne = $reqListe->fetch(PDO::FETCH_ASSOC));
+        $aucRes = '';
+        $nbLignes = $reqListe->rowCount();
     }
-
-    //Recupération de l'age des bêtes
-    $i = 0;
-    while ($ligne2 = $reqAgeAnimaux->fetch(PDO::FETCH_ASSOC)) {
-        $listeAnimaux[$i]['age'] = $ligne2['Age'];
-        if ($listeAnimaux[$i]['age'] <= 1) {
-            $listeAnimaux[$i]['age'] = $listeAnimaux[$i]['age'] . ' an';
-        } else {
-            $listeAnimaux[$i]['age'] = $listeAnimaux[$i]['age'] . ' ans';
-        }
-        $i++;
-    }
-    //Recuperation de l'espèce
-    $i = 0;
-    while ($ligne3 = $reqEspeceAnimaux->fetch(PDO::FETCH_ASSOC)) {
-        $listeAnimaux[$i]['nomEspece'] = $ligne3['nomEspece'];
-        $i++;
-    }
-    //Recuperation du sexe
-    $i = 0;
-    while ($ligne4 = $reqSexAnimaux->fetch(PDO::FETCH_ASSOC)) {
-        $listeAnimaux[$i]['sexe'] = $ligne4['sexe'];
-        if ($listeAnimaux[$i]['sexe'] == 'M') {
-            $listeAnimaux[$i]['sexe'] = 'Male';
-        } else {
-            $listeAnimaux[$i]['sexe'] = 'Femelle';
-        }
-        $i++;
-    }
-    $aucRes = '';
-    $nbLignes = $reqListeAnimaux->rowCount();
 }
 
 
@@ -111,16 +104,5 @@ $tpl->assign('aucRes', $aucRes);
 $tpl->assign('nbLignes', $nbLignes);
 $tpl->assign('initTable', $initTable);
 $tpl->assign('listeAnimaux', $listeAnimaux);
-
-
-
-
-
-
-
-
-
-
-
 
 $tpl->display('vues/animauxVue.tpl');

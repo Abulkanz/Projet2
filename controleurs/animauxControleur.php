@@ -9,6 +9,6 @@ function rechercher($param) {
 }
 
 function parDefaut() {
-    $tabReqListe = listeAnimaux();
+    $reqListe = listeAnimaux();
     require_once 'vues/animauxVue.php';
 }

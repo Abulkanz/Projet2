@@ -16,7 +16,7 @@ $reqPaysAnimal = $tabReqConsult[4];
 if ($ligne = $reqConsAnimal->fetch()) {
     $ficheAnimal['idAnimal'] = $ligne['idAnimaux'];
     $ficheAnimal['photo'] = '<img class="iPortrait tooltip" src= "img/imgFiches/' . $ligne['photo'] . '" onclick="agrImg(this)">
-                             <span class="tooltiptext">Cliquez sur l\'image pour l\'agrandir</span><img id="icoAgr" src="img/icoLarge.png">';
+                             <span class="tooltiptext">Cliquez sur l\'image pour l\'agrandir</span>';
     $ficheAnimal['prenomAnimal'] = $ligne['prenomAnimal'];
     $ficheAnimal['idParcelle'] = $ligne['idParcelle'];
     $ficheAnimal['poids'] = $ligne['poids']." kg";

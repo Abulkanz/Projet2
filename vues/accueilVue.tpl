@@ -35,9 +35,9 @@
                 </ul>
             </header>
             <div class="contGraphs">
-                        <div class="contGraphAccueil">
-                            <canvas id="tailleEsp"></canvas>
-                        </div>
+                <div class="contGraphAccueil">
+                    <canvas id="tailleEsp"></canvas>
+                </div>
                 <div class="contGraphAccueil">
                     <canvas id="poidsEsp"></canvas>
                 </div>

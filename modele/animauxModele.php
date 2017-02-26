@@ -4,24 +4,25 @@ include 'modele.php';
 
 function listeAnimaux() {
     $cnx = getBD();
-    $sql = 'SELECT * FROM animaux ORDER BY idAnimaux';
-    $sql2 = 'SELECT
-                DATE_FORMAT(CURRENT_DATE,"%Y-%m-%d")
-                -
-                DATE_FORMAT(date_naissance,"%Y-%m-%d") "Age"
-                FROM animaux';
-    $sql3 = 'SELECT idAnimaux, nomEspece FROM animaux, especes
-             WHERE animaux.idEspece = especes.idEspece
-             ORDER BY idAnimaux';
-    $sql4 = 'SELECT idAnimaux, sexe FROM animaux, sexe
-             WHERE animaux.idSexe = sexe.idSexe
-             ORDER BY idAnimaux';
-    $reqListeAnimaux = executeR($cnx, $sql);
-    $reqAgeAnimaux = executeR($cnx, $sql2);
-    $reqEspeceAnimaux = executeR($cnx, $sql3);
-    $reqSexAnimaux = executeR($cnx, $sql4);
-    $tabReqListe = [$reqListeAnimaux, $reqAgeAnimaux, $reqEspeceAnimaux, $reqSexAnimaux];
-    return $tabReqListe;
+    $sql = 'SELECT DISTINCT
+                            idAnimaux,
+                            prenomAnimal, 
+                            nomEspece, 
+                            sexe.sexe "Sexe", 
+			    DATE_FORMAT(CURRENT_DATE,"%Y-%m-%d")
+                            -
+                            DATE_FORMAT(date_naissance,"%Y-%m-%d") "Age",
+                            animaux.statut "StatutA"
+                            FROM animaux
+            LEFT JOIN pays
+            ON animaux.idPays = pays.idPays
+            LEFT JOIN especes
+            ON animaux.idEspece = especes.idEspece
+            LEFT JOIN sexe
+            ON animaux.idSexe = sexe.idSexe
+            LEFT JOIN continent
+            ON pays.idContinent = continent.idContinent';
+    return $reqListe;
 }
 
 function listeRech($param) {
