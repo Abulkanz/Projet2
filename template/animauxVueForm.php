@@ -43,7 +43,7 @@ switch ($action){
         $tpl->assign("debutlignetab",$debutlignetab);
         $tpl->assign("finlignetab",$finlignetab);
         $tpl->assign('consultAnimaux', $consultAnimaux);
-        $tpl->display("template/AnimauxVueForm.tpl");
+        $tpl->display("template/animauxVueForm.tpl");
         break;
     case 'modifier':
         $consultAnimaux=array();
@@ -82,7 +82,7 @@ switch ($action){
         $tpl->assign("parametrereadonly",$parametrereadonly);
         $tpl->assign("debutlignetab",$debutlignetab);
         $tpl->assign("finlignetab",$finlignetab);
-        $tpl->display("template/AnimauxVueForm.tpl");
+        $tpl->display("template/animauxVueForm.tpl");
         break;
     case 'supprimer':
         $consultAnimaux=array();
@@ -121,7 +121,7 @@ switch ($action){
         $tpl->assign("debutlignetab",$debutlignetab);
         $tpl->assign("finlignetab",$finlignetab);
         $tpl->assign('consultAnimaux', $consultAnimaux);
-        $tpl->display("template/AnimauxVueForm.tpl");
+        $tpl->display("template/animauxVueForm.tpl");
         break; 
         case 'Rechercher':
         $listeAnimaux=array();
@@ -150,7 +150,7 @@ switch ($action){
         $nbligne=$idRequete->rowCount();
         $tpl->assign('nbligne',$nbligne);
         $tpl->assign('listeAnimaux', $listeAnimaux);
-        $tpl->display("template/AnimauxVueRechercher.tpl");
+        $tpl->display("template/animauxVueRechercher.tpl");
         break;
 
 }
