@@ -1,26 +1,23 @@
 <?php
-function executeRequete($cnx, $sql, $parametre=NULL){
-    if($parametre==NULL){
-        // requete simple
-        $idRequete=$cnx->query($sql);
+
+function executeR($logIn, $sql, $arg = null) {
+    if ($arg == null) {
+        $resReque = $logIn->query($sql);
     } else {
-        // requete preparé
-        $idRequete = $cnx->prepare($sql);
-        $idRequete->execute($parametre);
+        $resReque = $logIn->prepare($sql);
+        $resReque->execute($arg);
     }
-    return $idRequete; 
+    return $resReque;
 }
-function getBD(){
-    $cnx=  connexion(UTILISATEUR, MOTDEPASSE, SERVER, BASEDEDONNEES);
+
+function getBD() {
+    $cnx = connexion(SERVEUR, UTILISATEUR, MOTDEPASSE, BASEDEDONNEES);
     return $cnx;
 }
-function connexion($UTILISATEUR, $MOTDEPASSE, $SERVER, $BASEDEDONNEES){
-    try {
-        $cnx = new PDO('mysql:host='.SERVER.';dbname='.BASEDEDONNEES,UTILISATEUR,MOTDEPASSE, array(PDO::MYSQL_ATTR_INIT_COMMAND=>"SET NAMES utf8", PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION));
-        return $cnx;  
-    } catch (PDOException $montreMoi) {
-        echo 'Erreur releve:'.$montreMoi->getMessage();
-        exit();
-    }
+
+function connexion($serv, $util, $mdp, $bdd) {
+    $logIn = new PDO('mysql:host=' . $serv . ';dbname=' . $bdd, $util, $mdp, array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8", PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+    return $logIn;
 }
-?>
+
+

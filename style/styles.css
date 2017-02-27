@@ -1,0 +1,360 @@
+@font-face{
+    font-family: 'Alfa Slab One', cursive;
+    src: url(../fonts/AlfaSlabOne-Regular.ttf);
+}
+
+@font-face{
+    font-family: 'Righteous', cursive;
+    src: url(../fonts/Righteous-Regular.ttf);
+}
+
+*{
+    box-sizing: border-box;
+}
+
+html{
+    height: 100%;
+    /*Hauteur du document "bloquée" à 100%*/
+    font-size: 62.5%;
+    /*Cette proportion en % pour les tailles de police permet
+      d'ensuite utiliser les proportions en "em", qui sont très
+      intuitives de manière plus simple car grace à cette conversion
+      1.6em = 16 px 
+      1em vaut la taille d'un caractère, partique pour inclure des marges 
+      par exemple de façon simple et harmonieuse*/
+
+}
+
+body{
+    background: #eeffc3; /* Pour les navigateurs qui ne supporteraient pas gradient */
+    background: -webkit-linear-gradient(left, #3b4031, #eeffc3, #3b4031); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, #3b4031, #eeffc3, #3b4031); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, #3b4031, #eeffc3, #3b4031); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, #3b4031, #eeffc3, #3b4031); /* Standard syntax */
+    margin: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+/*Supprime le contour bleu au clic*/
+input:active,
+input:focus
+{
+    outline: 0;
+}
+
+/*div de l'image de fond'*/
+#accueil{
+    margin:0;
+    height: 100%;
+    background: url(../img/FeuillageAccueil.png) no-repeat bottom fixed;
+    box-sizing: border-box;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+/*accueil*/
+.conteneur{
+    margin:0;
+    height: 100%;
+}
+
+.contGraphs{
+    text-align: center;
+    margin-top: 1.5em;
+}
+
+.contGraphAccueil{
+    display: inline-block;
+    width: 40%;
+    background-color: white;
+    text-align: center;
+    font: 1.2em Righteous;
+    margin: 0.5em 0.5em;
+    border: 1px solid rgba(1, 1, 1, 0.5);
+}
+
+.noOverF{
+    overflow: hidden;
+}
+
+.aucRes{
+    text-align: center;
+    font: 1.2em "Alfa Slab One"; 
+    color: red;
+}
+
+#boiteLogo{
+    width: 100%
+}
+
+#logoAcc {
+    opacity: 0.8;
+    display:block;
+    height: 190px;
+    margin: 2em auto;
+}
+
+.logo{
+    height: 140px;
+    position: absolute;
+    top: 1em;
+    left: 1em;
+}
+
+.conteneur header{
+    margin-top: 3.5em; 
+    width: 100%;
+    text-align: center;
+    background-color: black;
+}
+
+.tAnimaux{
+    margin: 10em 5em 10em 5em;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-collapse: collapse;
+    background-color: #f5f5f5;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    display: inline-block;
+    border-right: 1px solid #bbb;
+    padding: 3em 4em;
+}
+
+li:first-child{
+    border-left: 1px solid #bbb;
+}
+
+li .lienNav {
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    font: 1.4em Righteous;
+    color: #61e5a1;
+    background-color: black;
+}
+
+li .lienNav:hover{
+    color: white;
+}
+
+li:last-child {
+    border-right: none;
+}
+
+
+
+/*Cible seulement le titre du formulaire*/
+div .formLogin label {
+    /*1.6em = 16px*/
+    font: 1.6em "Alfa Slab One";
+}
+
+.formLogin {
+    z-index: 1;
+    background: #777f61;
+    border-radius: 2em 2em 2em 2em;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    max-width: 360px;
+    margin: 0 auto;
+    padding: 45px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+.formLogin input {
+    outline: 0;
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font: 1.2em Righteous;
+}
+
+#boutonCo {
+    text-transform: uppercase;
+    outline: 0;
+    background: #357f59;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    color: #61e5a1;
+    font: 1.4em Righteous;
+    cursor: pointer;
+    border: 2px solid #1b402d;
+}
+
+#boutonCo:hover{
+    background: #61e5a1;
+    border: 2px solid #1b402d;
+    color: #357f59;
+}
+
+.formLogin .message{
+    font: 1.2em Righteous;
+    color: #357f59;
+    text-decoration: none;
+    margin: 2em auto -1em auto;
+}
+
+a{
+    color: #357f59;
+    text-decoration: none;  
+}
+
+a:hover{
+    color: #61e5a1;
+}
+
+.conteneurModules{
+    margin-top: 6em;
+    height: 100%;
+}
+
+.blocModules{
+    height: 33%;
+    text-align: center;
+    font: 1.2em Righteous white;
+    padding: 3em 0 0 0;
+}
+
+.module{
+    display: inline-block;
+    width: 40%;
+    height: 100%;
+    background-color: white;
+    text-align: center;
+    font: 1.2em Righteous white;
+    margin: auto auto;
+    border: 1px solid rgba(1, 1, 1, 0.5);
+}
+
+
+#fiche{
+    height: 43%;
+    width: 75%;
+    margin: auto auto;
+    background-color: white;
+    box-shadow: 1em 1em 1em rgba(0, 0, 0, 0.75);
+    transform: translateY(43%); 
+}
+
+.iPortrait{
+    width: 100%;
+    object-fit: cover;
+    padding: 1em;
+}
+
+#tFiche fieldset{
+    height: 100%;
+}
+
+#icoAgr{
+    position: absolute;
+    transform: scale(0.3);
+}
+
+.iPortrait:hover + .tooltiptext {
+    visibility: visible;
+}
+
+input[type='text']:disabled{
+    background-color: rgba(255, 255, 255, 0);
+}
+
+th{
+    font: 1.6em "Alfa Slab One";
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+.tAnimaux td{
+    width: 9%;
+    font: 1.2em "Alfa Slab One";
+    text-align: center;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.tAnimaux td img{
+    width: 100%;
+    vertical-align: middle;
+    padding: 0;
+}
+
+.vignLienFiche{
+    height: 8.5em;
+    width: 15em;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover 
+
+}
+
+.vignLienFiche:hover{
+    transform: scale(0.95);
+}
+
+#desc{
+    font: 14px "Righteous";
+    width: 100%;
+    resize: none;
+}
+
+.nomAnimal{
+    font: 2.2em "Righteous";
+    text-align: center;
+    padding: 0.5em;
+    color: #7f6229;
+}
+
+.espAnimal{
+    font: 1.6em "Righteous";
+    color: #367f59;
+}
+
+#tFiche{
+    font: 1.4em "Righteous";
+    height: 100%;
+}
+
+#tFiche #chpDesc{
+    width: 50%;
+}
+
+.tiers{
+    width: 30%;
+    display: inline-block;
+    height: 100%;
+    background-color: lightgrey;
+    text-align: center;
+    font: 1.2em Righteous white;
+    border: 1px solid rgba(1, 1, 1, 0.5);
+    margin: auto 1% auto 2%;
+    float: left;
+}
+
+.deuxTiers{
+    width: 60.5%;
+    display: inline-block;
+    height: 100%;
+    background-color: lightgrey;
+    text-align: center;
+    font: 1.2em Righteous white;
+    margin: auto auto;
+    border: 1px solid rgba(1, 1, 1, 0.5);
+}
+
+
+

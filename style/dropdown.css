@@ -1,0 +1,47 @@
+li button, .dropbtn {
+    display: inline-block;
+    font: 1.4em Righteous;
+    text-align: center;
+    padding: 5px 16px;
+    text-decoration: none;
+}
+
+li button:hover, .dropdown:hover .dropbtn {
+    color: #61e5a1;
+}
+
+li.dropdown {
+    display: inline-block;
+    float: right;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+     background-color: black;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content button {
+    font: 1.4em Righteous;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+
+.username{
+    margin-left: 4em;
+    color: #61e5a1;
+}
+.avatar{
+    width:25px; 
+    margin-right:1em;
+    padding:0px;
+    position: absolute;
+}
+
+.show {display:block;}
