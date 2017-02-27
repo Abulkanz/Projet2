@@ -5,7 +5,7 @@ function validationauth($param){
     $mdp_temp=$param["password"];
     $cnx=getBD();
     $sql="SELECT * FROM employes WHERE login=?";
-    $idRequete = executeRequete($cnx, $sql,array($login_temp));
+    $idRequete = executeR($cnx, $sql,array($login_temp));
     if ($idRequete->rowCount() == 1) {
         $row = $idRequete->fetch(PDO::FETCH_NUM);
         $droite="tk!@";
@@ -17,6 +17,7 @@ function validationauth($param){
             $_SESSION['nomEmploye']=$row[1];
             $_SESSION['prenomEmploye']=$row[2];
             $_SESSION['droits']=$row[8];
+            $_SESSION['avatar']=$row[5];
             header('location:index.php');
         }else{
             echo "Mot de passe inconnu";

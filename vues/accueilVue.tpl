@@ -28,21 +28,33 @@
                     </li>
                     <li>
                         <form method="POST" name="gestion">
-                            <input type="hidden" name="gestion" value="login">
+                            <input type="hidden" name="gestion" value="carte">
                             <input class="lienNav" type="submit" value="Carte">
                         </form>
                     </li>
                     <li class="dropdown">
-                        <span class="dropbtn" onclick="displayMenuUser()"><img class="avatar"  onclick="displayMenuUser()" src="img/userlogof.png"><span class="username"  onclick="displayMenuUser()">{$nom}</span></span>
+                        <span class="dropbtn" onclick="displayMenuUser()"><img class="avatar"  onclick="displayMenuUser()" src="img/userlogof.png"><span class="username"  onclick="displayMenuUser()">{$login}</span></span>
                         <div class="dropdown-content" id="menuUser">
                             <form method="POST" name="gestion">
                                 <button class="lienNav">
-                                    <input type="hidden" name="gestion" value="animaux">
-                                    <img src="http://epnet.epfl.ch/files/content/sites/network/files/Website%20Icon/Setting%20VF1.png" style="width:20px; margin-right:5px">Paramètres
+                                    <input type="hidden" name="gestion" value="profil">
+                                    <input type="hidden" name="action" value="profil">
+                                    <input type="hidden" name="identifiant" value="{$login}">
+                                    <img src="img/userlogof.png" style="width:20px; margin-right:5px">Profil
                                 </button>
                             </form>
                             <form method="POST" name="gestion">
-                                <button class="lienNav"><img src="http://img.pngget.com/clip2/z4oajxtcanh.png" style="width:15px; margin-right:5px">Déconnexion</button>
+                                <button class="lienNav">
+                                    <input type="hidden" name="gestion" value="animaux">
+                                    <img src="img/icone_aide.png" style="width:20px; margin-right:5px">Aide
+                                </button>
+                            </form>
+                            <form method="POST" name="gestion">
+                                 <button class="lienNav">
+                                    <input type="hidden" name="gestion" value="accueil">
+                                    <input type="hidden" name="action" value="deconnexion">
+                                    <img src="img/iconedeconnexion.png" style="width:15px; margin-right:5px">Déconnexion
+                                </button>
                             </form>
                         </div>
                     </li>

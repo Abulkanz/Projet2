@@ -1,18 +1,18 @@
-@font-face{
+@font-face {
     font-family: 'Alfa Slab One', cursive;
     src: url(../fonts/AlfaSlabOne-Regular.ttf);
 }
 
-@font-face{
+@font-face {
     font-family: 'Righteous', cursive;
     src: url(../fonts/Righteous-Regular.ttf);
 }
 
-*{
+* {
     box-sizing: border-box;
 }
 
-html{
+html {
     height: 100%;
     /*Hauteur du document "bloquée" à 100%*/
     font-size: 62.5%;
@@ -22,30 +22,37 @@ html{
       1.6em = 16 px 
       1em vaut la taille d'un caractère, partique pour inclure des marges 
       par exemple de façon simple et harmonieuse*/
-
 }
 
-body{
-    background: #eeffc3; /* Pour les navigateurs qui ne supporteraient pas gradient */
-    background: -webkit-linear-gradient(left, #3b4031, #eeffc3, #3b4031); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(right, #3b4031, #eeffc3, #3b4031); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(right, #3b4031, #eeffc3, #3b4031); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(to right, #3b4031, #eeffc3, #3b4031); /* Standard syntax */
+body {
+    background: #eeffc3;
+    /* Pour les navigateurs qui ne supporteraient pas gradient */
+    background: -webkit-linear-gradient(left, #3b4031, #eeffc3, #3b4031);
+    /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, #3b4031, #eeffc3, #3b4031);
+    /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, #3b4031, #eeffc3, #3b4031);
+    /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, #3b4031, #eeffc3, #3b4031);
+    /* Standard syntax */
     margin: 0px;
     width: 100%;
     height: 100%;
 }
 
+
 /*Supprime le contour bleu au clic*/
+
 input:active,
-input:focus
-{
+input:focus {
     outline: 0;
 }
 
+
 /*div de l'image de fond'*/
-#accueil{
-    margin:0;
+
+#accueil {
+    margin: 0;
     height: 100%;
     background: url(../img/FeuillageAccueil.png) no-repeat bottom fixed;
     box-sizing: border-box;
@@ -55,18 +62,20 @@ input:focus
     background-size: cover;
 }
 
+
 /*accueil*/
-.conteneur{
-    margin:0;
+
+.conteneur {
+    margin: 0;
     height: 100%;
 }
 
-.contGraphs{
+.contGraphs {
     text-align: center;
     margin-top: 1.5em;
 }
 
-.contGraphAccueil{
+.contGraphAccueil {
     display: inline-block;
     width: 40%;
     background-color: white;
@@ -76,42 +85,42 @@ input:focus
     border: 1px solid rgba(1, 1, 1, 0.5);
 }
 
-.noOverF{
+.noOverF {
     overflow: hidden;
 }
 
-.aucRes{
+.aucRes {
     text-align: center;
-    font: 1.2em "Alfa Slab One"; 
+    font: 1.2em "Alfa Slab One";
     color: red;
 }
 
-#boiteLogo{
+#boiteLogo {
     width: 100%
 }
 
 #logoAcc {
     opacity: 0.8;
-    display:block;
+    display: block;
     height: 190px;
     margin: 2em auto;
 }
 
-.logo{
+.logo {
     height: 140px;
     position: absolute;
     top: 1em;
     left: 1em;
 }
 
-.conteneur header{
-    margin-top: 3.5em; 
+.conteneur header {
+    margin-top: 3.5em;
     width: 100%;
     text-align: center;
     background-color: black;
 }
 
-.tAnimaux{
+.tAnimaux {
     margin: 10em 5em 10em 5em;
     border: 1px solid rgba(0, 0, 0, 0.3);
     border-collapse: collapse;
@@ -130,7 +139,7 @@ li {
     padding: 3em 4em;
 }
 
-li:first-child{
+li:first-child {
     border-left: 1px solid #bbb;
 }
 
@@ -143,7 +152,7 @@ li .lienNav {
     background-color: black;
 }
 
-li .lienNav:hover{
+li .lienNav:hover {
     color: white;
 }
 
@@ -152,8 +161,8 @@ li:last-child {
 }
 
 
-
 /*Cible seulement le titre du formulaire*/
+
 div .formLogin label {
     /*1.6em = 16px*/
     font: 1.6em "Alfa Slab One";
@@ -195,41 +204,41 @@ div .formLogin label {
     border: 2px solid #1b402d;
 }
 
-#boutonCo:hover{
+#boutonCo:hover {
     background: #61e5a1;
     border: 2px solid #1b402d;
     color: #357f59;
 }
 
-.formLogin .message{
+.formLogin .message {
     font: 1.2em Righteous;
     color: #357f59;
     text-decoration: none;
     margin: 2em auto -1em auto;
 }
 
-a{
+a {
     color: #357f59;
-    text-decoration: none;  
+    text-decoration: none;
 }
 
-a:hover{
+a:hover {
     color: #61e5a1;
 }
 
-.conteneurModules{
+.conteneurModules {
     margin-top: 6em;
     height: 100%;
 }
 
-.blocModules{
+.blocModules {
     height: 33%;
     text-align: center;
     font: 1.2em Righteous white;
     padding: 3em 0 0 0;
 }
 
-.module{
+.module {
     display: inline-block;
     width: 40%;
     height: 100%;
@@ -240,100 +249,103 @@ a:hover{
     border: 1px solid rgba(1, 1, 1, 0.5);
 }
 
-
-#fiche{
+#fiche {
     height: 43%;
     width: 75%;
     margin: auto auto;
     background-color: white;
     box-shadow: 1em 1em 1em rgba(0, 0, 0, 0.75);
-    transform: translateY(43%); 
+    transform: translateY(43%);
 }
 
-.iPortrait{
+.iPortrait {
     width: 100%;
     object-fit: cover;
     padding: 1em;
 }
 
-#tFiche fieldset{
+.avataruser {
+    width: 300x;
+    height: 300px;
+}
+
+#tFiche fieldset {
     height: 100%;
 }
 
-#icoAgr{
+#icoAgr {
     position: absolute;
     transform: scale(0.3);
 }
 
-.iPortrait:hover + .tooltiptext {
+.iPortrait:hover+.tooltiptext {
     visibility: visible;
 }
 
-input[type='text']:disabled{
+input[type='text']:disabled {
     background-color: rgba(255, 255, 255, 0);
 }
 
-th{
+th {
     font: 1.6em "Alfa Slab One";
     border: 1px solid rgba(0, 0, 0, 0.3);
     padding-top: 1em;
     padding-bottom: 1em;
 }
 
-.tAnimaux td{
+.tAnimaux td {
     width: 9%;
     font: 1.2em "Alfa Slab One";
     text-align: center;
     border: 1px solid rgba(0, 0, 0, 0.3);
 }
 
-.tAnimaux td img{
+.tAnimaux td img {
     width: 100%;
     vertical-align: middle;
     padding: 0;
 }
 
-.vignLienFiche{
+.vignLienFiche {
     height: 8.5em;
     width: 15em;
     background-repeat: no-repeat;
     background-position: center;
-    background-size: cover 
-
+    background-size: cover
 }
 
-.vignLienFiche:hover{
+.vignLienFiche:hover {
     transform: scale(0.95);
 }
 
-#desc{
+#desc {
     font: 14px "Righteous";
     width: 100%;
     resize: none;
 }
 
-.nomAnimal{
+.nomAnimal {
     font: 2.2em "Righteous";
     text-align: center;
     padding: 0.5em;
     color: #7f6229;
 }
 
-.espAnimal{
+.espAnimal {
     font: 1.6em "Righteous";
     color: #367f59;
 }
 
-#tFiche{
+#tFiche {
     font: 1.4em "Righteous";
     height: 100%;
 }
 
-#tFiche #chpDesc{
+#tFiche #chpDesc {
     width: 50%;
 }
 
-.tiers{
+.tiers {
     width: 30%;
     display: inline-block;
     height: 100%;
@@ -345,7 +357,7 @@ th{
     float: left;
 }
 
-.deuxTiers{
+.deuxTiers {
     width: 60.5%;
     display: inline-block;
     height: 100%;
@@ -355,6 +367,3 @@ th{
     margin: auto auto;
     border: 1px solid rgba(1, 1, 1, 0.5);
 }
-
-
-

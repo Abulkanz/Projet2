@@ -6,14 +6,14 @@ include  'modele.php' ;
 function listeEmploye(){
     $cnx=getBD();
     $sql="SELECT * FROM employes";
-    $idRequete=  executeRequete($cnx, $sql);
+    $idRequete=  executeR($cnx, $sql);
     return $idRequete;
 }
 function consultEmploye($param){
     $idEmployes= $param['identifiant'];
     $cnx=getBD();
     $sql="SELECT * FROM employes WHERE idEmploye = ?";
-    $idRequete=  executeRequete($cnx, $sql,array($idEmployes));
+    $idRequete=  executeR($cnx, $sql,array($idEmployes));
     return $idRequete;
 }
 function ajouterEmploye($param){
@@ -64,7 +64,7 @@ function ajouterEmploye($param){
         // on insere dans la bdd
          $cnx=getBD();
          $Sql = "INSERT INTO employes(login, nomEmploye, prenomEmploye, fonction, motDePasse, avatar, adresse_mail, droits, idSexe) VALUES (?,?,?,?,?,?,?,?,?)";
-         $idRequete = executeRequete($cnx,$Sql,array($login,$nom,$prenom,$fonction,$motdepasse,$userpic,$mail,$droits,$idSexe));
+         $idRequete = executeR($cnx,$Sql,array($login,$nom,$prenom,$fonction,$motdepasse,$userpic,$mail,$droits,$idSexe));
     }
     return $idRequete;
 }
@@ -86,7 +86,7 @@ function modifierEmploye($param){
     $motdepasse=hash('Ripemd128',"$gauche.$mdp_temp.$droite");
     $cnx=getBD();
     $Sql = "UPDATE employes SET login=?, nomEmploye=?, prenomEmploye=?, fonction=?, motDePasse=?, adresse_mail=?,droits=? WHERE idEmploye=?";
-    $idRequete = executeRequete($cnx,$Sql,array($login, $nom,$prenom,$fonction,$motdepasse,$mail,$droits,$idEmploye));
+    $idRequete = executeR($cnx,$Sql,array($login, $nom,$prenom,$fonction,$motdepasse,$mail,$droits,$idEmploye));
 
     return $idRequete;
 }
@@ -121,7 +121,7 @@ function modifierImageEmploye($param){
         // on insere dans la bdd
         $cnx=getBD();
         $Sql = "UPDATE employes SET avatar=? WHERE idEmploye=?";
-        $idRequete = executeRequete($cnx,$Sql,array($userpic,$idEmployes));
+        $idRequete = executeR($cnx,$Sql,array($userpic,$idEmployes));
     }
     return $idRequete;
 }
@@ -129,20 +129,20 @@ function supprimerEmploye($param){
     $idEmployes=$param["idEmploye"];
     $cnx=getBD();
     $sql="DELETE FROM employes WHERE idEmploye = ?";;
-    $idRequete=  executeRequete($cnx, $sql,array($idEmployes));
+    $idRequete=  executeR($cnx, $sql,array($idEmployes));
     return $idRequete;
 }
 function corspmail($param){
     $idEmployes= $param['idEmploye'];
     $cnx=getBD();
     $sql="SELECT * FROM employes WHERE idEmploye = ?";
-    $idRequete=  executeRequete($cnx, $sql,array($idEmployes));
+    $idRequete=  executeR($cnx, $sql,array($idEmployes));
     return $idRequete;
 }
 function profilEmploye($param){
     $idEmployes= $param['identifiant'];
     $cnx=getBD();
     $sql="SELECT * FROM employes WHERE login = ?";
-    $idRequete=  executeRequete($cnx, $sql,array($idEmployes));
+    $idRequete=  executeR($cnx, $sql,array($idEmployes));
     return $idRequete;
 }

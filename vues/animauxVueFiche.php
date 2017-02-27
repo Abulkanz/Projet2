@@ -1,12 +1,19 @@
 <?php
 
-require_once 'include/libs/Smarty.class.php';
+require_once 'include/libs/smarty/Smarty.class.php';
 
 $tpl = new Smarty();
 $ficheAnimal = [];
 
-$jScript = "";
+$jScript = '<script src="js/jquery.min.js" type="text/javascript"></script>
+           <script src="js/Chart.min.js" type="text/javascript"></script>
+           <script src="js/app.js" type="text/javascript"></script>
+           <script src="js/dropdown.js" type="text/javascript"></script>';
 
+$login= $_SESSION['login'];
+$nom = $_SESSION['nomEmploye'];
+$prenom = $_SESSION['prenomEmploye'];
+$avatar = $_SESSION['avatar'];
 
 $reqConsAnimal = $tabReqConsult[0];
 $reqAgeAnimal = $tabReqConsult[1];
@@ -93,6 +100,8 @@ $tpl->assign('description', $ficheAnimal['description']);
 $tpl->assign('pays', $ficheAnimal['pays']);
 $tpl->assign('pere', $ficheAnimal['pere']);
 $tpl->assign('mere', $ficheAnimal['mere']);
+$tpl->assign('login', $login);
+$tpl->assign('avatar', $avatar);
 $tpl->assign('js', $jScript);
 
 $tpl->display('vues/animauxVueFiche.tpl');
