@@ -7,12 +7,10 @@ $(document).ready(function () {
         success: function (data) {
             console.log(data);
             var espece = [];
-            var espece2 = [];
             var taille = [];
-            var taille2 = [];
-            var i = 0;
+            var lgTab = data.length;
 
-            for (i = 0; i <= 11; i++) {
+            for (var i = 0; i < lgTab; i++) {
                 espece.push(data[i].nomEspece);
                 taille.push(data[i].tMoyenne);
             }
@@ -61,8 +59,9 @@ $(document).ready(function () {
             console.log(data);
             var espece = [];
             var poids = [];
+            var lgTab = data.length;
 
-            for (var i = 0; i <= 11; i++) {
+            for (var i = 0; i < lgTab; i++) {
                 espece.push(data[i].nomEspece);
                 poids.push(data[i].pMoyen);
             }

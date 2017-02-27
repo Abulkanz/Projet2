@@ -70,6 +70,7 @@
                                     <br>
                                     <br>
                                     <textarea from="formAnimal" id="desc" {$varCRUD}>{$description}</textarea>
+                                    {$inputEdit}
                                 </form>
                             </fieldset>
                         </td>

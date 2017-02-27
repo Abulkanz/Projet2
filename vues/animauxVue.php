@@ -7,6 +7,8 @@ $listeAnimaux = [];
 $i = 0;
 
 if (isset($_POST['action'])) {
+    
+    //Liste via recherche ou tri
     if (!$ligne = $reqRech->fetch()) {
         $aucRes = '<p class="aucRes">--La recherche ne fournit aucun resultat--</p>';
         $nbLignes = '';
@@ -55,7 +57,9 @@ if (isset($_POST['action'])) {
         $aucRes = '';
         $nbLignes = $reqRech->rowCount();
     }
+    
 } else {
+    //Liste complète par défaut
     if ($ligne = $reqListe->fetch()) {
         $initTable = '<table class="tAnimaux">
                     <tr>

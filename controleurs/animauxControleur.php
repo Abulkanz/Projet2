@@ -2,7 +2,6 @@
 
 require_once 'modele/animauxModele.php';
 
-
 function rechercher($param) {
     $reqRech = listeRech($param);
     require_once 'vues/animauxVue.php';
@@ -22,5 +21,14 @@ function consulter($param) {
 function modifier($param) {
     $reference = $param['idAnimal'];
     $tabReqModif = modifierFiche($reference);
+    require_once 'vues/animauxVueFiche.php';
+}
+
+function supprimer($param) {
+    $reference = $param['idAnimal'];
+    if (isset($_POST['valSuppr'])) {
+        $reqSuppr = execSuppr($reference);
+    }
+    $tabReqConsult = consulterFiche($reference);
     require_once 'vues/animauxVueFiche.php';
 }
