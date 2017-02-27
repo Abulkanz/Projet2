@@ -87,6 +87,13 @@ function consulterFiche($reference) {
     return $tabReqConsult;
 }
 
+function execModif($param){
+    $cnx = getBD();
+    $sql = 'UPDATE animaux
+            SET ';
+            
+}
+
 function execSuppr($param) {
     $cnx = getBD();
     $sql = "DELETE FROM animaux WHERE idAnimaux = $param";

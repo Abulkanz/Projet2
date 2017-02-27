@@ -44,33 +44,58 @@
                         <td id="chpDesc">
                             <fieldset id="fsFiche">
                                 <legend class="nomAnimal"><strong>{$prenom} (Id n°{$numero})</strong></legend>
-                                <form id="formAnimal" method="POST" action="index.php">
-                                    <strong class="espAnimal">{$espece} ({$pays})</strong>
+                                <form id="formAnimal" method="POST" action="index.php" {$onSubmitJs}>
+                                    <!--Variable servant de module entre la consultation et la modif-->
+                                    {$espSexPays}
                                     <br>
-                                    <label for="numParcelle"><strong>Numero de parcelle : </strong></label>
-                                    <input type="text" id="numParcelle" value="{$parcelle}" {$varCRUD}>
-                                    <br>
-                                    <label for="taille"><strong>Taille (cm): </strong></label>
-                                    <input type="text" id="taille" value="{$taille}" {$varCRUD}>
-                                    <br>
-                                    <label for="poids"><strong>Poids (kg): </strong></label>
-                                    <input type="text" id="poids" value="{$poids}" {$varCRUD}>
-                                    <br>
-                                    <label for="dOb"><strong>Né le : </strong></label>
-                                    <input type="text" id="dOb" value="{$dOb}" {$varCRUD}>
-                                    <br>
-                                    <label for="pOb"><strong>Lieu de Naissance : </strong></label>
-                                    <input type="text" id="pOb" value="{$pOb}" {$varCRUD}>
-                                    <br>
-                                    <label for="pere"><strong>Père : </strong></label>
-                                    <input type="text" id="pere" value="{$pere}" {$varCRUD}>
-                                    <br>
-                                    <label for="mere"><strong>Mère : </strong></label>
-                                    <input type="text" id="mere" value="{$mere}" {$varCRUD}>
-                                    <br>
-                                    <br>
-                                    <textarea from="formAnimal" id="desc" {$varCRUD}>{$description}</textarea>
-                                    {$inputEdit}
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                <label for="numParcelle"><strong>Numero de parcelle : </strong></label>
+                                                <input type="text" id="numParcelle" value="{$parcelle}" {$varCRUD}></td>
+                                            <td>
+                                                <label for="statutAnimal"><strong>Statut actuel : </strong></label>
+                                                <input type="text" id="statutAnimal" value="{$statutAnimal}" {$varCRUD}>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <label for="taille"><strong>Taille (cm): </strong></label>
+                                                <input type="text" id="taille" value="{$taille}" {$varCRUD}>
+                                            </td>
+                                            <td>
+                                                <label for="poids"><strong>Poids (kg): </strong></label>
+                                                <input type="text" id="poids" value="{$poids}" {$varCRUD}>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <label for="dOb"><strong>Né le : </strong></label>
+                                                <input type="text" id="dOb" value="{$dOb}" {$varCRUD}>
+                                            </td>
+                                            <td>
+                                                <label for="pOb"><strong>Lieu de Naissance : </strong></label>
+                                                <input type="text" id="pOb" value="{$pOb}" {$varCRUD}>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <label for="pere"><strong>Père : </strong></label>
+                                                <input type="text" id="pere" value="{$pere}" {$varCRUD}>
+                                            </td>
+                                            <td>
+                                                <label for="mere"><strong>Mère : </strong></label>
+                                                <input type="text" id="mere" value="{$mere}" {$varCRUD}>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">
+                                                <br>
+                                                <textarea from="formAnimal" id="desc" {$varCRUD}>{$description}</textarea>
+                                                {$inputEdit}
+                                            </td>
+                                        </tr>
+                                    </table>
                                 </form>
                             </fieldset>
                         </td>
@@ -78,16 +103,9 @@
                 </table>
             </div>
         </div>
+        <!--Balises pour pouvoir concaténer les scripts Js-->
         <script>
-            function agrImg($param) {
-                if ($param.style.position == "absolute") {
-                    $param.style.cssText = " width: 100%;object-fit: cover;padding: 1em;";
-                    document.getElementById("fsFiche").style.display = "block";
-                } else {
-                    $param.style.cssText = "width:80%;position:absolute; top:43%; left:50%; transform:translate(-50%, -50%);";
-                    document.getElementById("fsFiche").style.display = "none";
-                }
-            }
+            {$js}
         </script>
     </body>
 </html>

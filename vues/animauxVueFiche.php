@@ -5,8 +5,15 @@ require_once 'include/libs/Smarty.class.php';
 $tpl = new Smarty();
 $ficheAnimal = [];
 
-$jScript = "";
-
+$jScript = 'function agrImg($param) {
+                if ($param.style.position == "absolute") {
+                    $param.style.cssText = " width: 100%;object-fit: cover;padding: 1em;";
+                    document.getElementById("fsFiche").style.display = "block";
+                } else {
+                    $param.style.cssText = "width:80%;position:absolute; top:43%; left:50%; transform:translate(-50%, -50%);";
+                    document.getElementById("fsFiche").style.display = "none";
+                }
+            }';
 
 $reqConsAnimal = $tabReqConsult[0];
 $reqAgeAnimal = $tabReqConsult[1];
@@ -24,6 +31,9 @@ if ($ligne = $reqConsAnimal->fetch()) {
     $ficheAnimal['dateNaissance'] = $ligne['date_naissance'];
     $ficheAnimal['lieuNaissance'] = $ligne['lieu_naissance'];
     $ficheAnimal['statut'] = $ligne['statut'];
+    if ($ligne['statut'] == NULL) {
+        $ligne['statut'] = "Présent";
+    }
     $ficheAnimal['description'] = $ligne['description'];
     $ficheAnimal['pere'] = $ligne['pere'];
     if ($ficheAnimal['pere'] == NULL) {
@@ -45,7 +55,7 @@ if ($ligne = $reqConsAnimal->fetch()) {
     if ($ligne4 = $reqSexAnimal->fetch(PDO::FETCH_ASSOC)) {
         $ficheAnimal['sexe'] = $ligne4['sexe'];
         if ($ficheAnimal['sexe'] == 'M') {
-            $ficheAnimal['sexe'] = 'Male';
+            $ficheAnimal['sexe'] = 'Mâle';
         } else {
             $ficheAnimal['sexe'] = 'Femelle';
         }
@@ -64,25 +74,50 @@ if ($ligne = $reqConsAnimal->fetch()) {
 switch ($_POST['action']) {
     case 'supprimer' :
         $varCRUD = 'style="border-style:none;" readonly';
-        $inputEdit = '<input type="hidden" name="idAnimal" value="' . $ficheAnimal['idAnimal'] . '">
-                      <input type="hidden" name="gestion" value="animaux">
-                      <input type="hidden" name="action" value="supprimer">
-                      <input type="submit" name="valSuppr" value="Supprimer">';
+        $onSubmitJs = 'onsubmit="return validForm()"';
+        $jScript = $jScript.' function validForm() {
+                    var choix = confirm("Etes-vous certain de vouloir supprimer cet enregistrement ?");
+                    if (choix === true) {
+                        return true;
+                        } else {
+                        return false;
+                        }
+                    }';
+        $espSexPays = '<strong class="espAnimal">' . $ficheAnimal['nomEspece'] . ' ' . $ficheAnimal['sexe'] . ' (' . $ficheAnimal['pays'] . ' )</strong>';
+        $inputEdit = '<input type = "hidden" name = "idAnimal" value = "' . $ficheAnimal['idAnimal'] . '">
+        <input type = "hidden" name = "gestion" value = "animaux">
+        <input type = "hidden" name = "action" value = "supprimer">
+        <input type = "submit" name = "valSuppr" value = "Supprimer">';
+        break;
+    case 'modifier' :
+        $onSubmitJs = null;
+        $varCRUD = null;
+        $espSexPays = '<input type="text" name="espece" value="'. $ficheAnimal['nomEspece'].'">
+                       <input type="text" name="sexe" value="'. $ficheAnimal['sexe'].'">
+                       <input type="text" name="pays" value="'. $ficheAnimal['pays'].'">';
+        $inputEdit = '<input type = "hidden" name = "idAnimal" value = "' . $ficheAnimal['idAnimal'] . '">
+        <input type = "hidden" name = "gestion" value = "animaux">
+        <input type = "hidden" name = "action" value = "modifier">
+        <input type = "submit" name = "valModif" value = "Modifier">';
         break;
     case 'consulter' :
-        $varCRUD = 'style="border-style:none;" readonly';
-        $inputEdit = "";
+        $onSubmitJs = null;
+        $varCRUD = 'style = "border-style:none;" readonly';
+        $espSexPays = '<strong class="espAnimal">' . $ficheAnimal['nomEspece'] . ' ' . $ficheAnimal['sexe'] . ' (' . $ficheAnimal['pays'] . ' )</strong>';
+        $inputEdit = null;
         break;
 }
 
-
-
 $tpl->assign('inputEdit', $inputEdit);
 $tpl->assign('varCRUD', $varCRUD);
+$tpl->assign('espSexPays', $espSexPays);
+
 $tpl->assign('photo', $ficheAnimal['photo']);
+$tpl->assign('sexe', $ficheAnimal['sexe']);
 $tpl->assign('numero', $ficheAnimal['idAnimal']);
 $tpl->assign('parcelle', $ficheAnimal['idParcelle']);
 $tpl->assign('espece', $ficheAnimal['nomEspece']);
+$tpl->assign('statutAnimal', $ligne['statut']);
 $tpl->assign('prenom', $ficheAnimal['prenomAnimal']);
 $tpl->assign('poids', $ficheAnimal['poids']);
 $tpl->assign('taille', $ficheAnimal['taille']);
@@ -93,6 +128,8 @@ $tpl->assign('description', $ficheAnimal['description']);
 $tpl->assign('pays', $ficheAnimal['pays']);
 $tpl->assign('pere', $ficheAnimal['pere']);
 $tpl->assign('mere', $ficheAnimal['mere']);
+
+$tpl->assign('onSubmitJs', $onSubmitJs);
 $tpl->assign('js', $jScript);
 
 $tpl->display('vues/animauxVueFiche.tpl');
