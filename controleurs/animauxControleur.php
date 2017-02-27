@@ -27,7 +27,7 @@ function modifier($param) {
 function supprimer($param) {
     $reference = $param['idAnimal'];
     if (isset($_POST['valSuppr'])) {
-        $reqSuppr = execSuppr($reference);
+        execSuppr($reference);
     }
     $tabReqConsult = consulterFiche($reference);
     require_once 'vues/animauxVueFiche.php';

@@ -91,8 +91,7 @@ function consulterFiche($reference) {
 
 function execSuppr($param) {
     $cnx = getBD();
-    $sql = "DELETE FROM produit WHERE reference = ".$param."";
-    echo $sql;
-    $idRequete = executeR($cnx, $sql, array($param));
-//    Header('Location: index.php?gestion=animaux');
+    $sql = "DELETE FROM animaux WHERE idAnimaux = $param";
+    $idRequete = executeR($cnx, $sql);
+    Header('Location: index.php?gestion=animaux');
 }

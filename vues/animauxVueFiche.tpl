@@ -44,7 +44,7 @@
                         <td id="chpDesc">
                             <fieldset id="fsFiche">
                                 <legend class="nomAnimal"><strong>{$prenom} (Id n°{$numero})</strong></legend>
-                                <form id="formAnimal">
+                                <form id="formAnimal" method="POST" action="index.php">
                                     <strong class="espAnimal">{$espece} ({$pays})</strong>
                                     <br>
                                     <label for="numParcelle"><strong>Numero de parcelle : </strong></label>
