@@ -65,13 +65,13 @@
                         <td>{$Animal.statut}</td>
                         <td><form method='POST' action='index.php'>
                             <input class="action" type='submit' name='modifier' value='Modifier'>
-                            <input type="hidden" name="gestion" value="fiche">
+                            <input type="hidden" name="gestion" value="animaux">
                             <input type='hidden' name='idAnimal' value="{$Animal.idAnimal}">
                             <input type="hidden" name="action" value="modifier">
                         </form>
                         <form method='POST' action='index.php'>
                             <input class="action" type='submit' name='supprimer' value='Supprimer'>
-                            <input type="hidden" name="gestion" value="fiche">
+                            <input type="hidden" name="gestion" value="animaux">
                             <input type='hidden' name='idAnimal' value="{$Animal.idAnimal}">
                             <input type="hidden" name="action" value="supprimer">
                         </form></td>

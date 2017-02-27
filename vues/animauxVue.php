@@ -26,7 +26,7 @@ if (isset($_POST['action'])) {
         do {
             $listeAnimaux[$i]['idAnimal'] = $ligne['idAnimaux'];
             $listeAnimaux[$i]['photo'] = '<form method="POST" action="index.php">
-                                            <input type="hidden" name="gestion" value="fiche">
+                                            <input type="hidden" name="gestion" value="animaux">
                                             <input type="hidden" name="action" value="consulter">
                                             <input type="hidden" name="consulter" value="consulter">
                                             <input type="hidden" name="idAnimal" value=' . $ligne['idAnimaux'] . '>
@@ -71,7 +71,7 @@ if (isset($_POST['action'])) {
         do {
             $listeAnimaux[$i]['idAnimal'] = $ligne['idAnimaux'];
             $listeAnimaux[$i]['photo'] = '<form method="POST" action="index.php">
-                                            <input type="hidden" name="gestion" value="fiche">
+                                            <input type="hidden" name="gestion" value="animaux">
                                             <input type="hidden" name="action" value="consulter">
                                             <input type="hidden" name="consulter" value="consulter">
                                             <input type="hidden" name="idAnimal" value=' . $ligne['idAnimaux'] . '>

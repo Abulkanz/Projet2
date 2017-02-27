@@ -124,5 +124,5 @@ $tpl->assign('pere', $ficheAnimal['pere']);
 $tpl->assign('mere', $ficheAnimal['mere']);
 $tpl->assign('js', $jScript);
 
-$tpl->display('vues/ficheVue.tpl');
+$tpl->display('vues/animauxVueFiche.tpl');
 
