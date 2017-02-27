@@ -31,8 +31,10 @@
                             <input class="lienNav" type="submit" value="Carte">
                         </form>
                     </li>
-                    <li><input class="lienNav" type="submit" name="lignes_commande" value="Statistiques"></li>
+                    <li><input class="lienNav" type="submit" name="lignes_commande" value="{$nom}"></li>
                     <img class="avatar" src="img/avatarTest.png" alt=""/>
+                    
+                    
                 </ul>
             </header>
             <div class="contGraphs">

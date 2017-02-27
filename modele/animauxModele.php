@@ -2,8 +2,6 @@
 
 include 'modele.php';
 
-
-
 function listeAnimaux() {
     $cnx = getBD();
     $reqListe = 'SELECT DISTINCT

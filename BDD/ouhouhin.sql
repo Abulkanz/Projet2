@@ -118,8 +118,8 @@ INSERT INTO `pays` (`nomPays`, `idContinent`) VALUES
 -- alimentation dans la table employes
 INSERT INTO `employes` (`login`, `nomEmploye`, `prenomEmploye`, `fonction`, `motDePasse`, `avatar`, `adresse_mail`, `droits`, `idSexe`) 
 VALUES
-('vlacroix', 'Lacroix', 'Valérie', 'Administrateur', 'rbtqe6qV', '484830.png', 'vlacroix@ouhouhin.fr', 3, 2),
-('ecourtemanche', 'Courtemanche', 'Eugéne', 'Chef Animalier', 'qKlJfWoB', 'userlogom.png', 'ecourtemanche@ouhouhin.fr', 2, 1),
+('vlacroix', 'Lacroix', 'Valérie', 'Administrateur', 'rbtqe6qV', 'userlogof.png', 'vlacroix@ouhouhin.fr', 3, 2),
+('ecourtemanche', 'Courtemanche', 'Eugéne', 'Chef Animalier', 'userlogom.png', 'userlogom.png', 'ecourtemanche@ouhouhin.fr', 2, 1),
 ('tpoisson', 'Poisson', 'Tyson', 'Vétérinaire', 'gZH6Yurc', 'userlogom.png', 'tpoisson@ouhouhin.fr', 2, 1),
 ('tbler', 'Bler', 'Théodore', 'Vétérinaire', '6CEJJIOW', 'userlogom.png', 'tbler@ouhouhin.fr', 2, 1),
 ('obeland', 'Béland', 'Océane', 'Stagiaire', 'jjLUf1of', 'userlogof.png', 'obeland@ouhouhin.fr', 1, 2),

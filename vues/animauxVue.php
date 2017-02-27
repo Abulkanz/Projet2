@@ -24,7 +24,6 @@ if (isset($_POST['action'])) {
                         <th>Statut</th>
                         <th>Actions</th>
                     </tr>';
-
         do {
             $listeAnimaux[$i]['idAnimal'] = $ligne['idAnimaux'];
             $listeAnimaux[$i]['photo'] = '<form method="POST" action="index.php">
