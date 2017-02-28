@@ -1,10 +1,22 @@
 <?php
 require_once 'include/libs/smarty/Smarty.class.php';
 $tpl=new Smarty();
+$login= $_SESSION['login'];
+$nom = $_SESSION['nomEmploye'];
+$prenom = $_SESSION['prenomEmploye'];
+$avatar = $_SESSION['avatar'];
+$script = '<script src="js/jquery.min.js" type="text/javascript"></script>
+           <script src="js/Chart.min.js" type="text/javascript"></script>
+           <script src="js/app.js" type="text/javascript"></script>
+           <script src="js/dropdown.js" type="text/javascript"></script>';
+
 switch ($action){
     case 'ajouter' :
+        $tpl->assign('login', $login);
+        $tpl->assign('avatar', $avatar);
+        $tpl->assign('js', $script);
         $tpl->assign("msg","Ajout d'un employé");
-        $tpl->display("template/employesVueAjouter.tpl");
+        $tpl->display("vues/employesVueAjouter.tpl");
         break;
     case 'consulter' :
         $consultEmploye=array();
@@ -42,11 +54,14 @@ switch ($action){
         $tpl->assign("bouton2",$bouton2);
         $tpl->assign("valeurcolspan",$valeurcolspan);
         $tpl->assign('form',$form);
+        $tpl->assign('login', $login);
+        $tpl->assign('avatar', $avatar);
+        $tpl->assign('js', $script);
         $tpl->assign("parametrereadonly",$parametrereadonly);
         $tpl->assign("debutlignetab",$debutlignetab);
         $tpl->assign("finlignetab",$finlignetab);
         $tpl->assign('consultEmploye', $consultEmploye);
-        $tpl->display("template/employesVueForm.tpl");
+        $tpl->display("vues/employesVueForm.tpl");
         break;
     case 'modifier':
         $consultEmploye=array();
@@ -85,10 +100,13 @@ switch ($action){
         $tpl->assign("bouton1",$bouton1);
         $tpl->assign("bouton2",$bouton2);
         $tpl->assign('form',$form);
+        $tpl->assign('login', $login);
+        $tpl->assign('avatar', $avatar);
+        $tpl->assign('js', $script);
         $tpl->assign("parametrereadonly",$parametrereadonly);
         $tpl->assign("debutlignetab",$debutlignetab);
         $tpl->assign("finlignetab",$finlignetab);
-        $tpl->display("template/employesVueForm.tpl");
+        $tpl->display("vues/employesVueForm.tpl");
         break;
     case 'supprimer':
         $consultEmploye=array();
@@ -126,10 +144,13 @@ switch ($action){
         $tpl->assign("valeurcolspan",$valeurcolspan);
         $tpl->assign("bouton1",$bouton1);
         $tpl->assign("bouton2",$bouton2);
+        $tpl->assign('login', $login);
+        $tpl->assign('avatar', $avatar);
+        $tpl->assign('js', $script);
         $tpl->assign("parametrereadonly",$parametrereadonly);
         $tpl->assign("debutlignetab",$debutlignetab);
         $tpl->assign("finlignetab",$finlignetab);
         $tpl->assign('consultEmploye', $consultEmploye);
-        $tpl->display("template/employesVueForm.tpl");
+        $tpl->display("vues/employesVueForm.tpl");
         break;
 }

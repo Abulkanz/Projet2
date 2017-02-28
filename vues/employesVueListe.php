@@ -21,4 +21,4 @@ $tpl->assign('msg','Liste des employes');
 $tpl->assign('login',$login);
 $tpl->assign('nbligne',$nbligne);
 $tpl->assign('listeEmploye', $listeEmploye);
-$tpl->display('template/employesVueListe.tpl');
+$tpl->display('vues/employesVueListe.tpl');

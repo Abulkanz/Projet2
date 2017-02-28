@@ -33,11 +33,21 @@ if (isset($_SESSION['login'])) {
             consulter($_POST);
         } elseif ($_POST['action'] == 'rechercher') {
             rechercher($_POST);
-        } elseif ($_POST['action'] == 'modifier') {
+        } elseif ($_POST['action'] == 'ajouter') {
+            ajouter($_POST);
+        }elseif ($_POST['action'] == 'modifier') {
             modifier($_POST);
+        } elseif(isset($_POST['validermodification'])){
+            validermodification($_POST);
+        }elseif(isset($_POST['vmodificationimage'])){
+        vmodificationimage($_POST);
         } elseif ($_POST['action'] == 'supprimer') {
             supprimer($_POST);
-        } elseif ($_POST['action'] == 'profil') {
+        } elseif(isset($_POST['validersuppression'])){
+            validersuppression($_POST);
+        } elseif(isset($_POST['envoyermail'])){
+            envoyermail($_POST);
+        }elseif ($_POST['action'] == 'profil') {
             profil($_POST);
         } elseif ($_POST['action'] == 'deconnexion') {
             deconnexion();

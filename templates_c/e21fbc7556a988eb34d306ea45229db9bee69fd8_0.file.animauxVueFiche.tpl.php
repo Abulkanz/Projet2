@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2017-02-28 06:43:53
+/* Smarty version 3.1.29, created on 2017-02-28 17:53:32
   from "C:\wamp64\www\Projet2zoo\vues\animauxVueFiche.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_58b51c29e55075_57838291',
+  'unifunc' => 'content_58b5b91cba2d97_01661783',
   'file_dependency' => 
   array (
     'e21fbc7556a988eb34d306ea45229db9bee69fd8' => 
     array (
       0 => 'C:\\wamp64\\www\\Projet2zoo\\vues\\animauxVueFiche.tpl',
-      1 => 1488264090,
+      1 => 1488302509,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_58b51c29e55075_57838291 ($_smarty_tpl) {
+function content_58b5b91cba2d97_01661783 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -51,7 +51,7 @@ function content_58b51c29e55075_57838291 ($_smarty_tpl) {
                     </li>
                     <li>
                         <form method="POST" name="gestion">
-                            <input type="hidden" name="gestion" value="login">
+                            <input type="hidden" name="gestion" value="carte">
                             <input class="lienNav" type="submit" value="Carte">
                         </form>
                     </li>
@@ -77,7 +77,6 @@ function content_58b51c29e55075_57838291 ($_smarty_tpl) {
                                 </select>
                             </form>
                     </li>
-                    <li><input class="lienNav" type="submit" name="lignes_commande" value="Statistiques"></li>
                     <li class="dropdown">
                         <span class="dropbtn" onclick="displayMenuUser()"><img class="avatar"  onclick="displayMenuUser()" src="img/userlogof.png"><span class="username"  onclick="displayMenuUser()"><?php echo $_smarty_tpl->tpl_vars['login']->value;?>
 </span></span>
@@ -93,7 +92,7 @@ function content_58b51c29e55075_57838291 ($_smarty_tpl) {
                             </form>
                             <form method="POST" name="gestion">
                                 <button class="lienNav">
-                                    <input type="hidden" name="gestion" value="animaux">
+                                    <input type="hidden" name="gestion" value="aide">
                                     <img src="img/icone_aide.png" style="width:20px; margin-right:5px">Aide
                                 </button>
                             </form>

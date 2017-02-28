@@ -1,17 +1,42 @@
+<?php
+/* Smarty version 3.1.29, created on 2017-02-28 18:00:57
+  from "C:\wamp64\www\Projet2zoo\vues\employesVueAjouter.tpl" */
+
+if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
+  'has_nocache_code' => false,
+  'version' => '3.1.29',
+  'unifunc' => 'content_58b5bad94d6b52_89518613',
+  'file_dependency' => 
+  array (
+    '3905aff9d5f784c14c76750637db5c8fdb31c3eb' => 
+    array (
+      0 => 'C:\\wamp64\\www\\Projet2zoo\\vues\\employesVueAjouter.tpl',
+      1 => 1488304849,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_58b5bad94d6b52_89518613 ($_smarty_tpl) {
+?>
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!--<link href="css/bootstrap.min.css" rel="stylesheet">-->
         <link href="style/font-awesome.min.css" rel="stylesheet" type="text/css"/>
         <link href="style/styles.css" rel="stylesheet">
         <link href="style/dropdown.css" rel="stylesheet">
+        <?php echo '<script'; ?>
+ type="text/javascript" src="js/script.js"> <?php echo '</script'; ?>
+>
         <title>Projet2</title>
 	</head>
-        <body>
-        <div class="conteneur noOverF">
+    <body>
+    <div class="conteneur noOverF">
             <img class="logo" src="img/logoSinges.png">
             <header>
                 <ul>
@@ -28,15 +53,9 @@
                         </form>
                     </li>
                     <li>
-                        <form method="POST" name="gestion">
-                            <input type="hidden" name="gestion" value="carte">
-                            <input class="lienNav" type="submit" value="Carte">
-                        </form>
-                    </li>
-                     <li>
-                        <form method="POST" name="gestion">
-                            <input type="hidden" name="gestion" value="statistiques">
-                            <input class="lienNav" type="submit" value="Statistiques">
+                        <form method="POST" action="index.php">
+                            <input type="hidden" name="gestion" value="employes">
+                            <input class="lienNav" type="submit" name="employes" value="utilisateur">
                         </form>
                     </li>
                      <li>
@@ -56,13 +75,15 @@
                             </form>
                     </li>
                     <li class="dropdown">
-                        <span class="dropbtn" onclick="displayMenuUser()"><img class="avatar"  onclick="displayMenuUser()" src="img/userlogof.png"><span class="username"  onclick="displayMenuUser()">{$login}</span></span>
+                        <span class="dropbtn" onclick="displayMenuUser()"><img class="avatar"  onclick="displayMenuUser()" src="img/userlogof.png"><span class="username"  onclick="displayMenuUser()"><?php echo $_smarty_tpl->tpl_vars['login']->value;?>
+</span></span>
                         <div class="dropdown-content" id="menuUser">
                             <form method="POST" name="gestion">
                                 <button class="lienNav">
                                     <input type="hidden" name="gestion" value="profil">
                                     <input type="hidden" name="action" value="profil">
-                                    <input type="hidden" name="identifiant" value="{$login}">
+                                    <input type="hidden" name="identifiant" value="<?php echo $_smarty_tpl->tpl_vars['login']->value;?>
+">
                                     <img src="img/userlogof.png" style="width:20px; margin-right:5px">Profil
                                 </button>
                             </form>
@@ -83,63 +104,81 @@
                     </li>
                 </ul>
             </header>
-        <h2>{$msg}</h2>
-        {foreach from=$consultEmploye item=Employe}
+        <h2><?php echo $_smarty_tpl->tpl_vars['msg']->value;?>
+</h2>
+        <div class="conteneurTable">
         <table>
-				{$form}
+				<form method="POST" action="index.php" enctype="multipart/form-data" onsubmit="Verifier_formulaire (this.form)">
                 <thead>
-                    <tr>
-                        <td colspan="3">Fiche de : {$Employe.nomEmploye} {$Employe.prenomEmploye}</td>
-                    </tr>
                     </thead>
                     <tfoot>
                     <tr>
                         <input type="hidden" name="gestion" value="employes">
-                        {$action1}
-                        <td>{$bouton2}</td>
-                        <td colspan='{$valeurcolspan}'>{$bouton1}</td>
-                        <!-- bouton servant a la modification -->
+                        <input type="hidden" name="action" value="validerajouter">
+                        <td><input type="submit" id="retour" name="Retour" value="Retour" ></td>
+                        <td colspan="3"><input type="submit" name="validerajouter" value="Valider"/></td>
                     </tr>
                     </tfoot>
                     <tbody>
                         <tr>
-                            <td rowspan="8"><img src="img/{$Employe.avatar}" class="miniatureavatar"></td>
-                            <td>Identifiant de connexion</td>
-                            <td><input id="login" name="login" value="{$Employe.login}" {$parametrereadonly}></td>
-                        </tr>
-                        <tr>
-                            <td>Civilité</td>
-							<td><input id="idSexe" name="idSexe" value="{$Civilite}" {$parametrereadonly}></td>
+                            <td>Identifiant de connexion(login)</td>
+                            <td><input type="text" id="login" name="login" onblur="verifUtilisateur(this);"><span id="info"></span></td>
                         </tr>
 						<tr>
                             <td>Nom</td>
-                            <td><input id="nom" name="nom" value="{$Employe.nomEmploye}" {$parametrereadonly}></td>
+                            <td><input type="text" id="nom" name="nom" /></td>
                         </tr>
                         <tr>
                             <td>Prénom</td>
-                            <td><input id="prenom" name="prenom" value="{$Employe.prenomEmploye}"{$parametrereadonly}></td>
+                            <td><input type="text" id="prenom" name="prenom" /></td>
                         </tr>
                         <tr>
                             <td>Fonction</td>
-                            <td><input id="fonction" name="fonction" value="{$Employe.fonction}" {$parametrereadonly}></td>
+                            <td>
+                                <select id="fonction" name="fonction">
+                                    <option value="">---Fonction---</option>
+                                    <option value="Administrateur">Administrateur</option> 
+                                    <option value="Chef animalier">Chef animalier</option>
+                                    <option value="Veterinaire">Veterinaire</option>
+                                    <option value="Stagiaire">Stagiaire</option>
+                                </select>
+                            </td>
                         </tr>
                         <tr>
                             <td>Mot de passe</td>
-                            <td><input type="password" id="motdepasse" name="motdepasse" value="{$Employe.motdepasse}" {$parametrereadonly}></td>
+                            <td><input type="password" id="motdepasse" name="motdepasse" value=""></td>
                         </tr>
                         <tr>
                             <td>Adresse mail</td>
-                            <td><input type="email" id="mail" name="mail" value="{$Employe.adressemail}" {$parametrereadonly}></td>
+                            <td><input type="email" id="mail" name="mail" value=""></td>
                         </tr>
                         <tr>
-                            <td>Droits de l'utilisateur</td>
-							<td><input id="droits" name="droits" value="{$Employe.droits}" {$parametrereadonly}></td>
+                            <td>Sexe</td>
+							<td><select id="idSexe" name="idSexe">
+                    <option value="">---Sexe de l'employé---</option>
+                    <option value="1">Masculin</option> 
+                    <option value="2">Feminin</option>
+                </select></td>
                         </tr>
-                        {$debutlignetab}<input type="hidden" id="idEmploye" name="idEmploye" value="{$Employe.idEmploye}">{$finlignetab}
+                        <tr>
+                            <td>Droits</td>
+							<td><select id='droits' name='droits'>
+                    <option value=''>---Droits---</option>
+                    <option value='1'>Lecture</option> 
+                    <option value='2'>Tous les droits</option>
+                    <option value='3'>Droits de type administrateur</option>
+                </select></td>
+                        </tr>
+                        <tr>
+                            <td>Photo de profil</td>
+                            <td><input type="file" id="avatar" name="avatar" value=""></td>
+                        </tr>
                     </tbody>
                     </form>
             </table>
-             {/foreach}
-             </body>
-             {$js}
-</html>
+            </div>
+            </body>
+            <?php echo $_smarty_tpl->tpl_vars['js']->value;?>
+
+</html><?php }
+}

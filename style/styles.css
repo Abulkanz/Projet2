@@ -269,6 +269,16 @@ a:hover {
     height: 300px;
 }
 
+.miniature {
+    width: 50px;
+    height: 50px;
+}
+
+.miniatureavatar {
+    width: 200px;
+    height: 200px;
+}
+
 #tFiche fieldset {
     height: 100%;
 }

@@ -27,15 +27,9 @@
                         </form>
                     </li>
                     <li>
-                        <form method="POST" name="gestion">
-                            <input type="hidden" name="gestion" value="carte">
-                            <input class="lienNav" type="submit" value="Carte">
-                        </form>
-                    </li>
-                     <li>
-                        <form method="POST" name="gestion">
-                            <input type="hidden" name="gestion" value="statistiques">
-                            <input class="lienNav" type="submit" value="Statistiques">
+                        <form method="POST" action="index.php">
+                            <input type="hidden" name="gestion" value="employes">
+                            <input class="lienNav" type="submit" name="employes" value="utilisateur">
                         </form>
                     </li>
                      <li>
