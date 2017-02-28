@@ -77,61 +77,64 @@
                     </li>
                 </ul>
             </header>
-        <div class="conteneurTable">
-        <h2>{$msg}</h2>
-        <br>
-        <table>
-            <tr>
-                <th></th>
-                <th>Nom</th>
-                <th>Prénom</th>
-                <th>Fonction</th>
-                <th colspan="3">Action</th>
-            </tr>
-            {foreach from=$listeEmploye item=Employe}
-            <tr>
-                <td><img src="img/{$Employe.avatar}" class="miniature"></td>        
-                <td>{$Employe.nomEmploye}</td>
-                <td>{$Employe.prenomEmploye}</td>
-                <td>{$Employe.fonction}</td>
-                <td>
-                    <form method="POST" action="index.php">
-                        <input type="hidden" name="identifiant" value="{$Employe.idEmploye}">
-                        <input type="hidden" name="gestion" value="employes">
-                        <input type="hidden" name="action" value="consulter">
-                        <input type="submit" name="consulter" value="Consulter">
-                    </form>
-                </td>
-                <td>
-                    <form method="POST" action="index.php">
-                        <input type="hidden" name="identifiant" value="{$Employe.idEmploye}">
-                        <input type="hidden" name="gestion" value="employes">
-                        <input type="hidden" name="action" value="modifier">
-                        <input type="submit" name="modifier" value="Modifier">
-                    </form>
-                </td>
-                <td>
-                    <form method="POST" action="index.php">
-                        <input type="hidden" name="identifiant" value="{$Employe.idEmploye}">
-                        <input type="hidden" name="gestion" value="employes">
-                        <input type="hidden" name="action" value="supprimer">
-                        <input type="submit" name="supprimer" value="Supprimer">
-                    </form>
-                </td>
-            </tr>
-            {/foreach}
-        </table>
-        <br>
-        nombre d'enregistrements : {$nbligne}
-        <br>
-        <form method="POST" action="index.php">
-            <p>
-                <label>Ajout d'un employé</label>
-                <input type="hidden" name="gestion" value="employes">
-                <input type="hidden" name="action" value="ajouter">
-                <input type="submit" name="ajouter" value="Ajouter">
-            </p>
-        </form>
+        </div>
+        <div id="fiche">
+            <div class="conteneurTable">
+            <h2>{$msg}</h2>
+            <br>
+            <table>
+                <tr>
+                    <th></th>
+                    <th>Nom</th>
+                    <th>Prénom</th>
+                    <th>Fonction</th>
+                    <th colspan="3">Action</th>
+                </tr>
+                {foreach from=$listeEmploye item=Employe}
+                <tr>
+                    <td><img src="img/{$Employe.avatar}" class="miniature"></td>        
+                    <td>{$Employe.nomEmploye}</td>
+                    <td>{$Employe.prenomEmploye}</td>
+                    <td>{$Employe.fonction}</td>
+                    <td>
+                        <form method="POST" action="index.php">
+                            <input type="hidden" name="identifiant" value="{$Employe.idEmploye}">
+                            <input type="hidden" name="gestion" value="employes">
+                            <input type="hidden" name="action" value="consulter">
+                            <input type="submit" name="consulter" value="Consulter">
+                        </form>
+                    </td>
+                    <td>
+                        <form method="POST" action="index.php">
+                            <input type="hidden" name="identifiant" value="{$Employe.idEmploye}">
+                            <input type="hidden" name="gestion" value="employes">
+                            <input type="hidden" name="action" value="modifier">
+                            <input type="submit" name="modifier" value="Modifier">
+                        </form>
+                    </td>
+                    <td>
+                        <form method="POST" action="index.php">
+                            <input type="hidden" name="identifiant" value="{$Employe.idEmploye}">
+                            <input type="hidden" name="gestion" value="employes">
+                            <input type="hidden" name="action" value="supprimer">
+                            <input type="submit" name="supprimer" value="Supprimer">
+                        </form>
+                    </td>
+                </tr>
+                {/foreach}
+            </table>
+            <br>
+            nombre d'enregistrements : {$nbligne}
+            <br>
+            <form method="POST" action="index.php">
+                <p>
+                    <label>Ajout d'un employé</label>
+                    <input type="hidden" name="gestion" value="employes">
+                    <input type="hidden" name="action" value="ajouter">
+                    <input type="submit" name="ajouter" value="Ajouter">
+                </p>
+            </form>
+            </div>
         </div>
     </body>
 </html>

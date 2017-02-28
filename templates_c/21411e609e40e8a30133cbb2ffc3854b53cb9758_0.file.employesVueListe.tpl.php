@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2017-02-28 18:03:32
+/* Smarty version 3.1.29, created on 2017-02-28 19:41:07
   from "C:\wamp64\www\Projet2zoo\vues\employesVueListe.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_58b5bb74debc59_93675137',
+  'unifunc' => 'content_58b5d2532eaa32_27059282',
   'file_dependency' => 
   array (
     '21411e609e40e8a30133cbb2ffc3854b53cb9758' => 
     array (
       0 => 'C:\\wamp64\\www\\Projet2zoo\\vues\\employesVueListe.tpl',
-      1 => 1488305008,
+      1 => 1488310855,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_58b5bb74debc59_93675137 ($_smarty_tpl) {
+function content_58b5d2532eaa32_27059282 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -102,19 +102,21 @@ function content_58b5bb74debc59_93675137 ($_smarty_tpl) {
                     </li>
                 </ul>
             </header>
-        <div class="conteneurTable">
-        <h2><?php echo $_smarty_tpl->tpl_vars['msg']->value;?>
+        </div>
+        <div id="fiche">
+            <div class="conteneurTable">
+            <h2><?php echo $_smarty_tpl->tpl_vars['msg']->value;?>
 </h2>
-        <br>
-        <table>
-            <tr>
-                <th></th>
-                <th>Nom</th>
-                <th>Prénom</th>
-                <th>Fonction</th>
-                <th colspan="3">Action</th>
-            </tr>
-            <?php
+            <br>
+            <table>
+                <tr>
+                    <th></th>
+                    <th>Nom</th>
+                    <th>Prénom</th>
+                    <th>Fonction</th>
+                    <th colspan="3">Action</th>
+                </tr>
+                <?php
 $_from = $_smarty_tpl->tpl_vars['listeEmploye']->value;
 if (!is_array($_from) && !is_object($_from)) {
 settype($_from, 'array');
@@ -126,63 +128,64 @@ foreach ($_from as $_smarty_tpl->tpl_vars['Employe']->value) {
 $_smarty_tpl->tpl_vars['Employe']->_loop = true;
 $__foreach_Employe_0_saved_local_item = $_smarty_tpl->tpl_vars['Employe'];
 ?>
-            <tr>
-                <td><img src="img/<?php echo $_smarty_tpl->tpl_vars['Employe']->value['avatar'];?>
+                <tr>
+                    <td><img src="img/<?php echo $_smarty_tpl->tpl_vars['Employe']->value['avatar'];?>
 " class="miniature"></td>        
-                <td><?php echo $_smarty_tpl->tpl_vars['Employe']->value['nomEmploye'];?>
+                    <td><?php echo $_smarty_tpl->tpl_vars['Employe']->value['nomEmploye'];?>
 </td>
-                <td><?php echo $_smarty_tpl->tpl_vars['Employe']->value['prenomEmploye'];?>
+                    <td><?php echo $_smarty_tpl->tpl_vars['Employe']->value['prenomEmploye'];?>
 </td>
-                <td><?php echo $_smarty_tpl->tpl_vars['Employe']->value['fonction'];?>
+                    <td><?php echo $_smarty_tpl->tpl_vars['Employe']->value['fonction'];?>
 </td>
-                <td>
-                    <form method="POST" action="index.php">
-                        <input type="hidden" name="identifiant" value="<?php echo $_smarty_tpl->tpl_vars['Employe']->value['idEmploye'];?>
+                    <td>
+                        <form method="POST" action="index.php">
+                            <input type="hidden" name="identifiant" value="<?php echo $_smarty_tpl->tpl_vars['Employe']->value['idEmploye'];?>
 ">
-                        <input type="hidden" name="gestion" value="employes">
-                        <input type="hidden" name="action" value="consulter">
-                        <input type="submit" name="consulter" value="Consulter">
-                    </form>
-                </td>
-                <td>
-                    <form method="POST" action="index.php">
-                        <input type="hidden" name="identifiant" value="<?php echo $_smarty_tpl->tpl_vars['Employe']->value['idEmploye'];?>
+                            <input type="hidden" name="gestion" value="employes">
+                            <input type="hidden" name="action" value="consulter">
+                            <input type="submit" name="consulter" value="Consulter">
+                        </form>
+                    </td>
+                    <td>
+                        <form method="POST" action="index.php">
+                            <input type="hidden" name="identifiant" value="<?php echo $_smarty_tpl->tpl_vars['Employe']->value['idEmploye'];?>
 ">
-                        <input type="hidden" name="gestion" value="employes">
-                        <input type="hidden" name="action" value="modifier">
-                        <input type="submit" name="modifier" value="Modifier">
-                    </form>
-                </td>
-                <td>
-                    <form method="POST" action="index.php">
-                        <input type="hidden" name="identifiant" value="<?php echo $_smarty_tpl->tpl_vars['Employe']->value['idEmploye'];?>
+                            <input type="hidden" name="gestion" value="employes">
+                            <input type="hidden" name="action" value="modifier">
+                            <input type="submit" name="modifier" value="Modifier">
+                        </form>
+                    </td>
+                    <td>
+                        <form method="POST" action="index.php">
+                            <input type="hidden" name="identifiant" value="<?php echo $_smarty_tpl->tpl_vars['Employe']->value['idEmploye'];?>
 ">
-                        <input type="hidden" name="gestion" value="employes">
-                        <input type="hidden" name="action" value="supprimer">
-                        <input type="submit" name="supprimer" value="Supprimer">
-                    </form>
-                </td>
-            </tr>
-            <?php
+                            <input type="hidden" name="gestion" value="employes">
+                            <input type="hidden" name="action" value="supprimer">
+                            <input type="submit" name="supprimer" value="Supprimer">
+                        </form>
+                    </td>
+                </tr>
+                <?php
 $_smarty_tpl->tpl_vars['Employe'] = $__foreach_Employe_0_saved_local_item;
 }
 if ($__foreach_Employe_0_saved_item) {
 $_smarty_tpl->tpl_vars['Employe'] = $__foreach_Employe_0_saved_item;
 }
 ?>
-        </table>
-        <br>
-        nombre d'enregistrements : <?php echo $_smarty_tpl->tpl_vars['nbligne']->value;?>
+            </table>
+            <br>
+            nombre d'enregistrements : <?php echo $_smarty_tpl->tpl_vars['nbligne']->value;?>
 
-        <br>
-        <form method="POST" action="index.php">
-            <p>
-                <label>Ajout d'un employé</label>
-                <input type="hidden" name="gestion" value="employes">
-                <input type="hidden" name="action" value="ajouter">
-                <input type="submit" name="ajouter" value="Ajouter">
-            </p>
-        </form>
+            <br>
+            <form method="POST" action="index.php">
+                <p>
+                    <label>Ajout d'un employé</label>
+                    <input type="hidden" name="gestion" value="employes">
+                    <input type="hidden" name="action" value="ajouter">
+                    <input type="submit" name="ajouter" value="Ajouter">
+                </p>
+            </form>
+            </div>
         </div>
     </body>
 </html><?php }
