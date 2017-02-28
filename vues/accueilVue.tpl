@@ -67,7 +67,7 @@
                             </form>
                             <form method="POST" name="gestion">
                                 <button class="lienNav">
-                                    <input type="hidden" name="gestion" value="animaux">
+                                    <input type="hidden" name="gestion" value="aide">
                                     <img src="img/icone_aide.png" style="width:20px; margin-right:5px">Aide
                                 </button>
                             </form>

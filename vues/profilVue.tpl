@@ -28,11 +28,11 @@
                     </li>
                     <li>
                         <form method="POST" name="gestion">
-                            <input type="hidden" name="gestion" value="login">
+                            <input type="hidden" name="gestion" value="carte">
                             <input class="lienNav" type="submit" value="Carte">
                         </form>
                     </li>
-                    <li>
+                     <li>
                         <form method="POST" name="gestion">
                             <input type="hidden" name="gestion" value="statistiques">
                             <input class="lienNav" type="submit" value="Statistiques">
@@ -54,7 +54,6 @@
                                 </select>
                             </form>
                     </li>
-                    <li><input class="lienNav" type="submit" name="lignes_commande" value="Statistiques"></li>
                     <li class="dropdown">
                         <span class="dropbtn" onclick="displayMenuUser()"><img class="avatar"  onclick="displayMenuUser()" src="img/userlogof.png"><span class="username"  onclick="displayMenuUser()">{$login}</span></span>
                         <div class="dropdown-content" id="menuUser">
@@ -68,7 +67,7 @@
                             </form>
                             <form method="POST" name="gestion">
                                 <button class="lienNav">
-                                    <input type="hidden" name="gestion" value="animaux">
+                                    <input type="hidden" name="gestion" value="aide">
                                     <img src="img/icone_aide.png" style="width:20px; margin-right:5px">Aide
                                 </button>
                             </form>

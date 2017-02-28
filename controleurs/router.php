@@ -39,7 +39,7 @@ if (isset($_SESSION['login'])) {
             supprimer($_POST);
         } elseif ($_POST['action'] == 'profil') {
             profil($_POST);
-        }elseif ($_POST['action'] == 'deconnexion') {
+        } elseif ($_POST['action'] == 'deconnexion') {
             deconnexion();
         }
     } else {
