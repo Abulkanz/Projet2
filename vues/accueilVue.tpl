@@ -32,6 +32,28 @@
                             <input class="lienNav" type="submit" value="Carte">
                         </form>
                     </li>
+                     <li>
+                        <form method="POST" name="gestion">
+                            <input type="hidden" name="gestion" value="statistiques">
+                            <input class="lienNav" type="submit" value="Statistiques">
+                        </form>
+                    </li>
+                     <li>
+                            <form method="POST" action="index.php">
+                                <input type="text" name="objRech" placeholder="Rechercher">
+                                <input type="hidden" name="gestion" value="animaux">
+                                <input type="hidden" name="action" value="rechercher">
+                                <input type="submit" name="rechAnimal" value="->">
+                                <label for="tri">Trier par</label>
+                                <select id="tri" name="selection">
+                                    <option selected="selected" value="prenomAnimal">Prénom</option>
+                                    <option value="nomEspece">Espèce</option>
+                                    <option value="Sexe">Sexe</option>
+                                    <option value="Age">Age</option>
+                                    <option value="StatutA">Statut</option>
+                                </select>
+                            </form>
+                    </li>
                     <li class="dropdown">
                         <span class="dropbtn" onclick="displayMenuUser()"><img class="avatar"  onclick="displayMenuUser()" src="img/userlogof.png"><span class="username"  onclick="displayMenuUser()">{$login}</span></span>
                         <div class="dropdown-content" id="menuUser">

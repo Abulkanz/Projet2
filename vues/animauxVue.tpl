@@ -32,8 +32,13 @@
                             <input class="lienNav" type="submit" value="Carte">
                         </form>
                     </li>
-                    <li><input class="lienNav" type="submit" name="lignes_commande" value="Statistiques"></li>
-                    <li>
+                      <li>
+                        <form method="POST" name="gestion">
+                            <input type="hidden" name="gestion" value="statistiques">
+                            <input class="lienNav" type="submit" value="Statistiques">
+                        </form>
+                    </li>
+                     <li>
                             <form method="POST" action="index.php">
                                 <input type="text" name="objRech" placeholder="Rechercher">
                                 <input type="hidden" name="gestion" value="animaux">

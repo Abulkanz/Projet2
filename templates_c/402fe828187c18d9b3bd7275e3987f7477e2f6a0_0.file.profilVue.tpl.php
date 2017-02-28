@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2017-02-27 22:04:21
+/* Smarty version 3.1.29, created on 2017-02-28 06:38:32
   from "C:\wamp64\www\Projet2zoo\vues\profilVue.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_58b4a265480e40_23441231',
+  'unifunc' => 'content_58b51ae8099df1_26981259',
   'file_dependency' => 
   array (
     '402fe828187c18d9b3bd7275e3987f7477e2f6a0' => 
     array (
       0 => 'C:\\wamp64\\www\\Projet2zoo\\vues\\profilVue.tpl',
-      1 => 1488233055,
+      1 => 1488233654,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_58b4a265480e40_23441231 ($_smarty_tpl) {
+function content_58b51ae8099df1_26981259 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -72,14 +72,14 @@ function content_58b4a265480e40_23441231 ($_smarty_tpl) {
                             <form method="POST" name="gestion">
                                 <button class="lienNav">
                                     <input type="hidden" name="gestion" value="animaux">
-                                    <img src="http://laubrac.loire-atlantique.e-lyco.fr/lectureFichiergw.do?ID_FICHIER=1433358088742" style="width:20px; margin-right:5px">Aide
+                                    <img src="img/icone_aide.png" style="width:20px; margin-right:5px">Aide
                                 </button>
                             </form>
                             <form method="POST" name="gestion">
                                  <button class="lienNav">
                                     <input type="hidden" name="gestion" value="accueil">
                                     <input type="hidden" name="action" value="deconnexion">
-                                    <img src="http://img.pngget.com/clip2/z4oajxtcanh.png" style="width:15px; margin-right:5px">Déconnexion
+                                    <img src="img/iconedeconnexion.png" style="width:15px; margin-right:5px">Déconnexion
                                 </button>
                             </form>
                         </div>

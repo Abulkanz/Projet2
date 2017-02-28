@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2017-02-27 22:14:21
+/* Smarty version 3.1.29, created on 2017-02-28 06:42:58
   from "C:\wamp64\www\Projet2zoo\vues\animauxVue.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_58b4a4bdda7a83_71956098',
+  'unifunc' => 'content_58b51bf2a71c31_74310840',
   'file_dependency' => 
   array (
     '0bf07d562f38f3a15f80147bcfbda7e282509dff' => 
     array (
       0 => 'C:\\wamp64\\www\\Projet2zoo\\vues\\animauxVue.tpl',
-      1 => 1488233648,
+      1 => 1488264081,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_58b4a4bdda7a83_71956098 ($_smarty_tpl) {
+function content_58b51bf2a71c31_74310840 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -55,8 +55,13 @@ function content_58b4a4bdda7a83_71956098 ($_smarty_tpl) {
                             <input class="lienNav" type="submit" value="Carte">
                         </form>
                     </li>
-                    <li><input class="lienNav" type="submit" name="lignes_commande" value="Statistiques"></li>
-                    <li>
+                      <li>
+                        <form method="POST" name="gestion">
+                            <input type="hidden" name="gestion" value="statistiques">
+                            <input class="lienNav" type="submit" value="Statistiques">
+                        </form>
+                    </li>
+                     <li>
                             <form method="POST" action="index.php">
                                 <input type="text" name="objRech" placeholder="Rechercher">
                                 <input type="hidden" name="gestion" value="animaux">

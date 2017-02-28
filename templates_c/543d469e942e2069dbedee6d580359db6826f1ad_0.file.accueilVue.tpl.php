@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2017-02-27 21:31:23
+/* Smarty version 3.1.29, created on 2017-02-28 06:43:48
   from "C:\wamp64\www\Projet2zoo\vues\accueilVue.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_58b49aab0cdfd9_75853395',
+  'unifunc' => 'content_58b51c24dd4128_43878301',
   'file_dependency' => 
   array (
     '543d469e942e2069dbedee6d580359db6826f1ad' => 
     array (
       0 => 'C:\\wamp64\\www\\Projet2zoo\\vues\\accueilVue.tpl',
-      1 => 1488230168,
+      1 => 1488264210,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_58b49aab0cdfd9_75853395 ($_smarty_tpl) {
+function content_58b51c24dd4128_43878301 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -55,6 +55,28 @@ function content_58b49aab0cdfd9_75853395 ($_smarty_tpl) {
                             <input class="lienNav" type="submit" value="Carte">
                         </form>
                     </li>
+                     <li>
+                        <form method="POST" name="gestion">
+                            <input type="hidden" name="gestion" value="statistiques">
+                            <input class="lienNav" type="submit" value="Statistiques">
+                        </form>
+                    </li>
+                     <li>
+                            <form method="POST" action="index.php">
+                                <input type="text" name="objRech" placeholder="Rechercher">
+                                <input type="hidden" name="gestion" value="animaux">
+                                <input type="hidden" name="action" value="rechercher">
+                                <input type="submit" name="rechAnimal" value="->">
+                                <label for="tri">Trier par</label>
+                                <select id="tri" name="selection">
+                                    <option selected="selected" value="prenomAnimal">Prénom</option>
+                                    <option value="nomEspece">Espèce</option>
+                                    <option value="Sexe">Sexe</option>
+                                    <option value="Age">Age</option>
+                                    <option value="StatutA">Statut</option>
+                                </select>
+                            </form>
+                    </li>
                     <li class="dropdown">
                         <span class="dropbtn" onclick="displayMenuUser()"><img class="avatar"  onclick="displayMenuUser()" src="img/userlogof.png"><span class="username"  onclick="displayMenuUser()"><?php echo $_smarty_tpl->tpl_vars['login']->value;?>
 </span></span>
@@ -71,14 +93,14 @@ function content_58b49aab0cdfd9_75853395 ($_smarty_tpl) {
                             <form method="POST" name="gestion">
                                 <button class="lienNav">
                                     <input type="hidden" name="gestion" value="animaux">
-                                    <img src="http://laubrac.loire-atlantique.e-lyco.fr/lectureFichiergw.do?ID_FICHIER=1433358088742" style="width:20px; margin-right:5px">Aide
+                                    <img src="img/icone_aide.png" style="width:20px; margin-right:5px">Aide
                                 </button>
                             </form>
                             <form method="POST" name="gestion">
                                  <button class="lienNav">
                                     <input type="hidden" name="gestion" value="accueil">
                                     <input type="hidden" name="action" value="deconnexion">
-                                    <img src="http://img.pngget.com/clip2/z4oajxtcanh.png" style="width:15px; margin-right:5px">Déconnexion
+                                    <img src="img/iconedeconnexion.png" style="width:15px; margin-right:5px">Déconnexion
                                 </button>
                             </form>
                         </div>

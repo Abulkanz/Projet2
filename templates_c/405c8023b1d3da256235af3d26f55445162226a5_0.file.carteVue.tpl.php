@@ -1,3 +1,26 @@
+<?php
+/* Smarty version 3.1.29, created on 2017-02-28 06:59:24
+  from "C:\wamp64\www\Projet2zoo\vues\carteVue.tpl" */
+
+if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
+  'has_nocache_code' => false,
+  'version' => '3.1.29',
+  'unifunc' => 'content_58b51fccb0d648_63391440',
+  'file_dependency' => 
+  array (
+    '405c8023b1d3da256235af3d26f55445162226a5' => 
+    array (
+      0 => 'C:\\wamp64\\www\\Projet2zoo\\vues\\carteVue.tpl',
+      1 => 1488265160,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_58b51fccb0d648_63391440 ($_smarty_tpl) {
+?>
 <!DOCTYPE html>
 <html lang="fr">
     <head>
@@ -28,11 +51,11 @@
                     </li>
                     <li>
                         <form method="POST" name="gestion">
-                            <input type="hidden" name="gestion" value="login">
+                            <input type="hidden" name="gestion" value="carte">
                             <input class="lienNav" type="submit" value="Carte">
                         </form>
                     </li>
-                    <li>
+                     <li>
                         <form method="POST" name="gestion">
                             <input type="hidden" name="gestion" value="statistiques">
                             <input class="lienNav" type="submit" value="Statistiques">
@@ -54,15 +77,16 @@
                                 </select>
                             </form>
                     </li>
-                    <li><input class="lienNav" type="submit" name="lignes_commande" value="Statistiques"></li>
                     <li class="dropdown">
-                        <span class="dropbtn" onclick="displayMenuUser()"><img class="avatar"  onclick="displayMenuUser()" src="img/userlogof.png"><span class="username"  onclick="displayMenuUser()">{$login}</span></span>
+                        <span class="dropbtn" onclick="displayMenuUser()"><img class="avatar"  onclick="displayMenuUser()" src="img/userlogof.png"><span class="username"  onclick="displayMenuUser()"><?php echo $_smarty_tpl->tpl_vars['login']->value;?>
+</span></span>
                         <div class="dropdown-content" id="menuUser">
                             <form method="POST" name="gestion">
                                 <button class="lienNav">
                                     <input type="hidden" name="gestion" value="profil">
                                     <input type="hidden" name="action" value="profil">
-                                    <input type="hidden" name="identifiant" value="{$login}">
+                                    <input type="hidden" name="identifiant" value="<?php echo $_smarty_tpl->tpl_vars['login']->value;?>
+">
                                     <img src="img/userlogof.png" style="width:20px; margin-right:5px">Profil
                                 </button>
                             </form>
@@ -83,55 +107,10 @@
                     </li>
                 </ul>
             </header>
-            <div id="fiche">
-                <table id="tFiche">
-                    <tr>
-                        <td>
-                            <img class="avataruser" src="img/{$avatar}">
-                        </td>
-                        <td id="chpDesc">
-                            {foreach from=$profilEmploye item=Employe}
-                            <fieldset id="fsFiche">
-                                <legend class="nomAnimal"><strong>Fiche de l'employe</strong></legend>
-                                <form id="formAnimal" method="POST" action="index.php">
-                                    <strong class="espAnimal">{$Employe.login}</strong>
-                                    <br>
-                                    <label for="numParcelle"><strong>Civilite</strong></label>
-                                    <input type="text" id="numParcelle" value="{$Civilite}">
-                                    <br>
-                                    <label for="taille"><strong>Nom</strong></label>
-                                    <input type="text" id="taille" value="{$Employe.nomEmploye}">
-                                    <br>
-                                    <label for="poids"><strong>Prenom</strong></label>
-                                    <input type="text" id="poids" value="{$Employe.prenomEmploye}">
-                                    <br>
-                                    <label for="dOb"><strong>Fonction</strong></label>
-                                    <input type="text" id="dOb" value="{$Employe.fonction}">
-                                    <br>
-                                    <label for="pOb"><strong>Adresse mail</strong></label>
-                                    <input type="text" id="pOb" value="{$Employe.adressemail}">
-                                    <br>
-                                    <label for="pere"><strong>Droits</strong></label>
-                                    <input type="text" id="pere" value="{$Employe.droits}">
-                                </form>
-                            </fieldset>
-                            {/foreach}
-                        </td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-        <script>
-            function agrImg($param) {
-                if ($param.style.position == "absolute") {
-                    $param.style.cssText = " width: 100%;object-fit: cover;padding: 1em;";
-                    document.getElementById("fsFiche").style.display = "block";
-                } else {
-                    $param.style.cssText = "width:80%;position:absolute; top:43%; left:50%; transform:translate(-50%, -50%);";
-                    document.getElementById("fsFiche").style.display = "none";
-                }
-            }
-        </script>
-        {$js} 
+            <?php echo $_smarty_tpl->tpl_vars['msg']->value;?>
+
+            <?php echo $_smarty_tpl->tpl_vars['js']->value;?>
+
     </body>
-</html>
+</html><?php }
+}
