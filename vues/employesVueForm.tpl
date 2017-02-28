@@ -83,9 +83,9 @@
                     </li>
                 </ul>
             </header>
-        <h2>{$msg}</h2>
         {foreach from=$consultEmploye item=Employe}
-        <table>
+        <div id="fiche">
+        <table id="tFiche">
 				{$form}
                 <thead>
                     <tr>
@@ -140,6 +140,7 @@
                     </form>
             </table>
              {/foreach}
+             </div>
              </body>
              {$js}
 </html>

@@ -78,11 +78,10 @@
                 </ul>
             </header>
         </div>
-        <div id="fiche">
             <div class="conteneurTable">
             <h2>{$msg}</h2>
             <br>
-            <table>
+            <table class="tAnimaux">
                 <tr>
                     <th></th>
                     <th>Nom</th>
@@ -92,7 +91,7 @@
                 </tr>
                 {foreach from=$listeEmploye item=Employe}
                 <tr>
-                    <td><img src="img/{$Employe.avatar}" class="miniature"></td>        
+                    <td><img src="img/{$Employe.avatar}" class="vignLienFiche"></td>        
                     <td>{$Employe.nomEmploye}</td>
                     <td>{$Employe.prenomEmploye}</td>
                     <td>{$Employe.fonction}</td>
@@ -135,6 +134,5 @@
                 </p>
             </form>
             </div>
-        </div>
     </body>
 </html>

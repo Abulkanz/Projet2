@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2017-02-28 19:41:07
+/* Smarty version 3.1.29, created on 2017-02-28 20:13:48
   from "C:\wamp64\www\Projet2zoo\vues\employesVueListe.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_58b5d2532eaa32_27059282',
+  'unifunc' => 'content_58b5d9fcbb5297_70506059',
   'file_dependency' => 
   array (
     '21411e609e40e8a30133cbb2ffc3854b53cb9758' => 
     array (
       0 => 'C:\\wamp64\\www\\Projet2zoo\\vues\\employesVueListe.tpl',
-      1 => 1488310855,
+      1 => 1488312822,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_58b5d2532eaa32_27059282 ($_smarty_tpl) {
+function content_58b5d9fcbb5297_70506059 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -103,12 +103,11 @@ function content_58b5d2532eaa32_27059282 ($_smarty_tpl) {
                 </ul>
             </header>
         </div>
-        <div id="fiche">
             <div class="conteneurTable">
             <h2><?php echo $_smarty_tpl->tpl_vars['msg']->value;?>
 </h2>
             <br>
-            <table>
+            <table class="tAnimaux">
                 <tr>
                     <th></th>
                     <th>Nom</th>
@@ -130,7 +129,7 @@ $__foreach_Employe_0_saved_local_item = $_smarty_tpl->tpl_vars['Employe'];
 ?>
                 <tr>
                     <td><img src="img/<?php echo $_smarty_tpl->tpl_vars['Employe']->value['avatar'];?>
-" class="miniature"></td>        
+" class="vignLienFiche"></td>        
                     <td><?php echo $_smarty_tpl->tpl_vars['Employe']->value['nomEmploye'];?>
 </td>
                     <td><?php echo $_smarty_tpl->tpl_vars['Employe']->value['prenomEmploye'];?>
@@ -186,7 +185,6 @@ $_smarty_tpl->tpl_vars['Employe'] = $__foreach_Employe_0_saved_item;
                 </p>
             </form>
             </div>
-        </div>
     </body>
 </html><?php }
 }

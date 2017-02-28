@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2017-02-28 18:24:08
+/* Smarty version 3.1.29, created on 2017-02-28 20:19:04
   from "C:\wamp64\www\Projet2zoo\vues\employesVueForm.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_58b5c0487a3f69_75554655',
+  'unifunc' => 'content_58b5db3843d7b7_82813708',
   'file_dependency' => 
   array (
     'c4653f1d132685dca12caf157e6e41e40ebadcb7' => 
     array (
       0 => 'C:\\wamp64\\www\\Projet2zoo\\vues\\employesVueForm.tpl',
-      1 => 1488306242,
+      1 => 1488313139,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_58b5c0487a3f69_75554655 ($_smarty_tpl) {
+function content_58b5db3843d7b7_82813708 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html>
@@ -108,8 +108,6 @@ function content_58b5c0487a3f69_75554655 ($_smarty_tpl) {
                     </li>
                 </ul>
             </header>
-        <h2><?php echo $_smarty_tpl->tpl_vars['msg']->value;?>
-</h2>
         <?php
 $_from = $_smarty_tpl->tpl_vars['consultEmploye']->value;
 if (!is_array($_from) && !is_object($_from)) {
@@ -122,7 +120,8 @@ foreach ($_from as $_smarty_tpl->tpl_vars['Employe']->value) {
 $_smarty_tpl->tpl_vars['Employe']->_loop = true;
 $__foreach_Employe_0_saved_local_item = $_smarty_tpl->tpl_vars['Employe'];
 ?>
-        <table>
+        <div id="fiche">
+        <table id="tFiche">
 				<?php echo $_smarty_tpl->tpl_vars['form']->value;?>
 
                 <thead>
@@ -210,6 +209,7 @@ if ($__foreach_Employe_0_saved_item) {
 $_smarty_tpl->tpl_vars['Employe'] = $__foreach_Employe_0_saved_item;
 }
 ?>
+             </div>
              </body>
              <?php echo $_smarty_tpl->tpl_vars['js']->value;?>
 
