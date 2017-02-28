@@ -151,13 +151,6 @@ li:last-child {
     border-right: none;
 }
 
-.avatar{
-    width: 240px;
-    position: absolute;
-    right: 1em;
-    top: 3.5em;
-}
-
 /*Cible seulement le titre du formulaire*/
 div .formLogin label {
     /*1.6em = 16px*/
