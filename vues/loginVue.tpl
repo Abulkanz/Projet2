@@ -17,10 +17,11 @@
                 <div class="formLogin">
                     <form method="POST" name="gestion">
                         <label><h1>BIENVENUE</h1></label>
-                        <input type="text" placeholder="username" />
-                        <input type="password" placeholder="password" />
-                        <input type="hidden" name="gestion" value="accueil">
-                        <input id="boutonCo" type="submit" value="login">
+                        <input type="hidden" name="gestion" value="login">
+                        <input type="hidden" name="action" value="login">
+                        <input type="text" id="identifiant" name="identifiant" value="" placeholder="username" />
+                        <input type="password" id="password" name="password" value="" placeholder="password" />
+                        <input id="boutonCo" type="submit" name="login" value="Se connecter">
                         <p class="message"><a href="#">Mot de passe oublié ?</a></p>
                     </form>
                 </div>

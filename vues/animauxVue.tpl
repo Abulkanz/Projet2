@@ -33,21 +33,21 @@
                     </li>
                     <li><input class="lienNav" type="submit" name="lignes_commande" value="Statistiques"></li>
                     <li>
-                            <form method="POST" action="index.php">
-                                <input type="text" name="objRech" placeholder="Rechercher">
-                                <input type="hidden" name="gestion" value="animaux">
-                                <input type="hidden" name="action" value="rechercher">
-                                <input type="submit" name="rechAnimal" value="->">
-                                <label for="tri">Trier par</label>
-                                <select id="tri" name="selection">
-                                    <option selected="selected" value="prenomAnimal">Prénom</option>
-                                    <option value="nomEspece">Espèce</option>
-                                    <option value="Sexe">Sexe</option>
-                                    <option value="Age">Age</option>
-                                    <option value="StatutA">Statut</option>
-                                </select>
-                            </form>
-                        </li>
+                        <form method="POST" action="index.php">
+                            <input type="text" name="objRech" placeholder="Rechercher">
+                            <input type="hidden" name="gestion" value="animaux">
+                            <input type="hidden" name="action" value="rechercher">
+                            <input type="submit" name="rechAnimal" value="->">
+                            <label for="tri">Trier par</label>
+                            <select id="tri" name="selection">
+                                <option selected="selected" value="prenomAnimal">Prénom</option>
+                                <option value="nomEspece">Espèce</option>
+                                <option value="Sexe">Sexe</option>
+                                <option value="Age">Age</option>
+                                <option value="StatutA">Statut</option>
+                            </select>
+                        </form>
+                    </li>
                     <img class="avatar" src="img/avatarTest.png" alt=""/>
                 </ul>
 
@@ -64,21 +64,22 @@
                         <td>{$Animal.age}</td>
                         <td>{$Animal.statut}</td>
                         <td><form method='POST' action='index.php'>
-                            <input class="action" type='submit' name='modifier' value='Modifier'>
-                            <input type="hidden" name="gestion" value="animaux">
-                            <input type='hidden' name='idAnimal' value="{$Animal.idAnimal}">
-                            <input type="hidden" name="action" value="modifier">
-                        </form>
-                        <form method='POST' action='index.php'>
-                            <input class="action" type='submit' name='supprimer' value='Supprimer'>
-                            <input type="hidden" name="gestion" value="animaux">
-                            <input type='hidden' name='idAnimal' value="{$Animal.idAnimal}">
-                            <input type="hidden" name="action" value="supprimer">
-                        </form></td>
+                                <input class="action" type='submit' name='modifier' value='Modifier'>
+                                <input type="hidden" name="gestion" value="animaux">
+                                <input type='hidden' name='idAnimal' value="{$Animal.idAnimal}">
+                                <input type="hidden" name="action" value="modifier">
+                            </form>
+                            <form method='POST' action='index.php'>
+                                <input class="action" type='submit' name='supprimer' value='Supprimer'>
+                                <input type="hidden" name="gestion" value="animaux">
+                                <input type='hidden' name='idAnimal' value="{$Animal.idAnimal}">
+                                <input type="hidden" name="action" value="supprimer">
+                            </form></td>
                     </tr>
                 {/foreach}
                 </table>
             </div>
-        </div>  
+        </div> 
+        {$js} 
     </body>
 </html>

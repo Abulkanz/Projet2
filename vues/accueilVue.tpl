@@ -26,15 +26,47 @@
                         </form>
                     </li>
                     <li>
-                        <form method="POST" name="gestion">
-                            <input type="hidden" name="gestion" value="login">
-                            <input class="lienNav" type="submit" value="Carte">
+                        <form method="POST" action="index.php">
+                            <input type="text" name="objRech" placeholder="Rechercher">
+                            <input type="hidden" name="gestion" value="animaux">
+                            <input type="hidden" name="action" value="rechercher">
+                            <input type="submit" name="rechAnimal" value="->">
+                            <label for="tri">Trier par</label>
+                            <select id="tri" name="selection">
+                                <option selected="selected" value="prenomAnimal">Prénom</option>
+                                <option value="nomEspece">Espèce</option>
+                                <option value="Sexe">Sexe</option>
+                                <option value="Age">Age</option>
+                                <option value="StatutA">Statut</option>
+                            </select>
                         </form>
                     </li>
-                    <li><input class="lienNav" type="submit" name="lignes_commande" value="{$nom}"></li>
-                    <img class="avatar" src="img/avatarTest.png" alt=""/>
-                    
-                    
+                    <li class="dropdown">
+                        <span class="dropbtn" onclick="displayMenuUser()"><img class="avatar"  onclick="displayMenuUser()" src="img/userlogof.png"><span class="username"  onclick="displayMenuUser()">{$login}</span></span>
+                        <div class="dropdown-content" id="menuUser">
+                            <form method="POST" name="gestion">
+                                <button class="lienNav">
+                                    <input type="hidden" name="gestion" value="profil">
+                                    <input type="hidden" name="action" value="profil">
+                                    <input type="hidden" name="identifiant" value="{$login}">
+                                    <img src="img/userlogof.png" style="width:20px; margin-right:5px">Profil
+                                </button>
+                            </form>
+                            <form method="POST" name="gestion">
+                                <button class="lienNav">
+                                    <input type="hidden" name="gestion" value="aide">
+                                    <img src="img/icone_aide.png" style="width:20px; margin-right:5px">Aide
+                                </button>
+                            </form>
+                            <form method="POST" name="gestion">
+                                <button class="lienNav">
+                                    <input type="hidden" name="gestion" value="accueil">
+                                    <input type="hidden" name="action" value="deconnexion">
+                                    <img src="img/iconedeconnexion.png" style="width:15px; margin-right:5px">Déconnexion
+                                </button>
+                            </form>
+                        </div>
+                    </li>
                 </ul>
             </header>
             <div class="contGraphs">
@@ -46,10 +78,10 @@
                 </div>
                 <div class="contGraphAccueil"></div>
                 <div class="contGraphAccueil"></div>
-                    
-                   
+
+
             </div>
-                
-        {$js}
+
+            {$js}
     </body>
 </html>

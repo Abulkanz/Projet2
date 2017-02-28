@@ -21,7 +21,7 @@ function consulter($param) {
 function modifier($param) {
     $reference = $param['idAnimal'];
     if (isset($_POST['valModif'])) {
-        execModif($reference);
+        execModif($_POST);
     }
     $tabReqConsult = consulterFiche($reference);
     require_once 'vues/animauxVueFiche.php';

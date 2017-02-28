@@ -1,6 +1,6 @@
 <?php
 
-include 'modele.php';
+require_once 'modele.php';
 
 function listeAnimaux() {
     $cnx = getBD();
@@ -87,12 +87,9 @@ function consulterFiche($reference) {
     return $tabReqConsult;
 }
 
-function execModif($param){
-    $cnx = getBD();
-    $sql = 'UPDATE animaux
-            SET ';
-            
-}
+//function execModif($param){
+//    
+//}
 
 function execSuppr($param) {
     $cnx = getBD();

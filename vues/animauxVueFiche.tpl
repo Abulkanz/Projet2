@@ -52,46 +52,46 @@
                                         <tr>
                                             <td>
                                                 <label for="numParcelle"><strong>Numero de parcelle : </strong></label>
-                                                <input type="text" id="numParcelle" value="{$parcelle}" {$varCRUD}></td>
+                                                <input type="text" name="parcelle" id="numParcelle" value="{$parcelle}" {$varCRUD}></td>
                                             <td>
                                                 <label for="statutAnimal"><strong>Statut actuel : </strong></label>
-                                                <input type="text" id="statutAnimal" value="{$statutAnimal}" {$varCRUD}>
+                                                <input type="text" name="statut" id="statutAnimal" value="{$statutAnimal}" {$varCRUD}>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>
                                                 <label for="taille"><strong>Taille (cm): </strong></label>
-                                                <input type="text" id="taille" value="{$taille}" {$varCRUD}>
+                                                <input type="text" name="taille" id="taille" value="{$taille}" {$varCRUD}>
                                             </td>
                                             <td>
                                                 <label for="poids"><strong>Poids (kg): </strong></label>
-                                                <input type="text" id="poids" value="{$poids}" {$varCRUD}>
+                                                <input type="text" name="poids" id="poids" value="{$poids}" {$varCRUD}>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>
                                                 <label for="dOb"><strong>Né le : </strong></label>
-                                                <input type="text" id="dOb" value="{$dOb}" {$varCRUD}>
+                                                <input type="text" name="dateNaissance" id="dOb" value="{$dOb}" {$varCRUD}>
                                             </td>
                                             <td>
                                                 <label for="pOb"><strong>Lieu de Naissance : </strong></label>
-                                                <input type="text" id="pOb" value="{$pOb}" {$varCRUD}>
+                                                <input type="text" name="lieuNaissance" id="pOb" value="{$pOb}" {$varCRUD}>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>
                                                 <label for="pere"><strong>Père : </strong></label>
-                                                <input type="text" id="pere" value="{$pere}" {$varCRUD}>
+                                                <input type="text" name="pere" id="pere" value="{$pere}" {$varCRUD}>
                                             </td>
                                             <td>
                                                 <label for="mere"><strong>Mère : </strong></label>
-                                                <input type="text" id="mere" value="{$mere}" {$varCRUD}>
+                                                <input type="text" name="mere" id="mere" value="{$mere}" {$varCRUD}>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td colspan="2">
                                                 <br>
-                                                <textarea from="formAnimal" id="desc" {$varCRUD}>{$description}</textarea>
+                                                <textarea from="formAnimal" name="descriptif" id="desc" {$varCRUD}>{$description}</textarea>
                                                 {$inputEdit}
                                             </td>
                                         </tr>
