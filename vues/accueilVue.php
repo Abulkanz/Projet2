@@ -21,14 +21,14 @@ $script = '<script src="js/jquery.min.js" type="text/javascript"></script>
      $tpl->assign('js', $script);
      $tpl->display('vues/accueilVue.tpl');
  } elseif($droits=="2"){
-     $employes="<li><form method='POST' action='index.php'><input type='hidden' name='gestion' value='employes'><input class='lienNav' type='submit' name='employes' value='utilisateur'></form></li>";
+     $employes="";
      $tpl->assign('employes',$employes);
      $tpl->assign('login', $login);
      $tpl->assign('avatar', $avatar);
      $tpl->assign('js', $script);
      $tpl->display('vues/accueilVue.tpl');
  } else{
-     $employes="<li><form method='POST' action='index.php'><input type='hidden' name='gestion' value='employes'><input class='lienNav' type='submit' name='employes' value='utilisateur'></form></li>";
+     $employes="";
      $tpl->assign('employes',$employes);
      $tpl->assign('login', $login);
      $tpl->assign('avatar', $avatar);

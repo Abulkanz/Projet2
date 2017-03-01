@@ -155,12 +155,7 @@ if($droits=="3"){
         }
     }
 } elseif($droits=="2"){
-     $employes="<li>
-                        <form method='POST' action='index.php'>
-                            <input type='hidden' name='gestion' value='employes'>
-                            <input class='lienNav' type='submit' name='employes' value='utilisateur'>
-                        </form>
-                    </li>";
+     $employes="";
     $tpl->assign('employes',$employes);
     if (isset($_POST['action'])) {
     
@@ -210,12 +205,7 @@ if($droits=="3"){
                 $i++;
             } while ($ligne = $reqRech->fetch(PDO::FETCH_ASSOC));
             $aucRes = '';
-            $employes="<li>
-                        <form method='POST' action='index.php'>
-                            <input type='hidden' name='gestion' value='employes'>
-                            <input class='lienNav' type='submit' name='employes' value='utilisateur'>
-                        </form>
-                    </li>";
+            $employes="";
             $tpl->assign('employes',$employes);
             $style="style='display: none;'";
             $tpl->assign('style',$style);
@@ -275,12 +265,7 @@ if($droits=="3"){
                 $i++;
             } while ($ligne = $reqListe->fetch(PDO::FETCH_ASSOC));
             $aucRes = '';
-            $employes="<li>
-                        <form method='POST' action='index.php'>
-                            <input type='hidden' name='gestion' value='employes'>
-                            <input class='lienNav' type='submit' name='employes' value='utilisateur'>
-                        </form>
-                    </li>";
+            $employes="";
             $tpl->assign('employes',$employes);
             $style="style='display: none;'";
             $tpl->assign('style',$style);
@@ -313,7 +298,7 @@ if($droits=="3"){
                             <th>Sexe</th>
                             <th>Age</th>
                             <th>Statut</th>
-                            <th>Actions</th>
+                            <th style="display: none;">Actions</th>
                         </tr>';
             do {
                 $listeAnimaux[$i]['idAnimal'] = $ligne['idAnimaux'];
@@ -345,12 +330,7 @@ if($droits=="3"){
                 $i++;
             } while ($ligne = $reqRech->fetch(PDO::FETCH_ASSOC));
             $aucRes = '';
-            $employes="<li>
-                        <form method='POST' action='index.php'>
-                            <input type='hidden' name='gestion' value='employes'>
-                            <input class='lienNav' type='submit' name='employes' value='utilisateur'>
-                        </form>
-                    </li>";
+            $employes="";
             $tpl->assign('employes',$employes);
             $style="style='display: none;'";
             $tpl->assign('style',$style);

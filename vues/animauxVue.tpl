@@ -7,10 +7,10 @@
         <link href="style/font-awesome.min.css" rel="stylesheet" type="text/css"/>
         <link href="style/styles.css" rel="stylesheet">
         <link href="style/dropdown.css" rel="stylesheet">
-        <title>Ouhouhin-Animaux</title>
+        <title>Projet2</title>
     </head>
     <body>
-        <div class="conteneur">
+        <div class="conteneur noOverF">
             <img class="logo" src="img/logoSinges.png">
             <header>
                 <ul>

@@ -1,10 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
     <head>
-        <title></title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="style/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+        <link href="style/styles.css" rel="stylesheet">
+        <link href="style/dropdown.css" rel="stylesheet">
+        <title>Projet2</title>
     </head>
     <body>
-        <header>
+        <div class="conteneur noOverF">
+            <img class="logo" src="img/logoSinges.png">
+            <header>
                 <ul>
                     <li>
                         <form method="POST" name="gestion">
@@ -18,18 +26,7 @@
                             <input class="lienNav" type="submit" value="Animaux">
                         </form>
                     </li>
-                    <li>
-                        <form method="POST" name="gestion">
-                            <input type="hidden" name="gestion" value="carte">
-                            <input class="lienNav" type="submit" value="Carte">
-                        </form>
-                    </li>
-                     <li>
-                        <form method="POST" name="gestion">
-                            <input type="hidden" name="gestion" value="statistiques">
-                            <input class="lienNav" type="submit" value="Statistiques">
-                        </form>
-                    </li>
+                    {$employes}
                      <li>
                             <form method="POST" action="index.php">
                                 <input type="text" name="objRech" placeholder="Rechercher">

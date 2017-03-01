@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 <html lang="fr">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="style/styles.css" rel="stylesheet">
-    <link href="style/dropdown.css" rel="stylesheet">
-    <title>Projet2</title>
-    <title>Projet2</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="style/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+        <link href="style/styles.css" rel="stylesheet">
+        <link href="style/dropdown.css" rel="stylesheet">
+        <title>Projet2</title>
+    </head>
     <body>
         <div class="conteneur noOverF">
-            <!--<img class="logo" src="img/logoSinges.png">-->
+            <img class="logo" src="img/logoSinges.png">
             <header>
                 <ul>
                     <li>
@@ -27,12 +26,7 @@
                             <input class="lienNav" type="submit" value="Animaux">
                         </form>
                     </li>
-                    <li>
-                        <form method="POST" action="index.php">
-                            <input type="hidden" name="gestion" value="employes">
-                            <input class="lienNav" type="submit" name="employes" value="utilisateur">
-                        </form>
-                    </li>
+                    {$employes}
                      <li>
                             <form method="POST" action="index.php">
                                 <input type="text" name="objRech" placeholder="Rechercher">
@@ -134,5 +128,6 @@
                 </p>
             </form>
             </div>
+            {$js}
     </body>
 </html>
