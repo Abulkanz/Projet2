@@ -49,7 +49,7 @@ $mail->SMTPSecure = 'tls';
 $mail->IsHTML(true); 
 // On s'authentifie
 $mail->Username = "sora18500@gmail.com";
-$mail->Password = "Stargate18AU";
+$mail->Password = "mot de passse";
 	
 // On definit l'adrresse mail,le nom de l'expediteur et du destinataie
 // expediteur
