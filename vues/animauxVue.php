@@ -274,12 +274,12 @@ if($droits=="3"){
             } while ($ligne = $reqListe->fetch(PDO::FETCH_ASSOC));
             $aucRes = '';
             $employes="";
+            $style="";
             $boutonmodifier="<input class='action' type='submit' name='modifier' value='Modifier'>";
             $boutonsupprimer="<input class='action' type='submit' name='supprimer' value='Supprimer'>";
             $tpl->assign('boutonmodifier', $boutonmodifier);
             $tpl->assign('boutonsupprimer', $boutonsupprimer);
             $tpl->assign('employes',$employes);
-            $style="style='display: none;'";
             $tpl->assign('style',$style);
             $nbLignes = $reqListe->rowCount();
             $tpl->assign('msg', 'Liste des Animaux');
