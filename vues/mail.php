@@ -32,7 +32,7 @@ while($row=$idRequete->fetch()){
     $i++;
 }
 $tpl->assign('corspmail', $corspmail);
-$body = $tpl->fetch('template/mail.tpl');
+$body = $tpl->fetch('vues/mail.tpl');
 
 $mail = new PHPMailer();
 // On indique que l'on va utlisé le protocole smtp

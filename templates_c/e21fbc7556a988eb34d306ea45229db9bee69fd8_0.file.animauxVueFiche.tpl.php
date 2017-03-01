@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2017-02-28 17:53:32
+/* Smarty version 3.1.29, created on 2017-02-28 21:54:36
   from "C:\wamp64\www\Projet2zoo\vues\animauxVueFiche.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_58b5b91cba2d97_01661783',
+  'unifunc' => 'content_58b5f19ceef726_26505776',
   'file_dependency' => 
   array (
     'e21fbc7556a988eb34d306ea45229db9bee69fd8' => 
     array (
       0 => 'C:\\wamp64\\www\\Projet2zoo\\vues\\animauxVueFiche.tpl',
-      1 => 1488302509,
+      1 => 1488318870,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_58b5b91cba2d97_01661783 ($_smarty_tpl) {
+function content_58b5f19ceef726_26505776 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -165,6 +165,12 @@ function content_58b5b91cba2d97_01661783 ($_smarty_tpl) {
 </textarea>
                                     <?php echo $_smarty_tpl->tpl_vars['inputEdit']->value;?>
 
+                                    <form method='POST' action='index.php' enctype='multipart/form-data'> 
+                                    <?php echo $_smarty_tpl->tpl_vars['action1']->value;?>
+
+                                    <?php echo $_smarty_tpl->tpl_vars['bouton1']->value;?>
+
+                                    </form>
                                 </form>
                             </fieldset>
                         </td>

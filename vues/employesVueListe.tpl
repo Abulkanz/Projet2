@@ -12,7 +12,7 @@
 </head>
     <body>
         <div class="conteneur noOverF">
-            <img class="logo" src="img/logoSinges.png">
+            <!--<img class="logo" src="img/logoSinges.png">-->
             <header>
                 <ul>
                     <li>

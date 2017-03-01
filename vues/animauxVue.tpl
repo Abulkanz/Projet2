@@ -26,18 +26,7 @@
                             <input class="lienNav" type="submit" value="Animaux">
                         </form>
                     </li>
-                    <li>
-                        <form method="POST" name="gestion">
-                            <input type="hidden" name="gestion" value="carte">
-                            <input class="lienNav" type="submit" value="Carte">
-                        </form>
-                    </li>
-                     <li>
-                        <form method="POST" name="gestion">
-                            <input type="hidden" name="gestion" value="statistiques">
-                            <input class="lienNav" type="submit" value="Statistiques">
-                        </form>
-                    </li>
+                    {$employes}
                      <li>
                             <form method="POST" action="index.php">
                                 <input type="text" name="objRech" placeholder="Rechercher">
@@ -93,14 +82,14 @@
                         <td>{$Animal.sexe}</td>
                         <td>{$Animal.age}</td>
                         <td>{$Animal.statut}</td>
-                        <td><form method='POST' action='index.php'>
-                            <input class="action" type='submit' name='modifier' value='Modifier'>
+                        <td {$style}><form method='POST' action='index.php'>
+                            {$boutonmodifier}
                             <input type="hidden" name="gestion" value="animaux">
                             <input type='hidden' name='idAnimal' value="{$Animal.idAnimal}">
                             <input type="hidden" name="action" value="modifier">
                         </form>
                         <form method='POST' action='index.php'>
-                            <input class="action" type='submit' name='supprimer' value='Supprimer'>
+                            {$boutonsupprimer}
                             <input type="hidden" name="gestion" value="animaux">
                             <input type='hidden' name='idAnimal' value="{$Animal.idAnimal}">
                             <input type="hidden" name="action" value="supprimer">

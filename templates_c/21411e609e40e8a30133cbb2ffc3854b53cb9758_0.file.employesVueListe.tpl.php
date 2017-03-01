@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2017-02-28 20:13:48
+/* Smarty version 3.1.29, created on 2017-02-28 20:36:15
   from "C:\wamp64\www\Projet2zoo\vues\employesVueListe.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_58b5d9fcbb5297_70506059',
+  'unifunc' => 'content_58b5df3f2118b6_32585502',
   'file_dependency' => 
   array (
     '21411e609e40e8a30133cbb2ffc3854b53cb9758' => 
     array (
       0 => 'C:\\wamp64\\www\\Projet2zoo\\vues\\employesVueListe.tpl',
-      1 => 1488312822,
+      1 => 1488314171,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_58b5d9fcbb5297_70506059 ($_smarty_tpl) {
+function content_58b5df3f2118b6_32585502 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -35,7 +35,7 @@ function content_58b5d9fcbb5297_70506059 ($_smarty_tpl) {
 </head>
     <body>
         <div class="conteneur noOverF">
-            <img class="logo" src="img/logoSinges.png">
+            <!--<img class="logo" src="img/logoSinges.png">-->
             <header>
                 <ul>
                     <li>

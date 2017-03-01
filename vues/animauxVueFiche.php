@@ -83,7 +83,8 @@ switch ($_POST['action']) {
 }
 
 
-
+$bouton1="<input type='submit' name='envoyermail' value='Envoyer la fiche par mail' />";
+$action1="<input type='hidden' name='action' value='envoyermail'>";
 $tpl->assign('inputEdit', $inputEdit);
 $tpl->assign('varCRUD', $varCRUD);
 $tpl->assign('photo', $ficheAnimal['photo']);
@@ -100,6 +101,8 @@ $tpl->assign('description', $ficheAnimal['description']);
 $tpl->assign('pays', $ficheAnimal['pays']);
 $tpl->assign('pere', $ficheAnimal['pere']);
 $tpl->assign('mere', $ficheAnimal['mere']);
+$tpl->assign("action1",$action1);
+$tpl->assign("bouton1",$bouton1);
 $tpl->assign('login', $login);
 $tpl->assign('avatar', $avatar);
 $tpl->assign('js', $jScript);

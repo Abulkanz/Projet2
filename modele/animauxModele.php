@@ -93,3 +93,10 @@ function execSuppr($param) {
     $idRequete = executeR($cnx, $sql);
     Header('Location: index.php?gestion=animaux');
 }
+function corspmail($param){
+    $idAnimaux= $param['idAnimaux'];
+    $cnx=getBD();
+    $sql="SELECT * FROM animaux WHERE idAnimaux = ?";
+    $idRequete=  executeRequete($cnx, $sql,array($idAnimaux));
+    return $idRequete;
+}

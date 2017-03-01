@@ -32,3 +32,8 @@ function supprimer($param) {
     $tabReqConsult = consulterFiche($reference);
     require_once 'vues/animauxVueFiche.php';
 }
+function envoyermail($param){
+    $action=$param['action'];
+    $idRequete=corspmail($param);
+    require_once 'vues/mail.php';
+}

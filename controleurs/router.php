@@ -35,17 +35,21 @@ if (isset($_SESSION['login'])) {
             rechercher($_POST);
         } elseif ($_POST['action'] == 'ajouter') {
             ajouter($_POST);
+        } elseif($_POST['action']== 'validerajouter'){
+            validerajouter($_POST);
         }elseif ($_POST['action'] == 'modifier') {
             modifier($_POST);
         } elseif(isset($_POST['validermodification'])){
             validermodification($_POST);
         }elseif(isset($_POST['vmodificationimage'])){
-        vmodificationimage($_POST);
+            vmodificationimage($_POST);
         } elseif ($_POST['action'] == 'supprimer') {
             supprimer($_POST);
-        } elseif(isset($_POST['validersuppression'])){
+        } elseif($_POST['action'] == 'validersuppression'){
             validersuppression($_POST);
-        } elseif(isset($_POST['envoyermail'])){
+        } elseif(isset($_POST['retour'])) {
+            retour();
+        }elseif(isset($_POST['envoyermail'])){
             envoyermail($_POST);
         }elseif ($_POST['action'] == 'profil') {
             profil($_POST);
