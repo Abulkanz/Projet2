@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2017-02-28 22:38:51
+/* Smarty version 3.1.29, created on 2017-03-01 11:57:18
   from "C:\wamp64\www\Projet2zoo\vues\animauxVue.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_58b5fbfbf40c04_70178204',
+  'unifunc' => 'content_58b6b71eaa1251_14147428',
   'file_dependency' => 
   array (
     '0bf07d562f38f3a15f80147bcfbda7e282509dff' => 
     array (
       0 => 'C:\\wamp64\\www\\Projet2zoo\\vues\\animauxVue.tpl',
-      1 => 1488321525,
+      1 => 1488368645,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_58b5fbfbf40c04_70178204 ($_smarty_tpl) {
+function content_58b6b71eaa1251_14147428 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -30,10 +30,10 @@ function content_58b5fbfbf40c04_70178204 ($_smarty_tpl) {
         <link href="style/font-awesome.min.css" rel="stylesheet" type="text/css"/>
         <link href="style/styles.css" rel="stylesheet">
         <link href="style/dropdown.css" rel="stylesheet">
-        <title>Ouhouhin-Animaux</title>
+        <title>Projet2</title>
     </head>
     <body>
-        <div class="conteneur">
+        <div class="conteneur noOverF">
             <img class="logo" src="img/logoSinges.png">
             <header>
                 <ul>

@@ -140,7 +140,11 @@ if($droits=="3"){
                         </form>
                     </li>";
             $tpl->assign('employes',$employes);
-            $style="style='display: none;'";
+            $boutonmodifier="<input class='action' type='submit' name='modifier' value='Modifier'>";
+            $boutonsupprimer="<input class='action' type='submit' name='supprimer' value='Supprimer'>";
+            $tpl->assign('boutonmodifier', $boutonmodifier);
+            $tpl->assign('boutonsupprimer', $boutonsupprimer);
+            $style="";
             $tpl->assign('style',$style);
             $nbLignes = $reqListe->rowCount();
             $tpl->assign('msg', 'Liste des Animaux');
@@ -206,8 +210,12 @@ if($droits=="3"){
             } while ($ligne = $reqRech->fetch(PDO::FETCH_ASSOC));
             $aucRes = '';
             $employes="";
+            $boutonmodifier="<input class='action' type='submit' name='modifier' value='Modifier'>";
+            $boutonsupprimer="<input class='action' type='submit' name='supprimer' value='Supprimer'>";
+            $tpl->assign('boutonmodifier', $boutonmodifier);
+            $tpl->assign('boutonsupprimer', $boutonsupprimer);
             $tpl->assign('employes',$employes);
-            $style="style='display: none;'";
+            $style="";
             $tpl->assign('style',$style);
             $nbLignes = $reqListe->rowCount();
             $tpl->assign('msg', 'Liste des Animaux');
@@ -266,6 +274,10 @@ if($droits=="3"){
             } while ($ligne = $reqListe->fetch(PDO::FETCH_ASSOC));
             $aucRes = '';
             $employes="";
+            $boutonmodifier="<input class='action' type='submit' name='modifier' value='Modifier'>";
+            $boutonsupprimer="<input class='action' type='submit' name='supprimer' value='Supprimer'>";
+            $tpl->assign('boutonmodifier', $boutonmodifier);
+            $tpl->assign('boutonsupprimer', $boutonsupprimer);
             $tpl->assign('employes',$employes);
             $style="style='display: none;'";
             $tpl->assign('style',$style);
@@ -331,6 +343,10 @@ if($droits=="3"){
             } while ($ligne = $reqRech->fetch(PDO::FETCH_ASSOC));
             $aucRes = '';
             $employes="";
+            $boutonmodifier="";
+            $boutonsupprimer="";
+            $tpl->assign('boutonmodifier', $boutonmodifier);
+            $tpl->assign('boutonsupprimer', $boutonsupprimer);
             $tpl->assign('employes',$employes);
             $style="style='display: none;'";
             $tpl->assign('style',$style);
@@ -396,6 +412,10 @@ if($droits=="3"){
                             <input class='lienNav' type='submit' name='employes' value='utilisateur'>
                         </form>
                     </li>";
+            $boutonmodifier="<input class='action' type='submit' name='modifier' value='Modifier'>";
+            $boutonsupprimer="<input class='action' type='submit' name='supprimer' value='Supprimer'>";
+            $tpl->assign('boutonmodifier', $boutonmodifier);
+            $tpl->assign('boutonsupprimer', $boutonsupprimer);
             $tpl->assign('employes',$employes);
             $style="style='display: none;'";
             $tpl->assign('style',$style);
