@@ -5,16 +5,15 @@ require_once 'include/libs/smarty/Smarty.class.php';
 $tpl = new Smarty();
 $ficheAnimal = [];
 
-$jScript = '<script src="js/jquery.min.js" type="text/javascript"></script>
-           <script src="js/Chart.min.js" type="text/javascript"></script>
-           <script src="js/app.js" type="text/javascript"></script>
-           <script src="js/dropdown.js" type="text/javascript"></script>';
-
 $login= $_SESSION['login'];
 $nom = $_SESSION['nomEmploye'];
 $prenom = $_SESSION['prenomEmploye'];
+$droits = $_SESSION['droits'];
 $avatar = $_SESSION['avatar'];
-
+$script = '<script src="js/jquery.min.js" type="text/javascript"></script>
+           <script src="js/Chart.min.js" type="text/javascript"></script>
+           <script src="js/app.js" type="text/javascript"></script>
+           <script src="js/dropdown.js" type="text/javascript"></script>';
 $reqConsAnimal = $tabReqConsult[0];
 $reqAgeAnimal = $tabReqConsult[1];
 $reqEspeceAnimal = $tabReqConsult[2];
@@ -82,9 +81,17 @@ switch ($_POST['action']) {
         break;
 }
 
-
-$bouton1="<input type='submit' name='envoyermail' value='Envoyer la fiche par mail' />";
-$action1="<input type='hidden' name='action' value='envoyermail'>";
+if($droits=="3"){
+     $employes="<li><form method='POST' action='index.php'><input type='hidden' name='gestion' value='employes'><input class='lienNav' type='submit' name='employes' value='utilisateur'></form></li>";
+     $tpl->assign('employes',$employes);
+     $tpl->display('vues/aide.tpl');
+ } elseif($droits=="2"){
+     $employes="";
+     $tpl->assign('employes',$employes);
+ } else{
+     $employes="";
+     $tpl->assign('employes',$employes);
+ }
 $tpl->assign('inputEdit', $inputEdit);
 $tpl->assign('varCRUD', $varCRUD);
 $tpl->assign('photo', $ficheAnimal['photo']);
@@ -101,11 +108,9 @@ $tpl->assign('description', $ficheAnimal['description']);
 $tpl->assign('pays', $ficheAnimal['pays']);
 $tpl->assign('pere', $ficheAnimal['pere']);
 $tpl->assign('mere', $ficheAnimal['mere']);
-$tpl->assign("action1",$action1);
-$tpl->assign("bouton1",$bouton1);
 $tpl->assign('login', $login);
 $tpl->assign('avatar', $avatar);
-$tpl->assign('js', $jScript);
+$tpl->assign('js', $script);
 
 $tpl->display('vues/animauxVueFiche.tpl');
 

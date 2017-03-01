@@ -108,8 +108,6 @@
                                     <textarea from="formAnimal" id="desc" {$varCRUD}>{$description}</textarea>
                                     {$inputEdit}
                                     <form method='POST' action='index.php' enctype='multipart/form-data'> 
-                                    {$action1}
-                                    {$bouton1}
                                     </form>
                                 </form>
                             </fieldset>

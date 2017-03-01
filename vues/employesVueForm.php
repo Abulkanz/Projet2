@@ -97,7 +97,7 @@ switch ($action){
         $action1="<input type='hidden' name='action' value='validermodification'>";
         $bouton1="<input type='submit' id='Valider' name='validermodification' value='Valider' >";
         $debutlignetab="<tr><td valeurcolspan='3'><form><input type='hidden' name='gestion' value='employes'><input type='hidden' name='action' value='vmodificationimage'><input type='file' id='avatar' name='avatar' >";
-        $finlignetab="<input type='submit'' id='modifier' name='vmodificationimage' value='Modifier' ></form></td></tr>";
+        $finlignetab="<input type='submit'' id='modifier' name='vmodificationimage' value='Modifier image' ></form></td></tr>";
         $parametrereadonly="";
         $tpl->assign("msg","Modification de la fiche d'un employe");
         $tpl->assign('consultEmploye', $consultEmploye);
