@@ -18,7 +18,7 @@
 					<td colspan="7" align="center"><h1>Fiche de l'animal</h1></td>
 				</tr>
 				<tr>
-					<td colspan="7" align="center"><img src="http://92.39.241.41/plesk-site-preview/arossignol.fr/92.39.241.41/authentification/img/imgFiches/{$mail.photo}"></td>
+					<td colspan="7" align="center"><img src="http://92.39.241.41/plesk-site-preview/arossignol.fr/92.39.241.41/Projet2/img/imgFiches/{$mail.photo}"></td>
                     <td style="display:none;"></td>
 				</tr>
 			</thead>

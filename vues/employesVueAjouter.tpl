@@ -72,8 +72,8 @@
                 </ul>
             </header>
         <h2>{$msg}</h2>
-        <div class="conteneurTable">
-        <table>
+        <div id="fiche">
+        <table id="tFiche">
 				<form method="POST" action="index.php" enctype="multipart/form-data" onsubmit="Verifier_formulaire (this.form)">
                 <thead>
                     </thead>

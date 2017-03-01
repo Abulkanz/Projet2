@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2017-02-28 18:00:57
+/* Smarty version 3.1.29, created on 2017-03-01 11:53:03
   from "C:\wamp64\www\Projet2zoo\vues\employesVueAjouter.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_58b5bad94d6b52_89518613',
+  'unifunc' => 'content_58b6b61fa11740_31587971',
   'file_dependency' => 
   array (
     '3905aff9d5f784c14c76750637db5c8fdb31c3eb' => 
     array (
       0 => 'C:\\wamp64\\www\\Projet2zoo\\vues\\employesVueAjouter.tpl',
-      1 => 1488304849,
+      1 => 1488369172,
       2 => 'file',
     ),
   ),
@@ -19,24 +19,21 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_58b5bad94d6b52_89518613 ($_smarty_tpl) {
+function content_58b6b61fa11740_31587971 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="UTF-8">
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="style/font-awesome.min.css" rel="stylesheet" type="text/css"/>
         <link href="style/styles.css" rel="stylesheet">
         <link href="style/dropdown.css" rel="stylesheet">
-        <?php echo '<script'; ?>
- type="text/javascript" src="js/script.js"> <?php echo '</script'; ?>
->
         <title>Projet2</title>
-	</head>
+    </head>
     <body>
-    <div class="conteneur noOverF">
+        <div class="conteneur noOverF">
             <img class="logo" src="img/logoSinges.png">
             <header>
                 <ul>
@@ -52,12 +49,8 @@ function content_58b5bad94d6b52_89518613 ($_smarty_tpl) {
                             <input class="lienNav" type="submit" value="Animaux">
                         </form>
                     </li>
-                    <li>
-                        <form method="POST" action="index.php">
-                            <input type="hidden" name="gestion" value="employes">
-                            <input class="lienNav" type="submit" name="employes" value="utilisateur">
-                        </form>
-                    </li>
+                    <?php echo $_smarty_tpl->tpl_vars['employes']->value;?>
+
                      <li>
                             <form method="POST" action="index.php">
                                 <input type="text" name="objRech" placeholder="Rechercher">
@@ -106,8 +99,8 @@ function content_58b5bad94d6b52_89518613 ($_smarty_tpl) {
             </header>
         <h2><?php echo $_smarty_tpl->tpl_vars['msg']->value;?>
 </h2>
-        <div class="conteneurTable">
-        <table>
+        <div id="fiche">
+        <table id="tFiche">
 				<form method="POST" action="index.php" enctype="multipart/form-data" onsubmit="Verifier_formulaire (this.form)">
                 <thead>
                     </thead>

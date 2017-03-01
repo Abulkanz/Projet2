@@ -25,6 +25,8 @@ while($row=$idRequete->fetch()){
 }
 
 $nbligne=$idRequete->rowCount();
+$employes="<li><form method='POST' action='index.php'><input type='hidden' name='gestion' value='employes'><input class='lienNav' type='submit' name='employes' value='utilisateur'></form></li>";
+$tpl->assign('employes',$employes);
 $tpl->assign('msg','Liste des employes');
 $tpl->assign('login', $login);
 $tpl->assign('avatar', $avatar);

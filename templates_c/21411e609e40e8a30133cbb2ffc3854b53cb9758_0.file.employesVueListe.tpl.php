@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2017-03-01 06:42:10
+/* Smarty version 3.1.29, created on 2017-03-01 11:47:32
   from "C:\wamp64\www\Projet2zoo\vues\employesVueListe.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_58b66d42eabeb0_69222342',
+  'unifunc' => 'content_58b6b4d4e08c50_62016367',
   'file_dependency' => 
   array (
     '21411e609e40e8a30133cbb2ffc3854b53cb9758' => 
     array (
       0 => 'C:\\wamp64\\www\\Projet2zoo\\vues\\employesVueListe.tpl',
-      1 => 1488321509,
+      1 => 1488368645,
       2 => 'file',
     ),
   ),
@@ -19,23 +19,22 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_58b66d42eabeb0_69222342 ($_smarty_tpl) {
+function content_58b6b4d4e08c50_62016367 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="fr">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="style/styles.css" rel="stylesheet">
-    <link href="style/dropdown.css" rel="stylesheet">
-    <title>Projet2</title>
-    <title>Projet2</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="style/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+        <link href="style/styles.css" rel="stylesheet">
+        <link href="style/dropdown.css" rel="stylesheet">
+        <title>Projet2</title>
+    </head>
     <body>
         <div class="conteneur noOverF">
-            <!--<img class="logo" src="img/logoSinges.png">-->
+            <img class="logo" src="img/logoSinges.png">
             <header>
                 <ul>
                     <li>
@@ -50,12 +49,8 @@ function content_58b66d42eabeb0_69222342 ($_smarty_tpl) {
                             <input class="lienNav" type="submit" value="Animaux">
                         </form>
                     </li>
-                    <li>
-                        <form method="POST" action="index.php">
-                            <input type="hidden" name="gestion" value="employes">
-                            <input class="lienNav" type="submit" name="employes" value="utilisateur">
-                        </form>
-                    </li>
+                    <?php echo $_smarty_tpl->tpl_vars['employes']->value;?>
+
                      <li>
                             <form method="POST" action="index.php">
                                 <input type="text" name="objRech" placeholder="Rechercher">
@@ -185,6 +180,8 @@ $_smarty_tpl->tpl_vars['Employe'] = $__foreach_Employe_0_saved_item;
                 </p>
             </form>
             </div>
+            <?php echo $_smarty_tpl->tpl_vars['js']->value;?>
+
     </body>
 </html><?php }
 }

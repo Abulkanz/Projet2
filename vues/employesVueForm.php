@@ -12,6 +12,8 @@ $script = '<script src="js/jquery.min.js" type="text/javascript"></script>
 
 switch ($action){
     case 'ajouter' :
+        $employes="<li><form method='POST' action='index.php'><input type='hidden' name='gestion' value='employes'><input class='lienNav' type='submit' name='employes' value='utilisateur'></form></li>";
+        $tpl->assign('employes',$employes);
         $tpl->assign('login', $login);
         $tpl->assign('avatar', $avatar);
         $tpl->assign('js', $script);
@@ -41,6 +43,8 @@ switch ($action){
             $i++;
         }
         $valeurcolspan="";
+        $employes="<li><form method='POST' action='index.php'><input type='hidden' name='gestion' value='employes'><input class='lienNav' type='submit' name='employes' value='utilisateur'></form></li>";
+        $tpl->assign('employes',$employes);
         $form="<form method='POST' action='index.php'' enctype='multipart/form-data'>";
         $bouton1="<td><input type='submit' id='retour' name='retour' value='Retour' ></td>";
         $action1="";
@@ -86,6 +90,8 @@ switch ($action){
             $i++;
         }
         $valeurcolspan="'3'";
+        $employes="<li><form method='POST' action='index.php'><input type='hidden' name='gestion' value='employes'><input class='lienNav' type='submit' name='employes' value='utilisateur'></form></li>";
+        $tpl->assign('employes',$employes);
         $form="<form method='POST' action='index.php'' enctype='multipart/form-data'>";
         $bouton2="<td><input type='submit' id='retour' name='retour' value='Retour' ></td>";
         $action1="<input type='hidden' name='action' value='validermodification'>";
@@ -109,6 +115,8 @@ switch ($action){
         $tpl->display("vues/employesVueForm.tpl");
         break;
     case 'supprimer':
+        $employes="<li><form method='POST' action='index.php'><input type='hidden' name='gestion' value='employes'><input class='lienNav' type='submit' name='employes' value='utilisateur'></form></li>";
+        $tpl->assign('employes',$employes);
         $consultEmploye=array();
         $i=0;
         while($row=$idRequete->fetch()){

@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2017-02-28 20:32:39
+/* Smarty version 3.1.29, created on 2017-03-01 11:49:51
   from "C:\wamp64\www\Projet2zoo\vues\employesVueForm.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_58b5de673c6d64_85301537',
+  'unifunc' => 'content_58b6b55f2f9125_41017731',
   'file_dependency' => 
   array (
     'c4653f1d132685dca12caf157e6e41e40ebadcb7' => 
     array (
       0 => 'C:\\wamp64\\www\\Projet2zoo\\vues\\employesVueForm.tpl',
-      1 => 1488313497,
+      1 => 1488368645,
       2 => 'file',
     ),
   ),
@@ -19,21 +19,20 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_58b5de673c6d64_85301537 ($_smarty_tpl) {
+function content_58b6b55f2f9125_41017731 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="UTF-8">
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!--<link href="css/bootstrap.min.css" rel="stylesheet">-->
         <link href="style/font-awesome.min.css" rel="stylesheet" type="text/css"/>
         <link href="style/styles.css" rel="stylesheet">
         <link href="style/dropdown.css" rel="stylesheet">
         <title>Projet2</title>
-	</head>
-        <body>
+    </head>
+    <body>
         <div class="conteneur noOverF">
             <img class="logo" src="img/logoSinges.png">
             <header>
@@ -50,18 +49,8 @@ function content_58b5de673c6d64_85301537 ($_smarty_tpl) {
                             <input class="lienNav" type="submit" value="Animaux">
                         </form>
                     </li>
-                    <li>
-                        <form method="POST" name="gestion">
-                            <input type="hidden" name="gestion" value="carte">
-                            <input class="lienNav" type="submit" value="Carte">
-                        </form>
-                    </li>
-                     <li>
-                        <form method="POST" name="gestion">
-                            <input type="hidden" name="gestion" value="statistiques">
-                            <input class="lienNav" type="submit" value="Statistiques">
-                        </form>
-                    </li>
+                    <?php echo $_smarty_tpl->tpl_vars['employes']->value;?>
+
                      <li>
                             <form method="POST" action="index.php">
                                 <input type="text" name="objRech" placeholder="Rechercher">
