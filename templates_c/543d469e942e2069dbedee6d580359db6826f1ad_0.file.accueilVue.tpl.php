@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2017-02-28 17:41:37
+/* Smarty version 3.1.29, created on 2017-03-01 07:08:50
   from "C:\wamp64\www\Projet2zoo\vues\accueilVue.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_58b5b6513f2c18_44467887',
+  'unifunc' => 'content_58b67382a309f0_34966927',
   'file_dependency' => 
   array (
     '543d469e942e2069dbedee6d580359db6826f1ad' => 
     array (
       0 => 'C:\\wamp64\\www\\Projet2zoo\\vues\\accueilVue.tpl',
-      1 => 1488303692,
+      1 => 1488352054,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_58b5b6513f2c18_44467887 ($_smarty_tpl) {
+function content_58b67382a309f0_34966927 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -49,12 +49,8 @@ function content_58b5b6513f2c18_44467887 ($_smarty_tpl) {
                             <input class="lienNav" type="submit" value="Animaux">
                         </form>
                     </li>
-                    <li>
-                        <form method="POST" action="index.php">
-                            <input type="hidden" name="gestion" value="employes">
-                            <input class="lienNav" type="submit" name="employes" value="utilisateur">
-                        </form>
-                    </li>
+                    <?php echo $_smarty_tpl->tpl_vars['employes']->value;?>
+
                      <li>
                             <form method="POST" action="index.php">
                                 <input type="text" name="objRech" placeholder="Rechercher">

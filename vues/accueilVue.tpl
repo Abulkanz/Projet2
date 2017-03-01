@@ -26,12 +26,7 @@
                             <input class="lienNav" type="submit" value="Animaux">
                         </form>
                     </li>
-                    <li>
-                        <form method="POST" action="index.php">
-                            <input type="hidden" name="gestion" value="employes">
-                            <input class="lienNav" type="submit" name="employes" value="utilisateur">
-                        </form>
-                    </li>
+                    {$employes}
                      <li>
                             <form method="POST" action="index.php">
                                 <input type="text" name="objRech" placeholder="Rechercher">

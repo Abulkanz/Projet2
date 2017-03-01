@@ -16,13 +16,6 @@ $listeAnimaux = [];
 $i = 0;
 
 if($droits=="3"){
-    $employes="<li>
-                        <form method='POST' action='index.php'>
-                            <input type='hidden' name='gestion' value='employes'>
-                            <input class='lienNav' type='submit' name='employes' value='utilisateur'>
-                        </form>
-                    </li>";
-    $tpl->assign('employes',$employes);
     if (isset($_POST['action'])) {
     
         //Liste via recherche ou tri
@@ -71,6 +64,13 @@ if($droits=="3"){
                 $i++;
             } while ($ligne = $reqRech->fetch(PDO::FETCH_ASSOC));
             $aucRes = '';
+            $employes="<li>
+                        <form method='POST' action='index.php'>
+                            <input type='hidden' name='gestion' value='employes'>
+                            <input class='lienNav' type='submit' name='employes' value='utilisateur'>
+                        </form>
+                    </li>";
+            $tpl->assign('employes',$employes);
             $style="style='display: none;'";
             $tpl->assign('style',$style);
             $boutonmodifier="<input class='action' type='submit' name='modifier' value='Modifier'>";
@@ -133,6 +133,13 @@ if($droits=="3"){
                 $i++;
             } while ($ligne = $reqListe->fetch(PDO::FETCH_ASSOC));
             $aucRes = '';
+            $employes="<li>
+                        <form method='POST' action='index.php'>
+                            <input type='hidden' name='gestion' value='employes'>
+                            <input class='lienNav' type='submit' name='employes' value='utilisateur'>
+                        </form>
+                    </li>";
+            $tpl->assign('employes',$employes);
             $style="style='display: none;'";
             $tpl->assign('style',$style);
             $nbLignes = $reqListe->rowCount();
@@ -147,7 +154,7 @@ if($droits=="3"){
             $tpl->display('vues/animauxVue.tpl');
         }
     }
-} if($droits=="2"){
+} elseif($droits=="2"){
      $employes="<li>
                         <form method='POST' action='index.php'>
                             <input type='hidden' name='gestion' value='employes'>
@@ -203,6 +210,13 @@ if($droits=="3"){
                 $i++;
             } while ($ligne = $reqRech->fetch(PDO::FETCH_ASSOC));
             $aucRes = '';
+            $employes="<li>
+                        <form method='POST' action='index.php'>
+                            <input type='hidden' name='gestion' value='employes'>
+                            <input class='lienNav' type='submit' name='employes' value='utilisateur'>
+                        </form>
+                    </li>";
+            $tpl->assign('employes',$employes);
             $style="style='display: none;'";
             $tpl->assign('style',$style);
             $nbLignes = $reqListe->rowCount();
@@ -261,6 +275,13 @@ if($droits=="3"){
                 $i++;
             } while ($ligne = $reqListe->fetch(PDO::FETCH_ASSOC));
             $aucRes = '';
+            $employes="<li>
+                        <form method='POST' action='index.php'>
+                            <input type='hidden' name='gestion' value='employes'>
+                            <input class='lienNav' type='submit' name='employes' value='utilisateur'>
+                        </form>
+                    </li>";
+            $tpl->assign('employes',$employes);
             $style="style='display: none;'";
             $tpl->assign('style',$style);
             $nbLignes = $reqListe->rowCount();
@@ -324,6 +345,13 @@ if($droits=="3"){
                 $i++;
             } while ($ligne = $reqRech->fetch(PDO::FETCH_ASSOC));
             $aucRes = '';
+            $employes="<li>
+                        <form method='POST' action='index.php'>
+                            <input type='hidden' name='gestion' value='employes'>
+                            <input class='lienNav' type='submit' name='employes' value='utilisateur'>
+                        </form>
+                    </li>";
+            $tpl->assign('employes',$employes);
             $style="style='display: none;'";
             $tpl->assign('style',$style);
             $nbLignes = $reqListe->rowCount();
@@ -388,7 +416,7 @@ if($droits=="3"){
                             <input class='lienNav' type='submit' name='employes' value='utilisateur'>
                         </form>
                     </li>";
-    $tpl->assign('employes',$employes);
+            $tpl->assign('employes',$employes);
             $style="style='display: none;'";
             $tpl->assign('style',$style);
             $nbLignes = $reqListe->rowCount();
