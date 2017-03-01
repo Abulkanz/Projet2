@@ -4,11 +4,12 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="style/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+        <link href="style/fonts/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
         <link href="style/styles.css" rel="stylesheet">
         <link href="style/dropdown.css" rel="stylesheet">
         <title>Projet2</title>
     </head>
+    
     <body>
         <div class="conteneur noOverF">
             <img class="logo" src="img/logoSinges.png">
@@ -44,9 +45,8 @@
                     </li>
                     <li class="dropdown">
                         <img class="avatar dropbtn"  onclick="displayMenuUser()" src="img/userlogof.png">
-                        <span class="username"  onclick="displayMenuUser()">
+                        <span class="username dropbtn"  onclick="displayMenuUser()">
                             {$login}
-                            <i class="fa fa-caret-down" aria-hidden="true"></i>
                         </span>
                             <div class="dropdown-content" id="menuUser">
                                 <form method="POST" name="gestion">

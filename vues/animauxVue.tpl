@@ -5,6 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="style/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+        <link href="style/dropdown.css" rel="stylesheet" type="text/css"/>
         <link href="style/styles.css" rel="stylesheet">
         <title>Ouhouhin-Animaux</title>
     </head>
@@ -26,13 +27,6 @@
                         </form>
                     </li>
                     <li>
-                        <form method="POST" name="gestion">
-                            <input type="hidden" name="gestion" value="login">
-                            <input class="lienNav" type="submit" value="Carte">
-                        </form>
-                    </li>
-                    <li><input class="lienNav" type="submit" name="lignes_commande" value="Statistiques"></li>
-                    <li>
                         <form method="POST" action="index.php">
                             <input type="text" name="objRech" placeholder="Rechercher">
                             <input type="hidden" name="gestion" value="animaux">
@@ -48,7 +42,36 @@
                             </select>
                         </form>
                     </li>
-                    <img class="avatar" src="img/avatarTest.png" alt=""/>
+                    <li class="dropdown">
+                        <img class="avatar dropbtn"  onclick="displayMenuUser()" src="img/userlogof.png">
+                        <span class="username dropbtn"  onclick="displayMenuUser()">
+                            {$login}
+                        </span>
+                        <i class="fa fa-caret-down" aria-hidden="true" style="color:white;"></i>
+                        <div class="dropdown-content" id="menuUser">
+                            <form method="POST" name="gestion">
+                                <button class="lienNav">
+                                    <input type="hidden" name="gestion" value="profil">
+                                    <input type="hidden" name="action" value="profil">
+                                    <input type="hidden" name="identifiant" value="{$login}">
+                                    <img src="img/userlogof.png" style="width:20px; margin-right:5px">Profil
+                                </button>
+                            </form>
+                            <form method="POST" name="gestion">
+                                <button class="lienNav">
+                                    <input type="hidden" name="gestion" value="aide">
+                                    <img src="img/icone_aide.png" style="width:20px; margin-right:5px">Aide
+                                </button>
+                            </form>
+                            <form method="POST" name="gestion">
+                                <button class="lienNav">
+                                    <input type="hidden" name="gestion" value="accueil">
+                                    <input type="hidden" name="action" value="deconnexion">
+                                    <img src="img/iconedeconnexion.png" style="width:15px; margin-right:5px">Déconnexion
+                                </button>
+                            </form>
+                        </div>
+                    </li>
                 </ul>
 
             </header>

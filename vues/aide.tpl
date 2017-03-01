@@ -47,30 +47,34 @@
                             </form>
                     </li>
                     <li class="dropdown">
-                        <span class="dropbtn" onclick="displayMenuUser()"><img class="avatar"  onclick="displayMenuUser()" src="img/userlogof.png"><span class="username"  onclick="displayMenuUser()">{$login}</span></span>
-                        <div class="dropdown-content" id="menuUser">
-                            <form method="POST" name="gestion">
-                                <button class="lienNav">
-                                    <input type="hidden" name="gestion" value="profil">
-                                    <input type="hidden" name="action" value="profil">
-                                    <input type="hidden" name="identifiant" value="{$login}">
-                                    <img src="img/userlogof.png" style="width:20px; margin-right:5px">Profil
-                                </button>
-                            </form>
-                            <form method="POST" name="gestion">
-                                <button class="lienNav">
-                                    <input type="hidden" name="gestion" value="aide">
-                                    <img src="img/icone_aide.png" style="width:20px; margin-right:5px">Aide
-                                </button>
-                            </form>
-                            <form method="POST" name="gestion">
-                                 <button class="lienNav">
-                                    <input type="hidden" name="gestion" value="accueil">
-                                    <input type="hidden" name="action" value="deconnexion">
-                                    <img src="img/iconedeconnexion.png" style="width:15px; margin-right:5px">Déconnexion
-                                </button>
-                            </form>
-                        </div>
+                        <img class="avatar dropbtn"  onclick="displayMenuUser()" src="img/userlogof.png">
+                        <span class="username dropbtn"  onclick="displayMenuUser()">
+                            {$login}
+                        </span>
+                        <i class="fa fa-caret-down" aria-hidden="true" style="color:white;"></i>
+                            <div class="dropdown-content" id="menuUser">
+                                <form method="POST" name="gestion">
+                                    <button class="lienNav">
+                                        <input type="hidden" name="gestion" value="profil">
+                                        <input type="hidden" name="action" value="profil">
+                                        <input type="hidden" name="identifiant" value="{$login}">
+                                        <img src="img/userlogof.png" style="width:20px; margin-right:5px">Profil
+                                    </button>
+                                </form>
+                                <form method="POST" name="gestion">
+                                    <button class="lienNav">
+                                        <input type="hidden" name="gestion" value="aide">
+                                        <img src="img/icone_aide.png" style="width:20px; margin-right:5px">Aide
+                                    </button>
+                                </form>
+                                <form method="POST" name="gestion">
+                                    <button class="lienNav">
+                                        <input type="hidden" name="gestion" value="accueil">
+                                        <input type="hidden" name="action" value="deconnexion">
+                                        <img src="img/iconedeconnexion.png" style="width:15px; margin-right:5px">Déconnexion
+                                    </button>
+                                </form>
+                            </div>
                     </li>
                 </ul>
             </header>

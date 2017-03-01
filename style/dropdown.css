@@ -1,5 +1,6 @@
 li button:hover, .dropdown:hover .dropbtn {
     color: #61e5a1;
+    cursor: pointer;
 }
 
 li.dropdown {
@@ -19,11 +20,14 @@ li.dropdown {
 
 .dropdown-content button {
     text-align: left;
+    cursor: pointer;
 }
 
 .username{
-    font: 2.4em Righteous;
-    color: #61e5a1;
+    font: 2.5em Righteous;
+    color: white;
+    transform: translate(-23%, -17%);
+    display: inline-block;
 }
 .avatar{
     height: 8em;

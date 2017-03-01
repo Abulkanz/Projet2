@@ -238,20 +238,11 @@ a:hover{
     border: 1px solid rgba(1, 1, 1, 0.5);
 }
 
-
-#fiche{
-    height: 43%;
-    width: 75%;
-    margin: auto auto;
-    background-color: white;
-    box-shadow: 1em 1em 1em rgba(0, 0, 0, 0.75);
-    transform: translateY(43%); 
-}
-
 .iPortrait{
     width: 100%;
     object-fit: cover;
     padding: 1em;
+    cursor: pointer;
 }
 
 #tFiche fieldset{
@@ -323,8 +314,13 @@ th{
 }
 
 #tFiche{
+    height: 43%;
+    width: 75%;
+    margin-left: 50%;
+    background-color: white;
+    box-shadow: 1em 1em 1em rgba(0, 0, 0, 0.75);
+    transform: translate(-50%, 43%);
     font: 1.4em "Righteous";
-    height: 100%;
 }
 
 #tFiche #chpDesc{

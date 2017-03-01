@@ -7,7 +7,8 @@ $jsCalls = '<script src="js/jquery.min.js" type="text/javascript"></script>
            <script src="js/Chart.min.js" type="text/javascript"></script>
            <script src="js/app.js" type="text/javascript"></script>
            <script src="js/dropdown.js" type="text/javascript"></script>';
-$login= $_SESSION['login'];
+
+$login = $_SESSION['login'];
 $nom = $_SESSION['nomEmploye'];
 $prenom = $_SESSION['prenomEmploye'];
 $avatar = $_SESSION['avatar'];
@@ -30,6 +31,19 @@ $reqAgeAnimal = $tabReqConsult[1];
 $reqEspeceAnimal = $tabReqConsult[2];
 $reqSexAnimal = $tabReqConsult[3];
 $reqPaysAnimal = $tabReqConsult[4];
+$reqEspeces = $tabReqConsult[5];
+
+if ($ligne6 = $reqEspeces->fetch(PDO::FETCH_ASSOC)) {
+            $i = 0;
+            $initListEsp = '<select id="listEspeces" name="selectEsp">';
+            $endListEsp = '</select>';
+            do {
+                $listeEsp['espece' . $i] = $ligne6['nomEspece'];
+                $i++;
+            } while ($ligne6 = $reqEspeces->fetch(PDO::FETCH_ASSOC));
+        } else {
+            $listeEsp = null;
+        }
 
 if ($ligne = $reqConsAnimal->fetch()) {
     $ficheAnimal['idAnimal'] = $ligne['idAnimaux'];
@@ -80,12 +94,11 @@ if ($ligne = $reqConsAnimal->fetch()) {
     $erreur = "<p>Une erreur est survenue</p>";
 }
 
-
 switch ($_POST['action']) {
     case 'supprimer' :
         $varCRUD = 'style="border-style:none;" readonly';
         $onSubmitJs = 'onsubmit="return validForm()"';
-        $jScript = $jScript.' function validForm() {
+        $jScript = $jScript . ' function validForm() {
                     var choix = confirm("Etes-vous certain de vouloir supprimer cet enregistrement ?");
                     if (choix === true) {
                         return true;
@@ -102,9 +115,11 @@ switch ($_POST['action']) {
     case 'modifier' :
         $onSubmitJs = null;
         $varCRUD = null;
-        $espSexPays = '<input type="text" name="espece" value="'. $ficheAnimal['nomEspece'].'">
-                       <input type="text" name="sexe" value="'. $ficheAnimal['sexe'].'">
-                       <input type="text" name="pays" value="'. $ficheAnimal['pays'].'">';
+        $esp = $ficheAnimal['nomEspece'];
+        $sex = '<input type="text" name="sexe" value="' . $ficheAnimal['sexe'] . '">';
+        $pays = '<input type="text" name="pays" value="' . $ficheAnimal['pays'] . '">';
+
+
         $inputEdit = '<input type = "hidden" name = "idAnimal" value = "' . $ficheAnimal['idAnimal'] . '">
         <input type = "hidden" name = "gestion" value = "animaux">
         <input type = "hidden" name = "action" value = "modifier">
@@ -113,15 +128,22 @@ switch ($_POST['action']) {
     case 'consulter' :
         $onSubmitJs = null;
         $varCRUD = 'style = "border-style:none;" readonly';
-        $espSexPays = '<strong class="espAnimal">' . $ficheAnimal['nomEspece'] . ' ' . $ficheAnimal['sexe'] . ' (' . $ficheAnimal['pays'] . ' )</strong>';
+        $esp = '<strong class="espAnimal">' . $ficheAnimal['nomEspece'] . '';
+        $sex = ' ' . $ficheAnimal['sexe'] . ' ';
+        $pays = ' ' . $ficheAnimal['pays'] . '</strong>';
         $inputEdit = null;
         break;
 }
 
+
+$tpl->assign('initListEsp', $initListEsp);
+$tpl->assign('endListEsp', $endListEsp);
 $tpl->assign('inputEdit', $inputEdit);
 $tpl->assign('varCRUD', $varCRUD);
-$tpl->assign('espSexPays', $espSexPays);
-
+$tpl->assign('esp', $esp);
+$tpl->assign('sex', $sex);
+$tpl->assign('pays', $pays);
+$tpl->assign('listeEspeces', $listeEsp);
 $tpl->assign('photo', $ficheAnimal['photo']);
 $tpl->assign('sexe', $ficheAnimal['sexe']);
 $tpl->assign('numero', $ficheAnimal['idAnimal']);

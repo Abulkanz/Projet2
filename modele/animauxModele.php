@@ -78,18 +78,17 @@ function consulterFiche($reference) {
     $sql5 = "SELECT idAnimaux, nomPays FROM animaux, pays
              WHERE animaux.idPays = pays.idPays
              AND idAnimaux = ?";
+    $sql6 = 'SELECT nomEspece FROM especes';
+    
     $reqConsAnimal = executeR($cnx, $sql, array($reference));
     $reqAgeAnimal = executeR($cnx, $sql2, array($reference));
     $reqEspeceAnimal = executeR($cnx, $sql3, array($reference));
     $reqSexAnimal = executeR($cnx, $sql4, array($reference));
     $reqPaysAnimal = executeR($cnx, $sql5, array($reference));
-    $tabReqConsult = [$reqConsAnimal, $reqAgeAnimal, $reqEspeceAnimal, $reqSexAnimal, $reqPaysAnimal];
+    $reqEspeces = executeR($cnx, $sql6);
+    $tabReqConsult = [$reqConsAnimal, $reqAgeAnimal, $reqEspeceAnimal, $reqSexAnimal, $reqPaysAnimal, $reqEspeces];
     return $tabReqConsult;
 }
-
-//function execModif($param){
-//    
-//}
 
 function execSuppr($param) {
     $cnx = getBD();
