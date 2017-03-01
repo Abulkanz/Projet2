@@ -76,87 +76,113 @@
             </header>
             <table id="tFiche">
                 <tr>
-                <select id="listEspeces" name="selectEsp">
-                    {foreach from=$listeEspeces key="refEsp" item="Esp"}
-                        {if $Esp == $esp}
-                            <option selected="selected" value="{$refEsp}">{$Esp}</option>
-                        {else}
-                            <option value="{$refEsp}">{$Esp}</option>
-                        {/if}
-                    {/foreach}
-                </select>
-
-                <td>
-                    {$photo}
-                </td>
-                <td id="chpDesc">
-                    <fieldset id="fsFiche">
-                        <legend class="nomAnimal"><strong>{$prenom} (Id n°{$numero})</strong></legend>
-                        <form id="formAnimal" method="POST" action="index.php" {$onSubmitJs}>
-                            <!--Variable servant de module entre la consultation et la modif-->
-                            {$initListEsp}
-                            
+                    <td>
+                        {$photo}
+                    </td>
+                    <td id="chpDesc">
+                        <fieldset id="fsFiche">
+                            <legend class="nomAnimal"><strong>{$prenom} (Id n°{$numero})</strong></legend>
+                            <form id="formAnimal" method="POST" action="index.php" {$onSubmitJs}>
+                                <!--Traitement servant de module entre la consultation et la modif-->
+                                {$initEspSexPays}
+                                <!--Select de l'espèce (modification)-->
+                                {$initListEsp}
                                 {foreach from=$listeEspeces key="refEsp" item="Esp"}
                                     {if $Esp == $esp}
-                                        <option selected="selected" value="{$refEsp}" {$varCRUD}>{$Esp}</option>
+                                        {$initOptionsSelected}{$refEsp}{$milOptions}{$Esp}{$endOptions}
                                     {else}
-                                        <option value="{$refEsp}">{$Esp}</option>
+                                        {$initOptions}{$refEsp}{$milOptions}{$Esp}{$endOptions}
                                     {/if}
                                 {/foreach}
-                            {$endListEsp}
-                                {$sex}{$pays}
-                            <br>
-                            <table>
-                                <tr>
-                                    <td>
-                                        <label for="numParcelle"><strong>Numero de parcelle : </strong></label>
-                                        <input type="text" name="parcelle" id="numParcelle" value="{$parcelle}" {$varCRUD}></td>
-                                    <td>
-                                        <label for="statutAnimal"><strong>Statut actuel : </strong></label>
-                                        <input type="text" name="statut" id="statutAnimal" value="{$statutAnimal}" {$varCRUD}>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <label for="taille"><strong>Taille (cm): </strong></label>
-                                        <input type="text" name="taille" id="taille" value="{$taille}" {$varCRUD}>
-                                    </td>
-                                    <td>
-                                        <label for="poids"><strong>Poids (kg): </strong></label>
-                                        <input type="text" name="poids" id="poids" value="{$poids}" {$varCRUD}>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <label for="dOb"><strong>Né le : </strong></label>
-                                        <input type="text" name="dateNaissance" id="dOb" value="{$dOb}" {$varCRUD}>
-                                    </td>
-                                    <td>
-                                        <label for="pOb"><strong>Lieu de Naissance : </strong></label>
-                                        <input type="text" name="lieuNaissance" id="pOb" value="{$pOb}" {$varCRUD}>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <label for="pere"><strong>Père : </strong></label>
-                                        <input type="text" name="pere" id="pere" value="{$pere}" {$varCRUD}>
-                                    </td>
-                                    <td>
-                                        <label for="mere"><strong>Mère : </strong></label>
-                                        <input type="text" name="mere" id="mere" value="{$mere}" {$varCRUD}>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2">
-                                        <br>
-                                        <textarea from="formAnimal" name="descriptif" id="desc" {$varCRUD}>{$description}</textarea>
-                                        {$inputEdit}
-                                    </td>
-                                </tr>
-                            </table>
-                        </form>
-                    </fieldset>
-                </td>
+                                {$endList}
+                                <!--Select du sexe (modification)-->
+                                {$initListSex}
+                                {foreach from=$listeSexes key="refSex" item="Sexe"}
+                                    {if $Esp == $esp}
+                                        {$initOptionsSelected}{$refSex}{$milOptions}{$Sexe}{$endOptions}
+                                    {else}
+                                        {$initOptions}{$refSex}{$milOptions}{$Sexe}{$endOptions}
+                                    {/if}
+                                {/foreach}
+                                {$endList}      
+                                <!--Select du pays (modification)-->
+                                {$initListPays}
+                                {foreach from=$listeEspeces key="refPays" item="Pays"}
+                                    {if $Esp == $esp}
+                                        {$initOptionsSelected}{$refPays}{$milOptions}{$Pays}{$endOptions}
+                                    {else}
+                                        {$initOptions}{$refPays}{$milOptions}{$Pays}{$endOptions}
+                                    {/if}
+                                {/foreach}
+                                {$endList} 
+
+                                <!--Libellés consultation/suppression, cachés en modification-->
+                                {$varInitSpanHidden}{$esp}{$varEndSpanHidden} {$varInitSpanHidden}{$sex}{$varEndSpanHidden} {$varInitSpanHidden}{$pays}{$varEndSpanHidden}
+                                {$endEspSexPays}
+                                <br>
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <label for="numParcelle"><strong>Numero de parcelle : </strong></label>
+                                            <input type="text" name="parcelle" id="numParcelle" value="{$parcelle}" {$varCRUD}></td>
+                                        <td>
+                                            <label for="statutAnimal"><strong>Statut actuel : </strong></label>
+                                            <!--Select du statut(modification)-->
+                                            {$initListStatuts}
+                                            {foreach from=$listeStatuts key="refStatut" item="Statut"}
+                                                {if $Esp == $esp}
+                                                    {$initOptionsSelected}{$refStatut}{$milOptions}{$Statut}{$endOptions}
+                                                {else}
+                                                    {$initOptions}{$refStatut}{$milOptions}{$Statut}{$endOptions}
+                                                {/if}
+                                            {/foreach}
+                                            {$endList} 
+                                            {$varInitSpanHidden}
+                                            <input type="text" name="statut" id="statutAnimal" value="{$statutAnimal}" {$varCRUD}>
+                                            {$varEndSpanHidden}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="taille"><strong>Taille (cm): </strong></label>
+                                            <input type="text" name="taille" id="taille" value="{$taille}" {$varCRUD}>
+                                        </td>
+                                        <td>
+                                            <label for="poids"><strong>Poids (kg): </strong></label>
+                                            <input type="text" name="poids" id="poids" value="{$poids}" {$varCRUD}>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="dOb"><strong>Né le : </strong></label>
+                                            <input type="text" name="dateNaissance" id="dOb" value="{$dOb}" {$varCRUD}>
+                                        </td>
+                                        <td>
+                                            <label for="pOb"><strong>Lieu de Naissance : </strong></label>
+                                            <input type="text" name="lieuNaissance" id="pOb" value="{$pOb}" {$varCRUD}>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="pere"><strong>Père : </strong></label>
+                                            <input type="text" name="pere" id="pere" value="{$pere}" {$varCRUD}>
+                                        </td>
+                                        <td>
+                                            <label for="mere"><strong>Mère : </strong></label>
+                                            <input type="text" name="mere" id="mere" value="{$mere}" {$varCRUD}>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <br>
+                                            <textarea from="formAnimal" name="descriptif" id="desc" {$varCRUD}>{$description}</textarea>
+                                            {$inputEdit}
+                                        </td>
+                                    </tr>
+                                </table>
+                            </form>
+                        </fieldset>
+                    </td>
                 </tr>
             </table>
         </div>

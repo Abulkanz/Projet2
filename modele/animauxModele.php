@@ -79,14 +79,32 @@ function consulterFiche($reference) {
              WHERE animaux.idPays = pays.idPays
              AND idAnimaux = ?";
     $sql6 = 'SELECT nomEspece FROM especes';
-    
+    $sql7 = 'SELECT sexe from sexe';
+    $sql8 = 'SELECT nomPays from pays';
+    $sql9 = 'SELECT DISTINCT statut from animaux';
+
     $reqConsAnimal = executeR($cnx, $sql, array($reference));
     $reqAgeAnimal = executeR($cnx, $sql2, array($reference));
     $reqEspeceAnimal = executeR($cnx, $sql3, array($reference));
     $reqSexAnimal = executeR($cnx, $sql4, array($reference));
     $reqPaysAnimal = executeR($cnx, $sql5, array($reference));
     $reqEspeces = executeR($cnx, $sql6);
-    $tabReqConsult = [$reqConsAnimal, $reqAgeAnimal, $reqEspeceAnimal, $reqSexAnimal, $reqPaysAnimal, $reqEspeces];
+    $reqSexes = executeR($cnx, $sql7);
+    $reqPays = executeR($cnx, $sql8);
+    $reqStatutAnimal = executeR($cnx, $sql9);
+
+    $tabReqConsult = [
+        $reqConsAnimal,
+        $reqAgeAnimal,
+        $reqEspeceAnimal,
+        $reqSexAnimal,
+        $reqPaysAnimal,
+        $reqEspeces,
+        $reqSexes,
+        $reqPays,
+        $reqStatutAnimal
+    ];
+    
     return $tabReqConsult;
 }
 
